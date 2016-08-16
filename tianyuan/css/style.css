@@ -763,7 +763,7 @@ i {
 /* home section padding */
 #home {
 	padding: 148px 0 60px;
-	max-height: 768px;
+	min-height: 620px;
 }
 /**
  * about
