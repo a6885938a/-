@@ -106,16 +106,16 @@
    $("html,body").animate({scrollTop:$("#home").offset().top},500);
 });
 	  $('.navbar-nav li:eq(1)').click(function(){
-   $("html,body").animate({scrollTop:$("#about").offset().top-100},500);
+   $("html,body").animate({scrollTop:$("#about").offset().top},500);
 });
   $('.navbar-nav li:eq(2)').click(function(){
-   $("html,body").animate({scrollTop:$("#brief_1").offset().top-100},500);
+   $("html,body").animate({scrollTop:$("#brief_1").offset().top},500);
 });
  $('.navbar-nav li:eq(3)').click(function(){
-   $("html,body").animate({scrollTop:$("#pricing").offset().top-100},500);
+   $("html,body").animate({scrollTop:$("#pricing").offset().top},500);
 });
  $('.navbar-nav li:eq(4)').click(function(){
-   $("html,body").animate({scrollTop:$("#contact").offset().top-100},500);
+   $("html,body").animate({scrollTop:$("#contact").offset().top},500);
 });
 $(function(){
 	var home_top = $("#home").offset().top-100;

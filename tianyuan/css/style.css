@@ -794,10 +794,17 @@ i {
 #video1 {
 	display: none;
 }
+ @media (max-width: 768px) {
+.section {
+	padding:60px 0;
+}
+}
  @media (min-width: 768px) {
 .section {
-	padding: 90px 0;
+	padding: 110px 0;
 }
+}
+
 .site-footer-logo {
 	margin-bottom: 30px;
 }
@@ -844,20 +851,20 @@ i {
 }
 #about .product {
 	width: 100%;
-			height: 680px;
-				padding: 50px 0 10px;
+
+				padding: 50px 0 0px;
 				margin-bottom: 20px;
 }
 
 	#about .pre-bg{
 			width: 100%;
 z-index: -1;
-		height: 660px;
+		height: 680px;
 		position: absolute;
 		top: 0;
 	background-image: url(../images/ry-bg.jpg);
 	background-repeat: no-repeat;
-	background-position: center -40px;
+	background-position: center 0px;
 	background-attachment: fixed;
 background-size:cover;
 
