@@ -93,7 +93,7 @@ html, body {
 	text-decoration: none;
 }
 .block-warning {
-	background-color: #fbb03b;
+	background:url(../images/zwbg.jpg);
 	color: white;
 }
 lock-warning a:not(.btn) {
@@ -833,6 +833,7 @@ i {
 	width: 1920px;
 	height: 768px;
 	background: url(../images/video_img.jpg);
+	overflow: hidden;
 }
 .section-heading p {
 	font-size: 18px;
@@ -843,11 +844,24 @@ i {
 }
 #about .product {
 	width: 100%;
-	height: 100%;
-	background-image: url(../images/ry-bg.jpg);
-	background-size: cover;
-	padding: 10px 0;
+			height: 680px;
+				padding: 50px 0 10px;
+				margin-bottom: 20px;
 }
+
+	#about .pre-bg{
+			width: 100%;
+z-index: -1;
+		height: 660px;
+		position: absolute;
+		top: 0;
+	background-image: url(../images/ry-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center -40px;
+	background-attachment: fixed;
+background-size:cover;
+
+	overflow: hidden;}
 .product .container {
 }
 .product .col-md-12, .product .col-xs-6, .product .col-sm-4, .product .col-md-3, .product .col-md-2 {
@@ -874,6 +888,9 @@ i {
 #pricing h4 {
 	white-space: nowrap;
 	overflow: hidden;
+}
+#pricing .section-heading  a{
+color:#333;
 }
 /*回到顶部*/
 #rocket-to-top div {
@@ -1066,3 +1083,79 @@ figure.effect-apollo:hover p {
 
 .grid figure figcaption.li2{padding: 1em;}
 figure figcaption.li2 p{ left:0;border-left:4px solid #fff; text-align: left;border-right:0px}
+/*news*/
+.services ul {
+    padding: 0;
+    margin: 40px 0 0;
+    display: inline-block;
+    width: 100%;
+}
+.services ul li {
+    display: inline-block;
+    float: left;
+
+    text-align: center;
+    padding: 1%;
+
+}
+
+.services ul li:hover{
+	color: #333;
+ box-shadow: 0 0 10px #ccc;
+            }
+ .services ul li:hover h3{
+            color: #333;	
+            }
+
+.services ul li a, .services ul li:hover h3, .services ul li:hover p{
+    color: #333;
+}
+
+.services ul li a.goods-pic{
+	width:320px;
+    height: 250px;
+    border: 0 none;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;}
+.services ul li a figure {
+	    margin: 0;
+    height: 250px;
+
+        display:inline-block;
+    text-align: center;
+}
+.services ul li a figure:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.services ul li img{
+	max-width:320px;
+    max-height: 250px;
+
+    vertical-align: middle;
+    text-align: center;
+
+    }
+.services ul li a h3 {
+margin-top:10px;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    white-space:nowrap;
+text-overflow:ellipsis;
+
+    overflow: hidden;
+}
+.services ul li a p {
+height: 72px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: .3px;
+     overflow: hidden;
+}
