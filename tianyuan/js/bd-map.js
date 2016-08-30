@@ -35,7 +35,7 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"",content:"",point:"112.974908|22.973957",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+    var markerArr = [{title:"",content:"天园饼家-西樵大饼 销售热线：0757-86896293",point:"112.974908|22.973957",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
          ];
     //创建marker
     function addMarker(){
