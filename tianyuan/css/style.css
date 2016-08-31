@@ -8,8 +8,6 @@ body {
     padding: 0;
 }
 
-
-
 .iw_poi_title {
     color: #CC5522;
     font-size: 14px;
@@ -36,9 +34,6 @@ body {
 .clearfix:after {
     clear: both;
 }
-
-
-
 
 .p-a-0 {
     padding: 0px !important;
@@ -1053,7 +1048,6 @@ i {
     background: url(../images/video_img.jpg);
     overflow: hidden;
 }
-
 .section-heading p {
     font-size: 18px;
     text-align: center;
@@ -1193,9 +1187,11 @@ i {
 }
 
 /*荣誉产品鼠标效果*/
-.hor-gap{width: 10px;
+.hor-gap {
+    width: 10px;
     height: 100%;
-    line-height: 0}
+    line-height: 0
+}
 .grid {
     position: relative;
     clear: both;
@@ -1374,7 +1370,37 @@ figure figcaption.li2 p {
     letter-spacing: .3px;
     overflow: hidden;
 }
-/*modle page*/
 
-.bn-dec{ font-size: 18px; background: #f0f0f0; color: #333;}
-.bn-dec h3{color:#fff;}
+/*modle page*/
+.bn-dec {
+    font-size: 18px;
+    background: #f0f0f0;
+    color: #333;
+
+
+}
+.bn-det{  margin-bottom: 100px;}
+.bn-det h3 {
+    color: #525252;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.44;
+}
+.bn-det .section-content p {
+    line-height: 1.8;
+    color: #707070;
+    font-size: 18px;
+    margin: 0 0 14px;
+}
+.bn-det .section-content a.btn { font-size: 12px; border:2px solid #b89f7a; padding: 10px 24px; color:#b89f7a; margin-top:40px; }
+.bn-det .section-content a.btn:hover{color:#fff; background:#b89f7a; }
+@media (min-width: 768px)
+.col-sm-push-6 {
+    left: 50%;
+}
+
+
+@media (min-width: 768px)
+.col-sm-pull-6 {
+    right: 50%;
+}
