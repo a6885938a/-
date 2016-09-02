@@ -16,7 +16,7 @@
     <link rel="icon" href="assets/img/favicon.ico">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='css/style.css'>
-        <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
     <script src='http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js'></script>
     <!--IE9以下版本浏览器对HTML5新增标签不识别-->
 </head>
@@ -30,7 +30,7 @@
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                             <div class="navbar-brand-wrap">
-                                <a class="navbar-brand" href="#"> <img src="images/logo.png" alt=""> </a>
+                                <a class="navbar-brand" href="index.html"> <img src="images/logo.png" alt=""> </a>
                             </div>
                         </div>
                         <!-- .navbar-header -->
@@ -146,7 +146,20 @@
                         <div class="row ">
                             <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
                                 <div class="col-inner clearfix ">
-                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/jjbg.jpg">
+                                    <div class="swiper-container swiper">
+                           <!--          图片尺寸555-373 -->
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-1.jpg">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-2.jpg">
+                                            </div>
+                                        </div>
+                                        <!-- Add Pagination -->
+                                        <div class="swiper-pagination swiper-pagination"></div>
+                                    </div>
+                                    <!-- <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/jjbg.jpg"> -->
                                 </div>
                             </div>
                             <div class="col-sm-6 pd50">
@@ -157,12 +170,6 @@
                                     </div>
                                     <!-- .section-heading -->
                                     <div class="section-content" style="text-align:left;">
-                                        <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
-                                        <p>天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名，产品远销海内外。</p>
-                                        <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
-                                        <p>天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名，产品远销海内外。</p>
-                                        <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
-                                        <p>天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名，产品远销海内外。</p>
                                         <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
                                         <p>天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名，产品远销海内外。</p>
                                     </div>
@@ -323,23 +330,14 @@
     <script src='js/scrollReveal.min.js'></script>
     <script src='js/tybj.js'></script>
     <script src='js/bd-map.js'></script>
-        <script src="js/swiper.min.js"></script>
-      <script>
-    var swiper1 = new Swiper('.swiper1', {
-        pagination: '.swiper-pagination1',
+    <script src="js/swiper.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper', {
+        pagination: '.swiper-pagination',
         paginationClickable: true,
         spaceBetween: 0,
         centeredSlides: true,
-        autoplay: 2500,
-        autoplayDisableOnInteraction: false,
-        loop: true
-    });
-        var swiper2 = new Swiper('.swiper2', {
-        pagination: '.swiper-pagination2',
-        paginationClickable: true,
-        spaceBetween: 0,
-        centeredSlides: true,
-        autoplay: 2500,
+        autoplay: 4000,
         autoplayDisableOnInteraction: false,
         loop: true
     });
