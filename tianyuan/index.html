@@ -77,7 +77,7 @@
                         <div class="container">
                             <div class="col-md-12 column">
                                 <div class="hor-view" style="float:left;margin-right:10px; margin-bottom:10px;">
-                                    <a href="ct.html">
+                                    <a href="ct.html" style="height:650px;  overflow: hidden;">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="hor-gap"></div>
                                 <div class="r ver-view" style="float:left;">
-                                    <a href="sx.html" style="margin-bottom:10px;">
+                                    <a href="sx.html" style="margin-bottom:10px; height:400px;overflow:hidden">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -116,7 +116,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="yb.html">
+                                    <a href="yb.html" style="margin-bottom:10px; height:240px;overflow:hidden">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -143,11 +143,19 @@
                 <!-- #brief_1 -->
                 <div id="brief_1" class="section block-default align-c-xs-max">
                     <div class="container">
-                        <div class="row ">
+                        <div class="row ">  
+               
+
+       
+                                <div class="section-heading " style="text-align:center;padding-bottom: 50px; ">
+                                        <h2>走进天园</h2>
+                                        <h5>Company Profile</h5>
+                                    </div>
+                   
                             <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
                                 <div class="col-inner clearfix ">
                                     <div class="swiper-container swiper">
-                           <!--          图片尺寸555-373 -->
+                                        <!--          图片尺寸555-373 -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-1.jpg">
@@ -158,16 +166,19 @@
                                         </div>
                                         <!-- Add Pagination -->
                                         <div class="swiper-pagination swiper-pagination"></div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
                                     </div>
                                     <!-- <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/jjbg.jpg"> -->
                                 </div>
                             </div>
-                            <div class="col-sm-6 pd50">
+                            <div class="col-sm-6 ">
                                 <div class="col-inner">
-                                    <div class="section-heading ">
+                            
+                                 <!--    <div class="section-heading ">
                                         <h2>走进天园</h2>
                                         <h5>Company Profile</h5>
-                                    </div>
+                                    </div> -->
                                     <!-- .section-heading -->
                                     <div class="section-content" style="text-align:left;">
                                         <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
@@ -334,6 +345,8 @@
     <script>
     var swiper = new Swiper('.swiper', {
         pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
         paginationClickable: true,
         spaceBetween: 0,
         centeredSlides: true,
