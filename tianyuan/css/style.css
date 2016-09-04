@@ -1386,14 +1386,16 @@ figure figcaption.li2 p {
     font-size: 28px;
     line-height: 1.44;
 }
-.bn-det .section-content p {
+.bn-det . p {
     line-height: 1.8;
     color: #707070;
     font-size: 18px;
     margin: 0 0 14px;
 }
-.bn-det .section-content a.btn { font-size: 12px; border:2px solid #b89f7a; padding: 10px 24px; color:#b89f7a; margin-top:40px; }
-.bn-det .section-content a.btn:hover{color:#fff; background:#b89f7a; }
+
+.bn-det a.btn { font-size: 12px; border:2px solid #b89f7a; color:#b89f7a;  padding: 10px 24px; }
+.bn-det .section-content a.btn {margin-top:40px;}
+.bn-det a.btn:hover{color:#fff; background:#b89f7a; }
 @media (min-width: 768px)
 .col-sm-push-6 {
     left: 50%;
