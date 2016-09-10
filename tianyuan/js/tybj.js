@@ -1,3 +1,11 @@
+        //lazzy load
+          $(function() {
+      $("img.lazy").show().lazyload({
+          effect: "fadeIn",
+          threshold :100
+          });
+  });
+  
 //回到顶部.
         $(function() {
             var e = $("#rocket-to-top"),
@@ -77,14 +85,7 @@
         });
 		
 		
-		//lazzy load
-		  $(function() {
-      $("img.lazy").show().lazyload({
-		  effect: "fadeIn",
-          threshold :600
-		  });
-  });
-  
+
   //main
     $(window).scroll(function(){
          // 获得div的高度
