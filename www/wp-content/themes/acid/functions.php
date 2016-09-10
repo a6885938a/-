@@ -2,8 +2,6 @@
 require_once( get_template_directory() . '/inc/pure/core.php' );
 require_once( get_template_directory() . '/inc/template-tags.php' );
 
-
-
 /**
  * acid functions and definitions
  *

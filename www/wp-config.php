@@ -37,6 +37,7 @@ define('DB_CHARSET', 'utf8mb4');
 /** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
 
+
 /**#@+
  * 身份认证密钥与盐。
  *
