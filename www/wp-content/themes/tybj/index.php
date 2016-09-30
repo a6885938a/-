@@ -204,8 +204,21 @@
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
-             
-                          <!--               <ul class="row">
+        <?php
+			$a = $wpdb->get_results("SELECT link_url,link_name,link_image FROM $wpdb->links  order by time desc limit 6");
+			echo '<pre>';					表字段									表名		排序 				数量限制
+			print_r($a);
+			?>    array(
+			 0=>array(
+				'url' => '12321'
+				),
+			1=>array(
+				'url' => '12321'
+				),
+			)
+                                        <ul class="row"  >
+										<?php foreach( $a as $k => $v ){ ?>
+                                        <a href="<?php echo $v['url'];?>" title=""></a>
                                             <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                                                 <a href="prescription">
                                                     <div class="goods-pic">
@@ -216,6 +229,7 @@
                                                     </p>
                                                 </a>
                                             </li>
+                                          <?php } ?>
                                             <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                                                 <a href="prescription">
                                                     <div class="goods-pic">
@@ -258,26 +272,9 @@
                                                     <p>核桃酥</p>
                                                 </a>
                                             </li>
-                                        </ul> -->
+                                        </ul>
 
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-				get_the_title()
-			) );
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-		?>
-	</div>
                                     </div>
                                 </div>
                             </div>
