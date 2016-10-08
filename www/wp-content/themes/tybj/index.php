@@ -14,7 +14,7 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="assets/img/favicon.ico">
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='css/style.css'>
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
     <script src='http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js'></script>
@@ -204,74 +204,39 @@
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
+
         <?php
-			$a = $wpdb->get_results("SELECT link_url,link_name,link_image FROM $wpdb->links  order by time desc limit 6");
-			echo '<pre>';					表字段									表名		排序 				数量限制
-			print_r($a);
-			?>    array(
+            global $wpdb;  
+			$a = $wpdb->get_results("SELECT * FROM ".$wpdb->posts." order by post_parent desc limit 6");
+			// $a = $wpdb->get_results("desc ".$wpdb->postmeta);
+			// echo '<pre>';
+			//                         	// 表字段									表名		排序 				数量限制		
+
+			?>   
+			<!--  array(
 			 0=>array(
 				'url' => '12321'
 				),
 			1=>array(
 				'url' => '12321'
 				),
-			)
+			) -->
+					
                                         <ul class="row"  >
-										<?php foreach( $a as $k => $v ){ ?>
-                                        <a href="<?php echo $v['url'];?>" title=""></a>
+                                        <?php foreach( $a as $k => $v){$v = get_object_vars($v);?> 
                                             <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
+                                                <a href="">
                                                     <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
+                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="<?php echo $v['link_image']; ?>" alt="iamge"></figure>
                                                     </div>
-                                                    <h3>西樵大饼香飘500年,这家纯手工的老饼店传了200多年</h3>
-                                                    <p>一块西樵大饼入口，松软、香甜…… 　　西樵大饼与西樵山可谓是南海旅游的绝代双骄。一开始，大大的圆饼是作为西樵山登山游客的干粮，靠清香甜软滑打出名堂。
-                                                    </p>
+                                                    <h3><?php echo $v['post_title']; ?></h3>
+                                                    <p><?php echo $v['post_content']; ?>  </p>
                                                 </a>
                                             </li>
-                                          <?php } ?>
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3>天园大饼</h3>
-                                                    <p>核桃酥</p>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    <h3>天园大饼</h3>
-                                                    <p>核桃酥</p>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3>西樵大饼香飘500年,这家纯手工的老饼店传了200多年</h3>
-                                                    <p>一块西樵大饼入口，松软、香甜…… 　　西樵大饼与西樵山可谓是南海旅游的绝代双骄。一开始，大大的圆饼是作为西樵山登山游客的干粮，靠清香甜软滑打出名堂。
-                                                    </p>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3>天园大饼</h3>
-                                                    <p>核桃酥</p>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    <h3>天园大饼</h3>
-                                                    <p>核桃酥</p>
-                                                </a>
-                                            </li>
+                                     	 <?php } ?>
+                                        
+                                          
+                                        
                                         </ul>
 
 

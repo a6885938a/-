@@ -295,7 +295,6 @@ $bulk_messages['page'] = array(
  */
 $bulk_messages = apply_filters( 'bulk_post_updated_messages', $bulk_messages, $bulk_counts );
 $bulk_counts = array_filter( $bulk_counts );
-
 require_once( ABSPATH . 'wp-admin/admin-header.php' );
 ?>
 <div class="wrap">
@@ -343,7 +342,6 @@ $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated
 <?php if ( ! empty( $_REQUEST['show_sticky'] ) ) { ?>
 <input type="hidden" name="show_sticky" value="1" />
 <?php } ?>
-
 <?php $wp_list_table->display(); ?>
 
 </form>
