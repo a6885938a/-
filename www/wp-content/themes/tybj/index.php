@@ -207,12 +207,14 @@
 
         <?php
             global $wpdb;  
-			$a = $wpdb->get_results("SELECT * FROM ".$wpdb->posts." order by post_parent desc limit 6");
+			$a = $wpdb->get_results("SELECT * FROM ".$wpdb->posts." WHERE post_type='post' order by post_date_gmt desc limit 6");
 			// $a = $wpdb->get_results("desc ".$wpdb->postmeta);
 			// echo '<pre>';
 			//                         	// 表字段									表名		排序 				数量限制		
 
 			?>   
+
+
 			<!--  array(
 			 0=>array(
 				'url' => '12321'
@@ -222,18 +224,18 @@
 				),
 			) -->
 					
-                                        <ul class="row"  >
-                                        <?php foreach( $a as $k => $v){$v = get_object_vars($v);?> 
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="<?php echo $v['link_image']; ?>" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3><?php echo $v['post_title']; ?></h3>
-                                                    <p><?php echo $v['post_content']; ?>  </p>
-                                                </a>
-                                            </li>
-                                     	 <?php } ?>
+    <ul class="row"  >
+    <?php foreach( $a as $k => $v){$v = get_object_vars($v);?> 
+        <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
+            <a href="<?php echo $v['guid']; ?>">
+                <div class="goods-pic">
+                    <figure><img class="lazy" src="images/loading.jpg" data-original='<?php thumb_img($post->post_content); ?>' ></figure>
+                </div>
+                <h3><?php echo $v['post_title']; ?></h3>
+                <p><?php echo $v['post_content']; ?>  </p>
+            </a>
+        </li>
+ 	 <?php } ?>
                                         
                                           
                                         

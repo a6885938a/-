@@ -44,6 +44,25 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
  *
  * @since Twenty Sixteen 1.0
  */
+//截取内容中第一张图片函数 
+
+//获取图片
+function thumb_img($soContent) {
+$soImages = '~<img [^\>]*\ />~';
+preg_match_all($soImages, $soContent, $thePics);
+$allPics = count($thePics[0]);
+if ($allPics > 0) {
+echo $thePics[0][0];
+} else {
+echo "<img src = '";
+echo bloginfo(template_url);
+echo "/img/thumbnail.jpg'>";
+}
+}
+
+
+
+
 function twentysixteen_setup() {
 	/*
 	 * Make theme available for translation.
