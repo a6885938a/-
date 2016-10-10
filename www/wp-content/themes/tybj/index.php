@@ -1,6 +1,4 @@
-<!--  <?php 
-    include_
-?>  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -174,6 +172,7 @@
                             </div>
                             <div class="col-sm-6 ">
                                 <div class="col-inner">
+
                             
                                  <!--    <div class="section-heading ">
                                         <h2>走进天园</h2>
@@ -205,41 +204,24 @@
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
 
-        <?php
-            global $wpdb;  
-			$a = $wpdb->get_results("SELECT * FROM ".$wpdb->posts." order by post_parent desc limit 6");
-			// $a = $wpdb->get_results("desc ".$wpdb->postmeta);
-			// echo '<pre>';
-			//                         	// 表字段									表名		排序 				数量限制		
-
-			?>   
-			<!--  array(
-			 0=>array(
-				'url' => '12321'
-				),
-			1=>array(
-				'url' => '12321'
-				),
-			) -->
-					
-                                        <ul class="row"  >
-                                        <?php foreach( $a as $k => $v){$v = get_object_vars($v);?> 
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="<?php echo $v['link_image']; ?>" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3><?php echo $v['post_title']; ?></h3>
-                                                    <p><?php echo $v['post_content']; ?>  </p>
-                                                </a>
-                                            </li>
-                                     	 <?php } ?>
-                                        
-                                          
-                                        
-                                        </ul>
-
-
+                <?php global $post; $categories = get_the_category(); //函数获取分类ID好
+                foreach ($categories as $category){
+                 ?>
+                <ul class="row"  >
+                <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
+                 foreach($posts as $post){
+                ?>
+                <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="goods-pic">
+                            <figure><img class="lazy" src="<?php echo catch_that_image() ?>" ></figure>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+                    </a>
+                </li>
+                <?php } ?>                    
+                </ul>
+                <?php } ?>
                                     </div>
                                 </div>
                             </div>
