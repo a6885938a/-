@@ -1,3 +1,4 @@
+<?php include('include.inc.php');  ?>
 <?php
 /**
  * Template Name: Article List
@@ -8,7 +9,7 @@
 //wp_enqueue_script( 'articleList', get_template_directory_uri() . '/articlelist.js' );
 wp_enqueue_style( 'articleList', get_template_directory_uri() . '/articlelist.css');
 
-get_header(); 
+// get_header(); 
 
 /** 配置信息 */
 
@@ -16,6 +17,7 @@ get_header();
  * 排序字段
  * 可以是none, ID, author, title, date, modified, parent, rand, comment_count, menu_order, meta_value, meta_value_num
  */
+
 $order_by = 'date'; 
 
 /** 升序还是降序，DESC表示降序，ASC表示升序 */
@@ -53,6 +55,47 @@ $post_list = new WP_Query(
 );
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>西樵天园饼家</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <?php include('header_css.php');  ?>
+
+</head>
+
+<body class="is-loaded is-scroll">
+
+            <header class="site-header">
+                <nav class="navbar navbar-theme">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <div class="navbar-brand-wrap">
+                                <a class="navbar-brand" href="index.html"> <img src="<?=ty_of?>images/logo.png" alt=""> </a>
+                            </div>
+                        </div>
+                        <!-- .navbar-header -->
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="home active"><a href="index.html">首页</a></li>
+                                <li class="about"><a href="index.html#about">荣誉产品</a></li>
+                                <li class="bri"><a href="index.html#brief_1">走进天园</a></li>
+                                <li class="pri"><a href="index.html#pricing">天园资讯</a></li>
+                                <li class="con"><a href="index.html#contact">联系我们</a></li>
+                                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- .navbar-collapse -->
+                    </div>
+                </nav>
+            </header>
 
 		<!-- 外部的html结构应该替换成自己模板的结构 -->
 		<div id="primary">
@@ -112,4 +155,10 @@ $post_list = new WP_Query(
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
-<?php get_footer(); ?>
+            <?php
+include dirname(__FILE__).'/footer_t.php'; 
+?>
+
+    <?php
+    include dirname(__FILE__).'/footer_js.php'; 
+    ?>

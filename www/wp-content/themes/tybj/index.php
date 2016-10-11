@@ -1,8 +1,6 @@
-
+<?php include('include.inc.php');  ?>
 <!DOCTYPE html>
 <html lang="en">
-<!--<![endif]-->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,49 +8,24 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='css/style.css'>
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-    <script src='http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js'></script>
-    <!--IE9以下版本浏览器对HTML5新增标签不识别-->
+    <?php include('header_css.php');  ?>
+     <link rel='stylesheet' href='<?=ty_of?>css/tybj.css<?=version?>'>
+     <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">
 </head>
 
 <body class="is-loaded">
     <div class="site">
         <div class="site-canvas1">
-            <header class="site-header">
-                <nav class="navbar navbar-theme">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                            <div class="navbar-brand-wrap">
-                                <a class="navbar-brand" href="index.html"> <img src="images/logo.png" alt=""> </a>
-                            </div>
-                        </div>
-                        <!-- .navbar-header -->
-                        <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="home active"><a>首页</a></li>
-                                <li class="about"><a>荣誉产品</a></li>
-                                <li class="bri"><a>走进天园</a></li>
-                                <li class="pri"><a>媒体报道</a></li>
-                                <li class="con"><a>联系我们</a></li>
-                                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- .navbar-collapse -->
-                    </div>
-                </nav>
-            </header>
+            <?php include('header_t.php'); ?>
             <!-- .site-header -->
             <main class="site-main-1">
                 <!--change-->
                 <div id="home" class="section block-primary position-r align-c-xs-max" style="  overflow: hidden;">
                     <div class="video_play" style="   -webkit-filter:brightness(.7);filter: brightness(0.7);">
-                        <video id="video1" autoplay loop muted="muted" poster="images/video_img.jpg" webkit-playsinline />
-                        <source src="images/video_p1.mp4" type="video/mp4" -webkit-playsinline=true; />
+                        <video id="video1" autoplay loop muted="muted" poster="<?=ty_of?>images/video_img.jpg" webkit-playsinline />
+                        <source src="<?=ty_of?>images/video_p1.mp4" type="video/mp4" -webkit-playsinline=true; />
                         </video>
                     </div>
                     <div class="container">
@@ -60,7 +33,7 @@
                             <div class="col-sm-12">
                                 <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " style=" margin-top:-40px;">
                                     <div class="section-heading ">
-                                        <h1 style=" text-align:center;"><img style="width:100%;padding:0 8%" src="images/wenzi.png" ></h1>
+                                        <h1 style=" text-align:center;"><img style="width:100%;padding:0 8%" src="<?=ty_of?>images/wenzi.png" ></h1>
                                     </div>
                                     <!-- .section-heading -->
                                 </div>
@@ -79,7 +52,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/01.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/01.jpg" alt="img18">
                                                     <figcaption>
                                                         <h2>传统 <span>喜饼</span></h2>
                                                         <p>西樵大饼
@@ -103,7 +76,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/02.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/02.jpg" alt="img18">
                                                     <figcaption class="li2">
                                                         <h2 style="float:right; width:60px;"> <span>特产手信</span></h2>
                                                         <p>鸡仔饼
@@ -118,7 +91,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/03.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/03.jpg" alt="img18">
                                                     <figcaption>
                                                         <h2><span>月饼系列</span></h2>
                                                         <p>双黄莲蓉
@@ -156,10 +129,10 @@
                                         <!--          图片尺寸555-373 -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-1.jpg">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/w-1.jpg">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-2.jpg">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/w-2.jpg">
                                             </div>
                                         </div>
                                         <!-- Add Pagination -->
@@ -196,7 +169,8 @@
                             <div class="col-xs-12">
                                 <div class="col-inner">
                                     <div class="section-heading">
-                                        <a href="" class="color:#333;">
+                                        <a href="<?php $comment_count = get_post(110)->guid; 
+                                        echo $comment_count;?> " class="color:#333;">
                                             <h2>天园资讯</h2>
                                             <h5>News  Information Customers</h5>
                                             <h6>更多>></h6>
@@ -214,7 +188,7 @@
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">
-                            <figure><img class="lazy" src="<?php echo catch_that_image() ?>" ></figure>
+                            <figure><img class="lazy"  src="<?=ty_of?>images/loading.jpg"   data-original="<?php echo catch_that_image() ?>" ></figure>
                         </div>
                         <h3><?php the_title(); ?></h3>
                     </a>
@@ -238,7 +212,7 @@
                             <div class="col-sm-6 col-md-5">
                                 <div class="col-inner">
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_1.png" alt=""> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_1.png" alt=""> </div>
                                         <div class="icon-box-heading">
                                             <h4>销售热线</h4>
                                         </div>
@@ -247,7 +221,7 @@
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_2.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_2.png"> </div>
                                         <div class="icon-box-heading">
                                             <h4>邮箱地址</h4>
                                         </div>
@@ -256,7 +230,7 @@
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_3.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_3.png"> </div>
                                         <div class="icon-box-heading">
                                             <h4>工厂店址</h4>
                                         </div>
@@ -272,12 +246,9 @@
                 <!-- #contact -->
             </main>
             <!-- .site-main -->
-            <footer class="site-footer block-invert">
-                <div class="container">
-                    <div data-scroll-reveal="enter bottom over 2s move 20px"><img class="site-footer-logo img-responsive lazy" src="images/loading.jpg" data-original="images/logo.png" width="140"> </div>
-                    <p class="site-footer-copyright">2016 @ <a href="#" target="_blank">佛山市南海西樵饼家版权所有</a> | 粤ICP备xxx号-1</p>
-                </div>
-            </footer>
+            <?php
+include dirname(__FILE__).'/footer_t.php'; 
+?>
             <!-- .site-footer -->
         </div>
     </div>
@@ -291,13 +262,15 @@
     <div id="rocket-wrap-lit" class="visible-xs">
         <div id="rocket-lit"></div>
     </div>
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src='http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js'></script>
-    <script src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script>
-    <script src='js/scrollReveal.min.js'></script>
-    <script src='js/tybj.js'></script>
-    <script src='js/bd-map.js'></script>
-    <script src="js/swiper.min.js"></script>
+
+            <!-- .site-footer -->
+        </div>
+      <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
+    <?php
+    include dirname(__FILE__).'/footer_js.php'; 
+    ?>
+    <script src='<?=ty_of?>js/bd-map.js'></script>
+    <script src="<?=ty_of?>js/swiper.min.js"></script>
     <script>
     var swiper = new Swiper('.swiper', {
         pagination: '.swiper-pagination',
