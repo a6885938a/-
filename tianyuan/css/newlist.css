@@ -19,27 +19,36 @@ li {list-style-type:none;}
     overflow: hidden;
     position: relative;
 }
-.newleft li:first-child .mecc {
+.newleft li.first .mecc {
 
 background:#FAFAFA;
     width: 100%;
     float: right;
+    padding:0 8px;
 
 }
-
-.newleft li:first-child .mecc .mecctitle a{
-        line-height: 18px;
+.newleft li.first .mecc .mecctitle{    color: #b89f7a;}
+.newleft li.first .mecc .mecctitle a{
+     line-height: 18px;
     font-size: 24px;
+
     font-weight: bold;
     color: #b89f7a;
     transition: all 0.5s ease-out;
 
 }
-.newleft li:first-child .titleimg {width: 100%;}
+.newleft li.first .titleimg {width: 100%;}
 
-.newleft li:first-child .zuiyao{   width: 100%;text-indent:30px;}
-
-
+.newleft li.first .zuiyao{   width: 100%;text-indent:30px;}
+.newleft li.first .hidden-xs{display: block!important;}
+.newleft li.first .titleimg{
+    display: none;
+}
+@media (max-width: 767px){
+.newleft li.first .titleimg{
+    display: block!important;
+}
+}
 .newleft li {
  
     border-bottom: 2px dashed #f2f1f1;
@@ -67,10 +76,10 @@ white-space: nowrap;
 }
 .newleft li .meccaddress {
     color: #a2a2a2;
-    margin-top: 15px;
+    margin: 2px 0;
     font-style: normal;
     display: block;
-    margin-bottom:0px;
+ 
 }
 .newleft li .meccaddress a {
     color: #a2a2a2;
@@ -86,6 +95,7 @@ white-space: nowrap;
     background-size: 200px auto;
     margin-top: 5px;
 }
+
 .newleft li .titleimg img {
     width: 100%;
     height: auto;
