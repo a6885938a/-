@@ -47,18 +47,22 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 //截取内容中第一张图片函数 
 
 //获取图片
-function thumb_img($soContent) {
-$soImages = '~<img [^\>]*\ />~';
-preg_match_all($soImages, $soContent, $thePics);
-$allPics = count($thePics[0]);
-if ($allPics > 0) {
-echo $thePics[0][0];
-} else {
-echo "<img src = '";
-echo bloginfo(template_url);
-echo "/img/thumbnail.jpg'>";
+function catch_that_image() {
+global $post, $posts;
+$first_img = '';
+ob_start();
+ob_end_clean();
+$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+//获取文章中第一张图片的路径并输出
+$first_img = $matches [1] [0];
+//如果文章无图片，获取自定义图片
+if(empty($first_img)){ //Defines a default image
+$first_img = "/images/default.jpg";
+//请自行设置一张default.jpg图片
 }
+return $first_img;
 }
+
 
 
 

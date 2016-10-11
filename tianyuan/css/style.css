@@ -1317,12 +1317,11 @@ figure figcaption.li2 p {
     color: #333;
     box-shadow: 0 0 10px #ccc;
 }
-.services ul li:hover h3 {
+.services ul li:hover h3,.services ul li:hover div {
     color: #333;
 }
-.services ul li a,
-.services ul li:hover h3,
-.services ul li:hover p {
+.services ul li a
+{
     color: #333;
 }
 .services ul li a.goods-pic {
@@ -1362,8 +1361,8 @@ figure figcaption.li2 p {
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.services ul li a p {
-    height: 72px;
+.services ul li a .post_text {
+  height: 72px;
     font-size: 15px;
     line-height: 24px;
     font-weight: 300;

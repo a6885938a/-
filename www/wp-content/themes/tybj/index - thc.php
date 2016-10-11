@@ -1,6 +1,4 @@
-<!--  <?php 
-    include_
-?>  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <!--<![endif]-->
@@ -14,7 +12,7 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="assets/img/favicon.ico">
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='css/style.css'>
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
     <script src='http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js'></script>
@@ -174,6 +172,7 @@
                             </div>
                             <div class="col-sm-6 ">
                                 <div class="col-inner">
+
                             
                                  <!--    <div class="section-heading ">
                                         <h2>走进天园</h2>
@@ -204,27 +203,47 @@
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
-                                        <!--         <div class="row">
-                                            <div class="col-xs-12 col-sm-6 col-md-4" data-scroll-reveal="enter top over 1s "> <img class="lazy" src="images/loading.jpg" data-original="images/nh_product/01.jpg" alt="广东坚美集团有限公司全自动铝型材专用氧化线" />
-                                                <h4>广东坚美集团有限公司全自动铝型材专用氧化线</h4>
-                                            </div>
-                                         
-                                          
-                                
-                                        </div> -->
-                                        <ul class="row">
-                                            <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
-                                                <a href="prescription">
-                                                    <div class="goods-pic">
-                                                        <figure><img class="lazy" src="images/loading.jpg" data-original="images/2.jpg" alt="iamge"></figure>
-                                                    </div>
-                                                    <h3>西樵大饼香飘500年,这家纯手工的老饼店传了200多年</h3>
-                                                    <div class="post_text">一块西樵大饼入口，松软、香甜　　西樵大饼与西樵山可谓是南海旅游的绝代双骄。一开始，大大的圆饼是作为西樵山登山游客的干粮，靠清香甜软滑打出名堂。
-                                                    </div>
-                                                </a>
-                                            </li>
+     
+   <?php
+            global $wpdb;  
+			$a = $wpdb->get_results("SELECT * FROM ".$wpdb->posts." WHERE post_type='post' order by post_date_gmt desc limit 6");
+			?>   
+    <ul class="row"  >
+    <?php foreach( $a as $k => $v){$v = get_object_vars($v);?> 
+        <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
+            <a href="<?php echo $v['guid']; ?>">
+                <div class="goods-pic">
+                    <figure><img class="lazy" src="<?php echo $v[thumb_img_url($post->post_content)]; ?>" ></figure>
+                </div>
+                <h3><?php echo $v['post_title']; ?></h3>
+                <div class="post_text"><?php echo $v['post_content']; ?>  </div>
+            </a>
+        </li>
+ 	 <?php } ?> 
+</ul>
+ 
+ 
+                <?php global $post; $categories = get_the_category(); //函数获取分类ID好
+                foreach ($categories as $category){
+                 ?>
+                <ul class="row"  >
+                <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
+                 foreach($posts as $post){
+                ?>
+                <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="goods-pic">
+                            <figure><img class="lazy" src="<?php echo catch_that_image() ?>" ></figure>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+             
+                        <div class="post_text"><?php $content = get_post($id)->post_content; echo $content;?></div>
 
-                                        </ul>
+                    </a>
+                </li>
+                <?php } ?>                    
+                </ul>
+                <?php } ?>
                                     </div>
                                 </div>
                             </div>
