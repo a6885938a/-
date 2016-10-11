@@ -412,3 +412,7 @@ if ( is_multisite() ) {
  * @since 3.0.0
  */
 do_action( 'wp_loaded' );
+
+define('__PUBLIC__','wp-content/themes/tybj/css');	//定义一个public目录的网址
+define('Js','js/');	//定义一个存放js文件目录的网址
+define('Css',__PUBLIC__.'css/');	//定义一个存放css文件目录的网址
