@@ -323,7 +323,7 @@
  }
  /*相关文章*/
  
- .xianguan {
+.xianguan {
      overflow: hidden;
      margin-top: 10px;
      background: #fff;
@@ -360,12 +360,20 @@
      overflow: hidden;
  }
  
- .xianguan .pic li img {
-     width: 100%;
-     display: block;
-     float: left;
-     margin-right: 3%;
+ .xianguan .web-of li .goods-pic{
+  width: 23%;
+  float: left;
+  display: block;
+ margin-right: 3%;
  }
+  .xianguan .web-of li .goods-pic img{
+  width: 100%;
+
+  float: left;
+  display: block;
+ margin-right: 3%;
+ }
+
  
  .xianguan .pic li .link {
      display: block;
@@ -383,12 +391,13 @@
      text-align: left;
      color: #a2a2a2;
      margin-top: 9px;
+     margin-bottom: 0px;
      font-style: normal;
  }
  /*pc处理*/
  
  .xianguan img {
-     width: 100%
+/*     width: 100%*/
  }
  
  .xianguan .pc-of li {
@@ -396,41 +405,37 @@
      width: 241px;
      margin-left: 30px;
      overflow: hidden;
+          vertical-align: middle;
  }
  
  .xianguan .pc-of li .goods-pic {
-    width: 241px;
-    height: 250px;
-    border: 0 none;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    overflow: hidden;
+     float: left;
+     width: 260px;
+     height: 250px;
+     border: 0 none;
+     display: table-cell;
+     vertical-align: middle;
+         text-align: center;
+     overflow: hidden;
  }
-  .xianguan .pc-of li .goods-pic a{
-    margin: 0;
-    height: 250px;
-    display: inline-block;
-    text-align: center;
-    }
  
-  .xianguan .pc-of li .goods-pic img {
-     max-width: 241px;
-     max-height: 250px;
+
+ 
+ .xianguan .pc-of li .goods-pic img {
+   max-width: 241px;
+     max-height: 250px;  
      vertical-align: middle;
      text-align: center;
+
  }
- .xianguan .pc-of li .goods-pic a:after {
+ 
+ .xianguan .pc-of li .goods-pic:after {
      content: '';
      width: 0;
      height: 100%;
      display: inline-block;
      vertical-align: middle;
  }
- 
-
- 
-
  
  .xianguan .pc-of li .link {
      width: 100%;

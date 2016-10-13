@@ -118,9 +118,10 @@
  $('.navbar-nav li:eq(4)').click(function(){
    $("html,body").animate({scrollTop:$("#contact").offset().top},500);
 });
+
 $(function(){
-	var home_top = $("#home").offset().top-100;
-	var about_top = $("#about").offset().top-100;
+	var home_top = ($("#home").offset().top)-100;
+	var about_top = ($("#about").offset().top)-100;
 	var bri_top = $("#brief_1").offset().top-100;
 	var pri_top = $("#pricing").offset().top-100;
 	var con_top = $("#contact").offset().top-250;
