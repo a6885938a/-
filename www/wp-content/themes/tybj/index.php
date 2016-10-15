@@ -174,6 +174,7 @@
                                             <h2>天园资讯</h2>
                                             <h5>News  Information Customers</h5>
                                             <h6>更多>></h6>
+                                             
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
@@ -181,6 +182,7 @@
                 <?php global $post; $categories = get_the_category(); //函数获取分类ID好
                 foreach ($categories as $category){
                  ?>
+                 <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
                 <ul class="row"  >
                 <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
                  foreach($posts as $post){
@@ -233,6 +235,7 @@
                                         <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_3.png"> </div>
                                         <div class="icon-box-heading">
                                             <h4>工厂店址</h4>
+
                                         </div>
                                         <div class="icon-box-content font-sub"> <span>佛山市南海区西樵镇樵北中学西侧200米</span> </div>
                                     </div>
@@ -283,6 +286,8 @@ include dirname(__FILE__).'/footer_t.php';
         autoplayDisableOnInteraction: false,
         loop: true
     });
+
+  
     </script>
 </body>
 

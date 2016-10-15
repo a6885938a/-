@@ -65,7 +65,27 @@ return $first_img;
 
 
 
-
+// function autoset_featured() {
+// global $post;
+// $already_has_thumb = has_post_thumbnail($post->ID);
+// if (!$already_has_thumb)  {
+// $attached_image
+//  = get_children( 
+// "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1"
+//  );
+// if ($attached_image) {
+// foreach ($attached_image as $attachment_id => $attachment) {
+// set_post_thumbnail($post->ID, $attachment_id);
+// }
+// }
+// }
+// }  //end function
+// add_action('the_post', 'autoset_featured');
+// add_action('save_post', 'autoset_featured');
+// add_action('draft_to_publish', 'autoset_featured');
+// add_action('new_to_publish', 'autoset_featured');
+// add_action('pending_to_publish', 'autoset_featured');
+// add_action('future_to_publish', 'autoset_featured');
 
 function twentysixteen_setup() {
 	/*
@@ -103,9 +123,30 @@ function twentysixteen_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 9999 );
 
+	add_theme_support( 'post-thumbnails' );
+	// set_post_thumbnail_size( 1200, 9999 );
+//输出缩略图地址
+function post_thumbnail_src(){
+	global $post;
+	if( $values = get_post_custom_values("thumbnail") ) { //输出自定义域图片地址
+		$values = get_post_custom_values("thumbnail");
+		$post_thumbnail_src = $values [0];
+	} elseif( has_post_thumbnail() ){ //如果有特色缩略图，则输出缩略图地址
+		$thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');
+		$post_thumbnail_src = $thumbnail_src [0];
+	} else {
+		$post_thumbnail_src = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$post_thumbnail_src = $matches [1] [0]; //获取该图片 src
+		if(empty($post_thumbnail_src)){
+			$post_thumbnail_src = get_bloginfo('template_url')."/images/no-image.jpg"; //如果日志中没有图片，则显示默认图片
+		}
+	};
+	echo $post_thumbnail_src;
+}
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'twentysixteen' ),
