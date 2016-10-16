@@ -190,7 +190,7 @@
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">
-                            <figure><img class="lazy"  src="<?=ty_of?>images/loading.jpg"   data-original="<?php echo catch_that_image() ?>" ></figure>
+                            <figure><img class="lazy"  src="/<?=ty_of?>images/loading.jpg"   data-original="<?php echo catch_that_image() ?>" ></figure>
                         </div>
                         <h3><?php the_title(); ?></h3>
                     </a>

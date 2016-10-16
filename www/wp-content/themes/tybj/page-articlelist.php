@@ -103,25 +103,12 @@ $post_list = new WP_Query(
                 </nav>
             </header>    
              <!--newslist-->
-
-                     <img class="lazy" src="/<?=ty_of?>images/loading.jpg" 
-        data-original="<?php echo get_the_post_thumbnail($post->ID, 'thumbnail');
-?>"   alt="<?php the_title(); ?>" />   
          <div id="main" class="container mt10">
                 <div class="row ">
                     <div class="col-md-9 pd0">
                         <ul class="newleft">
-							<?php while ( $post_list->have_posts() ) : $post_list->the_post(); ?>
-						
-						<?php
-						//给文章链接加一个title属性
-						$title =  preg_replace("'[\n\r\s\t]'","",strip_tags( get_the_content() )); 
-						$title = mb_strimwidth( $title, 0, 160, ' ...');
-						?>	
-<img src="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=150&w=200&zc=1" alt="<?php the_title(); ?>" class="thumbnail"/>
-
- 
-<img src="<?php echo $image_attributes[0]; ?>" width="<?php echo $image_attributes[1]; ?>" height="<?php echo $image_attributes[2]; ?>">
+						<?php while ( $post_list->have_posts() ) : $post_list->the_post(); ?>
+					
                             <li class="list">
                                 <div class="mecc">
                                     <h2 class="mecctitle">
@@ -132,24 +119,19 @@ $post_list = new WP_Query(
                                     <address class="meccaddress">
                                         <time><?php echo esc_html( get_the_date() ); ?></time>
                                         -
-                                        <a href="<?php the_permalink() ?>" rel="category tag">个人成长</a> - 阅 1,269 </address>
+                                        <a href="<?php the_permalink() ?>" rel="category tag"><?php the_author() ?></a> - 阅 1,269 </address>
                                 </div>
                                 <span class="titleimg ">
-
         <a href="<?php the_permalink() ?>" target="_blank">
-
-	
-
-         <img class="lazy" src="<?php the_title(); ?>" 
-        data-original="<?php $thumbnail_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID,'Large', true));
-echo $thumbnail_image_url[0];
-?>"   alt="<?php the_title(); ?>" />   
+         <img class="lazy" src="/<?=ty_of?>images/loading.jpg" 
+        data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""   alt="<?php the_title(); ?>" />   
         
          </a>
         </span>
+
                                 <div class="zuiyao hidden-xs">
-                                    <a href="">
-                                        <p>你家离公司远不远，你的工资能不能付得起房租，你午饭吃的白菜还是大虾，这都是你个人的事情，跟公司一毛钱关系都没有。公司只为你给公司创造的价值和效益买单，价值越高，薪水越高。人最宝贵的，就是认清自己的价值，一个人的薪水跟职场价值基本上是匹配的..</p>
+                                    <a href="<?php the_permalink() ?>">
+                                      <?php the_excerpt() ?>
                                     </a>
                                 </div>
                                 <div class="clear"></div>
