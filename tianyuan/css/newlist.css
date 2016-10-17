@@ -142,7 +142,7 @@
      text-align: center;
  }
  
- .newleft li .newleft li:hover img {
+.newleft li:hover img {
      transform: scale(1.3);
      -webkit-transform: scale(1.3);
  }
