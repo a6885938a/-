@@ -6,11 +6,16 @@
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" class="content">
+	<header class="contenttitle">
+		<h1 class="mscctitle"> <a href="<?php the_permalink(); ?>"><?php the_title( ); ?></a></h1>
+		<address class="msccaddress ">
+                     <time>  <?php echo esc_html( get_the_date() ); ?> </time>
+                                    -<a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
+$category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php get_post_views($post -> ID); ?></address>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>

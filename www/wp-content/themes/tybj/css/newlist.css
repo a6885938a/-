@@ -317,7 +317,7 @@
      font-size: 24px;
  }
  
- .msccaddress {
+ .msccaddress, .msccaddress a {
      color: #a2a2a2;
      margin-top: 8px;
      font-style: normal;

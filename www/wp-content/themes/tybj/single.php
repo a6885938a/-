@@ -1,17 +1,30 @@
+<?php include('include.inc.php');  ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>西樵天园饼家</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <?php include('header_css.php');  ?>
+    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
+
+
+</head>
+
+<body class="is-loaded is-scroll">
 <?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-
-get_header(); ?>
-
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<?php
+include dirname(__FILE__).'/header_list.php'; 
+?>
+ <div id="main" class="container mt10">
+                <div class="row ">
+                    <div class="col-md-9 act pd0">
+                        <div class="newleft">
+							<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 
@@ -43,12 +56,49 @@ get_header(); ?>
 			// End of the loop.
 		endwhile;
 		?>
+                        </div> 
+            </div><!-- col-md-9 -->
+                <div class="col-md-3 column">
+                  <?php
+include dirname(__FILE__).'/sitebar.php'; 
+?><!-- col-md-3 -->
 
-	</main><!-- .site-main -->
+                    </div>
+                    </div>
+            </div>
+                <!--newslist-->
 
-	<?php get_sidebar( 'content-bottom' ); ?>
 
-</div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+		<!-- 外部的html结构应该替换成自己模板的结构 -->
+	
+
+            <?php
+include dirname(__FILE__).'/footer_t.php'; 
+?>
+   </body>
+    </html>
+    <?php
+    include dirname(__FILE__).'/footer_js.php'; 
+    ?>
+    <script>    
+          $(function() {
+      $("img.lazy").show().lazyload({
+      	  skip_invisible : false,
+          effect: "fadeIn"
+          });
+
+  });
+
+    </script>
+  <script type="text/javascript">
+    $(function() {
+        var elm = $('.sitebar_list');
+        var startPos = $(elm).offset().top;
+        $.event.add(window, "scroll", function() {
+            var p = $(window).scrollTop();
+            $(elm).css('position', ((p) > startPos) ? 'fixed' : 'static');
+            $(elm).css('top', ((p) > startPos) ? '0px' : '');
+        });
+    });
+    </script>

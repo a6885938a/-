@@ -68,41 +68,13 @@ $post_list = new WP_Query(
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
-<style>
-	
-
-
-</style>
-
 </head>
 
 <body class="is-loaded is-scroll">
-        <header class="site-header stc">
-                <nav class="navbar navbar-theme ">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                            <div class="navbar-brand-wrap">
-                                <a class="navbar-brand" href="index.php"> <img src="/<?=ty_of?>images/logo.png" alt=""> </a>
-                            </div>
-                        </div>
-                        <!-- .navbar-header -->
-                        <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="home"><a href="index.html">首页</a></li>
-                                <li class="about"><a href="index.html#about">荣誉产品</a></li>
-                                <li class="bri"><a href="index.html#brief_1">走进天园</a></li>
-                                <li class="pri  active"><a href="index.html#pricing">天园资讯</a></li>
-                                <li class="con"><a href="index.html#contact">联系我们</a></li>
-                                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- .navbar-collapse -->
-                    </div>
-                </nav>
-            </header>    
+<?php
+include dirname(__FILE__).'/header_list.php'; 
+?>
              <!--newslist-->
          <div id="main" class="container mt10">
                 <div class="row ">
@@ -167,7 +139,8 @@ include dirname(__FILE__).'/sitebar.php';
             <?php
 include dirname(__FILE__).'/footer_t.php'; 
 ?>
-
+    </body>
+    </html>
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?>
