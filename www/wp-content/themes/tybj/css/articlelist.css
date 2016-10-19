@@ -1,3 +1,4 @@
+.wp-pagenavi{text-align: right;}
 .article-list{
 	font-family:Helvetica,Arial,sans-serif;
 	font-size:13px;
@@ -9,7 +10,7 @@
 	line-height:2em;
 }
 .wp-pagenavi {
-	margin:10px 0;
+	margin:10px 15px;
 }
 .wp-pagenavi a:hover{color:#fff;}
 .wp-pagenavi a:hover,.wp-pagenavi span.current {

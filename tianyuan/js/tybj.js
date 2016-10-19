@@ -1,6 +1,7 @@
         //lazzy load
           $(function() {
       $("img.lazy").show().lazyload({
+         skip_invisible : false,
           effect: "fadeIn",
           threshold :100
           });

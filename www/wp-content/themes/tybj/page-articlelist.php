@@ -71,7 +71,8 @@ $post_list = new WP_Query(
        <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
 <style>
-	.wp-pagenavi{float: right; }
+	
+
 
 </style>
 
@@ -84,7 +85,7 @@ $post_list = new WP_Query(
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                             <div class="navbar-brand-wrap">
-                                <a class="navbar-brand" href="index.html"> <img src="/<?=ty_of?>images/logo.png" alt=""> </a>
+                                <a class="navbar-brand" href="index.php"> <img src="/<?=ty_of?>images/logo.png" alt=""> </a>
                             </div>
                         </div>
                         <!-- .navbar-header -->
@@ -107,9 +108,14 @@ $post_list = new WP_Query(
                 <div class="row ">
                     <div class="col-md-9 pd0">
                         <ul class="newleft">
-						<?php while ( $post_list->have_posts() ) : $post_list->the_post(); ?>
-					
-                            <li class="list">
+						<?php $query_index = 0;   while ( $post_list->have_posts() ) : $query_index++; $post_list->the_post(); ?>
+							<?php  $category = get_the_category();//定义分类目录
+							//判断是否是第一条
+							if($query_index==1){?>
+                            <li class="list first">
+                            <?php }else{?>
+                             <li class="list">
+                               <?php }?>
                                 <div class="mecc">
                                     <h2 class="mecctitle">
                                  <a href="<?php the_permalink() ?>" target="_blank">
@@ -119,12 +125,14 @@ $post_list = new WP_Query(
                                     <address class="meccaddress">
                                         <time><?php echo esc_html( get_the_date() ); ?></time>
                                         -
-                                        <a href="<?php the_permalink() ?>" rel="category tag"><?php the_author() ?></a> - 阅 1,269 </address>
+                                        <a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
+echo $category[0]->cat_name;?></a> - 阅 <?php get_post_views($post -> ID); ?> </address>
                                 </div>
                                 <span class="titleimg ">
         <a href="<?php the_permalink() ?>" target="_blank">
          <img class="lazy" src="/<?=ty_of?>images/loading.jpg" 
-        data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""   alt="<?php the_title(); ?>" />   
+         <?php if($query_index==1){?>
+        data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?> alt="<?php the_title(); ?>" />   
         
          </a>
         </span>
@@ -139,40 +147,13 @@ $post_list = new WP_Query(
          		<?php endwhile; ?>
                         </ul> <!-- col-md-9 -->
             	<?php if ( function_exists('wp_pagenavi') ) wp_pagenavi( array('query' => $post_list) );  ?>
+            <div class="clear"></div>
                     </div>
                     <div class="col-md-3 column">
-                        <div id="sitebar" class="sitebar-right">
-                            <div id="soutab">
-                                <form method="get" class="search" action="http://www.ishayou.com/">
-                                    <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="">
-                                    <input class="butto" value="搜索" type="submit">
-                                </form>
-                            </div>
-                            <div class=" hidden-xs">
-                                <span class="tagtitle">整体规划</span>
-                                <div id="tagg">
-                                    <ul id="menu-%e5%8f%b3%e4%be%a7%e8%8f%9c%e5%8d%95" class="menu">
-                                        <li id="menu-item-603" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-603"><a href="http://www.ishayou.com/category/yunyin/marketfenxi">市场分析</a></li>
-                                        <li id="menu-item-751" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-751"><a href="http://www.ishayou.com/category/yunyin/yonghuyajiu">用户研究</a></li>
-                                        <li id="menu-item-611" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-611"><a href="http://www.ishayou.com/category/yunyin/dingwei">定位/差异化</a></li>
-                                        <li id="menu-item-605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-605"><a href="http://www.ishayou.com/category/yunyin/design">产品/服务设计</a></li>
-                                        <li id="menu-item-604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-604"><a href="http://www.ishayou.com/category/yunyin/yonghu">用户体验</a></li>
-                                        <li id="menu-item-845" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-845"><a href="http://www.ishayou.com/category/yunyin/shuju">数据分析</a></li>
-                                        <li id="menu-item-118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-118"><a href="http://www.ishayou.com/category/yunyin/yunyings">运营思维</a></li>
-                                    </ul>
-                                </div>
-                                <div class="sitebar_list">
-                                    <h4 class="sitebar_title">随机热文</h4>
-                                    <ul class="sitebar_list_ul">
-                                        <li><a href="http://www.ishayou.com/805.htm" target="_blank">没有功劳也有苦劳，你是如何看待？</a> </li>
-                                         <li><a href="http://www.ishayou.com/805.htm" target="_blank">没有功劳也有苦劳，你是如何看待？</a> </li>
-                                          <li><a href="http://www.ishayou.com/805.htm" target="_blank">没有功劳也有苦劳，你是如何看待？</a> </li>
-                                          <li><a href="http://www.ishayou.com/805.htm" target="_blank">没有功劳也有苦劳，你是如何看待？</a> </li>
-                                          <li><a href="http://www.ishayou.com/805.htm" target="_blank">没有功劳也有苦劳，你是如何看待？</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                  <?php
+include dirname(__FILE__).'/sitebar.php'; 
+?>
+
                     </div>
                 </div>
             </div>
@@ -193,9 +174,21 @@ include dirname(__FILE__).'/footer_t.php';
     <script>    
           $(function() {
       $("img.lazy").show().lazyload({
-          effect: "fadeIn",
-          threshold :100
+      	  skip_invisible : false,
+          effect: "fadeIn"
           });
 
   });
+
+    </script>
+  <script type="text/javascript">
+    $(function() {
+        var elm = $('.sitebar_list');
+        var startPos = $(elm).offset().top;
+        $.event.add(window, "scroll", function() {
+            var p = $(window).scrollTop();
+            $(elm).css('position', ((p) > startPos) ? 'fixed' : 'static');
+            $(elm).css('top', ((p) > startPos) ? '0px' : '');
+        });
+    });
     </script>

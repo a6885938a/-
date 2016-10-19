@@ -272,6 +272,7 @@ include dirname(__FILE__).'/footer_t.php';
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?>
+    <script src='/<?=ty_of?>js/tybj.js'></script>
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
     <script>
