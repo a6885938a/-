@@ -102,7 +102,7 @@ echo $category[0]->cat_name;?></a> - 阅 <?php get_post_views($post -> ID); ?> <
                                 </div>
                                 <span class="titleimg ">
         <a href="<?php the_permalink() ?>" target="_blank">
-         <img class="lazy" src="/<?=ty_of?>images/loading.jpg" 
+         <img class="lazy" src="/<?=ty_of?>images/loading.jpg"  
          <?php if($query_index==1){?>
         data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?> alt="<?php the_title(); ?>" />   
         

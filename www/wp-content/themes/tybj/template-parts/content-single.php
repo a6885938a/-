@@ -15,7 +15,7 @@
 		<address class="msccaddress ">
                      <time>  <?php echo esc_html( get_the_date() ); ?> </time>
                                     -<a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
-$category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php get_post_views($post -> ID); ?></address>
+$category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php echo getPostViews(get_the_ID()); ?> </address>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>

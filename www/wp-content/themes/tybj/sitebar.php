@@ -31,18 +31,18 @@
                                 <div class="sitebar_list">
                                     <h4 class="sitebar_title">随机热文</h4>
                  <?php global $post; $categories = get_the_category(); //函数获取分类ID好
-                foreach ($categories as $category){
+               
                  ?>
 
                                     <ul class="sitebar_list_ul">
-                                                <?php $posts = get_posts('numberposts=5&orderby=post_date&date='. $category->term_id);
+                                                <?php $posts = get_posts('numberposts=5&orderby=rand');
                  foreach($posts as $post){
                 ?>
                                         <li><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a> </li>
       
                                                       <?php }?>
                                     </ul>
-                                                <?php }?>
+                                           
                                 </div>
                             </div>
                         </div>

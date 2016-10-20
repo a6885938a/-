@@ -142,7 +142,7 @@
      text-align: center;
  }
  
-.newleft li:hover img {
+ .newleft li:hover img {
      transform: scale(1.3);
      -webkit-transform: scale(1.3);
  }
@@ -317,14 +317,15 @@
      font-size: 24px;
  }
  
- .msccaddress, .msccaddress a {
+ .msccaddress,
+ .msccaddress a {
      color: #a2a2a2;
      margin-top: 8px;
      font-style: normal;
  }
  /*相关文章*/
  
-.xianguan {
+ .xianguan {
      overflow: hidden;
      margin-top: 10px;
      background: #fff;
@@ -361,20 +362,19 @@
      overflow: hidden;
  }
  
- .xianguan .web-of li .goods-pic{
-  width: 23%;
-  float: left;
-  display: block;
- margin-right: 3%;
+ .xianguan .web-of li .goods-pic {
+     width: 23%;
+     float: left;
+     display: block;
+     margin-right: 3%;
  }
-  .xianguan .web-of li .goods-pic img{
-  width: 100%;
-
-  float: left;
-  display: block;
- margin-right: 3%;
+ 
+ .xianguan .web-of li .goods-pic img {
+     width: 100%;
+     float: left;
+     display: block;
+     margin-right: 3%;
  }
-
  
  .xianguan .pic li .link {
      display: block;
@@ -398,7 +398,7 @@
  /*pc处理*/
  
  .xianguan img {
-/*     width: 100%*/
+     /*     width: 100%*/
  }
  
  .xianguan .pc-of li {
@@ -406,7 +406,7 @@
      width: 241px;
      margin-left: 30px;
      overflow: hidden;
-          vertical-align: middle;
+     vertical-align: middle;
  }
  
  .xianguan .pc-of li .goods-pic {
@@ -416,18 +416,15 @@
      border: 0 none;
      display: table-cell;
      vertical-align: middle;
-         text-align: center;
+     text-align: center;
      overflow: hidden;
  }
  
-
- 
  .xianguan .pc-of li .goods-pic img {
-   max-width: 241px;
-     max-height: 250px;  
+     max-width: 241px;
+     max-height: 250px;
      vertical-align: middle;
      text-align: center;
-
  }
  
  .xianguan .pc-of li .goods-pic:after {
@@ -453,4 +450,142 @@
  .xianguan .pc-of .pic-right {
      float: right;
      width: 100%;
+ }
+ /*文章页摘要*/
+ 
+ .entry-summary {
+     border-top: 1px solid #ddd;
+     padding: 20px 0;
+ }
+ 
+ .entry-summary p {
+     font-size: 16px;
+     text-indent: 40px;
+ }
+ 
+ .post-thumbnail {
+     text-align: center;
+ }
+ 
+ .post-thumbnail img {
+     padding-bottom: 20px
+ }
+ 
+ .entry-content img {
+     width: 100%;
+     text-align: center;
+ }
+ /* like*/
+ 
+ .kodex_buttons {
+     text-align: center;
+     padding: 15px 0 15px 0;
+     vertical-align: top;
+     margin: 0;
+ }
+ 
+ .kodex_buttons button {
+     color: #FFFFFF;
+     font-size: 12px;
+     text-decoration: none;
+     outline: none;
+     width: 90px;
+     height: 35px;
+     border-radius: 4px;
+     border: 1px solid #ccc;
+ }
+ /*  .kodex_buttons button {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    -webkit-transition: all 0.15s;
+    transition: all 0.15s;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    text-transform: none;
+    outline: none; 
+}*/
+ 
+ .kodex_buttons button .icon {
+     display: block;
+     padding: 0 10px;
+     float: left;
+     background: url(../images/zan.png) no-repeat;
+     background-size: 20px auto;
+     background-position: 15px 6px;
+     text-align: center;
+     font-size: 18px;
+ }
+ 
+ .kodex_buttons button .icon:before {
+     font-family: "dashicons";
+     display: block;
+ }
+ 
+ .kodex_buttons button .text {
+     display: block;
+     float: left;
+     padding-right: 10px;
+     font-weight: normal;
+ }
+ 
+ .kodex_buttons button .counter {
+     display: block;
+     float: left;
+     font-size: 16px;
+     padding:0 10px;
+     height: 32px;
+     line-height: 32px;
+     font-weight: bold;
+ }
+ 
+ .kodex_buttons button.kodex_like_button {
+     background: #b89f7a;
+     border-color: #bfbfbf;
+     color: #fff;
+ }
+ 
+ .kodex_buttons button.kodex_like_button .icon:before {
+     content: "\f529";
+ }
+ 
+ .kodex_buttons button.kodex_dislike_button {
+     background: whitesmoke;
+     border-color: #dfdfdf;
+     color: #dfdfdf;
+ }
+ 
+
+ 
+ .kodex_buttons button:hover {
+     color: #fff;
+     background: #a91f24;
+     border-color: #a91f24;
+ }
+ 
+
+ .kodex_buttons button.kodex_button_active {
+     background: #a91f24;
+     color: #fff;
+     border-color: #a91f24;
+ }
+ 
+ .kodex_likes_count {
+     display: block;
+     color: #aeea00;
+     line-height: 24px;
+     height: 24px;
+ }
+ 
+
+ 
+ .kodex_likes_count span {
+     display: block;
+     float: left;
+     font-weight: bold;
+     font-size: 13px;
  }

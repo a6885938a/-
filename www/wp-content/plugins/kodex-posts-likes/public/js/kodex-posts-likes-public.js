@@ -21,7 +21,7 @@ jQuery(function($){
 				btn_action : btn_action
 			}, 
 			success : function(response){
-				button.removeClass('kodex_button_loading');
+				button.removeClass('kodex_button_loading').attr('disabled','true');
 				var wrappers = $('.kodex_button[data-id="'+post_id+'"]').parents('.kodex_buttons').html(response);
 			}
 		});

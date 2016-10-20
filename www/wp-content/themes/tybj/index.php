@@ -145,12 +145,6 @@
                             </div>
                             <div class="col-sm-6 ">
                                 <div class="col-inner">
-
-                            
-                                 <!--    <div class="section-heading ">
-                                        <h2>走进天园</h2>
-                                        <h5>Company Profile</h5>
-                                    </div> -->
                                     <!-- .section-heading -->
                                     <div class="section-content" style="text-align:left;">
                                         <p>天园饼家始建于清光绪二十四（1898年），是首家制作正宗西樵大饼的饼坊，至今已鼎承六代之传承，逾百年历史之久，并荣膺“非物质文化遗产”西樵大饼传承人。</p>
@@ -179,14 +173,11 @@
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
 
-                <?php global $post; $categories = get_the_category(); //函数获取分类ID好
-                foreach ($categories as $category){
-                 ?>
                  <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
-                <ul class="row"  >
+                <ul class="row">
                 <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
-                 foreach($posts as $post){
-                ?>
+
+                 foreach($posts as $post){?>
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">
@@ -195,9 +186,9 @@
                         <h3><?php the_title(); ?></h3>
                     </a>
                 </li>
-                <?php } ?>                    
+                <?php }?>                    
                 </ul>
-                <?php } ?>
+  
                                     </div>
                                 </div>
                             </div>

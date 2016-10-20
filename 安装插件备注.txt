@@ -2,3 +2,9 @@ like
 postvie
 WP-PageNavi
 分录目录链接
+
+
+自定义结构：http://www.xqtybj.me /act/%post_id%.html
+
+分类目录前缀 ：
+标签前缀：act-put

@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
+
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
 
 
@@ -25,6 +26,8 @@ include dirname(__FILE__).'/header_list.php';
                     <div class="col-md-9 act pd0">
                         <div class="newleft">
 							<?php
+                            // Start the 获取文章次数
+                            setPostViews(get_the_ID());
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 
@@ -81,16 +84,6 @@ include dirname(__FILE__).'/footer_t.php';
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?>
-    <script>    
-          $(function() {
-      $("img.lazy").show().lazyload({
-      	  skip_invisible : false,
-          effect: "fadeIn"
-          });
-
-  });
-
-    </script>
   <script type="text/javascript">
     $(function() {
         var elm = $('.sitebar_list');
@@ -102,3 +95,10 @@ include dirname(__FILE__).'/footer_t.php';
         });
     });
     </script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+    <script type='text/javascript' src='../wp-content/plugins/kodex-posts-likes/public/js/kodex-posts-likes-public.js'></script>
+    
