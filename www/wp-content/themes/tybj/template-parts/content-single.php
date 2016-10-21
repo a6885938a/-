@@ -17,8 +17,9 @@
                                     -<a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
 $category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php echo getPostViews(get_the_ID()); ?> </address>
 	</header><!-- .entry-header -->
-
+<!-- 文章详情 -->
 	<?php twentysixteen_excerpt(); ?>
+
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
@@ -42,7 +43,7 @@ $category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php e
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
+		<!-- <?php twentysixteen_entry_meta(); ?> -->
 		<?php
 			edit_post_link(
 				sprintf(

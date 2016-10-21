@@ -101,4 +101,26 @@ var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
     <script type='text/javascript' src='../wp-content/plugins/kodex-posts-likes/public/js/kodex-posts-likes-public.js'></script>
+    <script>
+     //    $('.kodex_button').click(function(){
+     //    	console.log(123);
+    	// 	$('.kodex_buttons button .icon').removeClass('tgood').addClass('tgood').hide();
+    	// });
+    	//    $('.kodex_button_active').on('click',function(){
+    	// 	$('.kodex_buttons button .icon').removeClass('tgood');
+    	// };
+    // $('.kodex_button').on('click',function(){
+    // 	var like = $('.kodex_like_button').hasClass('kodex_button_active');
+    // 	if(like){
+    // 		$('.kodex_buttons button .icon').removeClass('tgood');
+    // 	}else{
+    // 		$('.kodex_buttons button .icon').addClass('tgood');
+    // 	}
+    // });
+    //     $('.kodex_button_active').on('click',function(){
+    // 		$('.kodex_buttons button .icon').removeClass('tgood');
+    // });
+
+    	
+    </script>
     

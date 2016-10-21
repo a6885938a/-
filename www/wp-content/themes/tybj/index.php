@@ -172,8 +172,6 @@
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
-
-                 <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
                 <ul class="row">
                 <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
 

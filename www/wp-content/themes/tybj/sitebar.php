@@ -28,7 +28,7 @@
                                             <?php } ?>     
                                     </ul>
                                 </div>
-                                <div class="sitebar_list">
+                                <div class="sitebar_list visible-lg">
                                     <h4 class="sitebar_title">随机热文</h4>
                  <?php global $post; $categories = get_the_category(); //函数获取分类ID好
                
