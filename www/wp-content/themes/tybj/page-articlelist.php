@@ -95,10 +95,10 @@ include dirname(__FILE__).'/header_list.php';
                                 </a>
                                  </h2>
                                     <address class="meccaddress">
-                                        <time><?php echo esc_html( get_the_date() ); ?></time>
+                                        <time><?php the_time('Y-n-j'); ?></time>
                                         -
                                         <a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
-echo $category[0]->cat_name;?></a> - 阅 <?php get_post_views($post -> ID); ?> </address>
+echo $category[0]->cat_name;?></a>  阅 <?php get_post_views($post -> ID); ?> </address>
                                 </div>
                                 <span class="titleimg ">
         <a href="<?php the_permalink() ?>" target="_blank">

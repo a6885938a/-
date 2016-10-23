@@ -262,6 +262,7 @@
  
  .sitebar_list {
      padding-top: 20px;
+      background: #FAFAFA;
  }
  
  .sitebar_list_ul {
@@ -270,7 +271,6 @@
      margin-left: 0px;
      padding-left: 0px;
      list-style-position: inside;
-     background: #FAFAFA;
  }
  
  .sitebar_list_ul li {
@@ -344,7 +344,7 @@
  .xianguan .xianguantitle {
      padding: 2% 0 0 2%;
      line-height: 25px;
-     font-size: 17px;
+     font-size: 18px;
      color: #000;
      font-weight: bold;
  }

@@ -546,8 +546,10 @@ function set_post_views () {
   
 }   
 add_action('get_header', 'set_post_views');  
+
+//文章页把img外面的P添加样式
 function img_unautop($pee) {
-$pee = preg_replace('/<p.*?>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<p class="img-tr">$1</div>', $pee);
+$pee = preg_replace('/<p.*?>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<p class="img-tr">$1</p>', $pee);
 return $pee;
 }
 add_filter( 'the_content', 'img_unautop', 30 );

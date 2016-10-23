@@ -33,33 +33,82 @@ include dirname(__FILE__).'/header_list.php';
 
 			// Include the single post content template.
 			get_template_part( 'template-parts/content', 'single' );
-
+//评论模块
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
-
-			if ( is_singular( 'attachment' ) ) {
-				// Parent post navigation.
-				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
-				) );
-			} elseif ( is_singular( 'post' ) ) {
-				// Previous/next post navigation.
-				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-						'<span class="post-title">%title</span>',
-				) );
-			}
+			// if ( comments_open() || get_comments_number() ) {
+			// 	comments_template();
+			// }
+//文章导航
+			// if ( is_singular( 'attachment' ) ) {
+			// 	// Parent post navigation.
+			// 	the_post_navigation( array(
+			// 		'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
+			// 	) );
+			// } elseif ( is_singular( 'post' ) ) {
+			// 	// Previous/next post navigation.
+			// 	the_post_navigation( array(
+			// 		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
+			// 			'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
+			// 			'<span class="post-title">%title</span>',
+			// 		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
+			// 			'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
+			// 			'<span class="post-title">%title</span>',
+			// 	) );
+			// }
 
 			// End of the loop.
 		endwhile;
 		?>
                         </div> 
+                                       <div class="xianguan">
+                            <div class="xianguantitle">相关文章！</div>
+                            <ul class="pic web-of">
+                       
+
+<?php
+global $post;
+$cats = wp_get_post_categories($post->ID);
+if ($cats) {
+    $args = array(
+          'category__in' => array( $cats[0] ),
+          'post__not_in' => array( $post->ID ),
+          'showposts' => 3,
+          'caller_get_posts' => 1
+      );
+  query_posts($args);
+  if (have_posts()) {
+    while (have_posts()) {
+      the_post(); update_post_caches($posts); ?>
+          <li>
+                                    <a href="<?php the_permalink() ?>" target="_blank">
+                                        <div class="pic-left goods-pic ">
+                                            <img src="http://dev.thgo8.com/public/wapsite/images/footer/foot_03.png" class="attachment-medium wp-post-image" alt="iji">
+                                        </div>
+                                    </a>
+                                    <div class="pic-right">
+                                        <a rel="bookmark" href="" title="  <?php the_title(); ?> " class="link" target="_blank">  <?php the_title(); ?> </a>
+                                        <address class="xianaddress">
+                                            <time>
+                                                <?php the_time('Y-n-j'); ?> </time>
+                                            阅 <?php get_post_views($post -> ID); ?> </address>
+                                    </div>
+                                </li>
+                        
+<?php
+    }
+  }
+  else {
+    echo '<li>* 暂无相关文章</li>';
+  }
+  wp_reset_query();
+}
+else {
+  echo '<li>* 暂无相关文章</li>';
+}
+?>
+
+                            </ul>
+                        </div>
             </div><!-- col-md-9 -->
                 <div class="col-md-3 column">
                   <?php
@@ -122,5 +171,12 @@ var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
     // });
 
     	
+    </script>
+        <script type="text/javascript">
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+    } else {
+        $('.xianguan .pic').removeClass('web-of').addClass('pc-of');
+    }
     </script>
     
