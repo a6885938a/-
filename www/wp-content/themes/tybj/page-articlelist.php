@@ -79,45 +79,45 @@ include dirname(__FILE__).'/header_list.php';
          <div id="main" class="container mt10">
                 <div class="row ">
                     <div class="col-md-9 pd0">
-                        <ul class="newleft">
-						<?php $query_index = 0;   while ( $post_list->have_posts() ) : $query_index++; $post_list->the_post(); ?>
-							<?php  $category = get_the_category();//定义分类目录
-							//判断是否是第一条
-							if($query_index==1){?>
-                            <li class="list first">
-                            <?php }else{?>
-                             <li class="list">
-                               <?php }?>
-                                <div class="mecc">
-                                    <h2 class="mecctitle">
-                                 <a href="<?php the_permalink() ?>" target="_blank">
-                              <?php the_title(); ?> 
-                                </a>
-                                 </h2>
-                                    <address class="meccaddress">
-                                        <time><?php the_time('Y-n-j'); ?></time>
-                                        -
-                                        <a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
-echo $category[0]->cat_name;?></a>  阅 <?php get_post_views($post -> ID); ?> </address>
-                                </div>
-                                <span class="titleimg ">
-        <a href="<?php the_permalink() ?>" target="_blank">
-         <img class="lazy" src="/<?=ty_of?>images/loading.jpg"  
-         <?php if($query_index==1){?>
-        data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?> alt="<?php the_title(); ?>" />   
-        
-         </a>
-        </span>
+                 <ul class="newleft">
+                    <?php $query_index = 0;   while ( $post_list->have_posts() ) : $query_index++; $post_list->the_post(); ?>
+                    <?php  $category = get_the_category();//定义分类目录
+                    //判断是否是第一条
+                    if($query_index==1){?>
+                    <li class="list first">
+                    <?php }else{?>
+                    <li class="list">
+                    <?php }?>
+                    <div class="mecc">
+                    <h2 class="mecctitle">
+                    <a href="<?php the_permalink() ?>" target="_blank">
+                    <?php the_title(); ?> 
+                    </a>
+                    </h2>
+                    <address class="meccaddress">
+                    <time><?php the_time('Y-n-j'); ?></time>
+                    -
+                    <a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
+                    echo $category[0]->cat_name;?></a>  阅 <?php get_post_views($post -> ID); ?> </address>
+                    </div>
+                    <span class="titleimg ">
+                    <a href="<?php the_permalink() ?>" target="_blank">
+                    <img class="lazy" src="/<?=ty_of?>images/loading.jpg"  
+                    <?php if($query_index==1){?>
+                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?> alt="<?php the_title(); ?>" />   
 
-                                <div class="zuiyao hidden-xs">
-                                    <a href="<?php the_permalink() ?>">
-                                      <?php the_excerpt() ?>
-                                    </a>
-                                </div>
-                                <div class="clear"></div>
-                            </li>
-         		<?php endwhile; ?>
-                        </ul> <!-- col-md-9 -->
+                    </a>
+                    </span>
+
+                    <div class="zuiyao hidden-xs">
+                    <a href="<?php the_permalink() ?>">
+                    <?php the_excerpt() ?>
+                    </a>
+                    </div>
+                    <div class="clear"></div>
+                    </li>
+                    <?php endwhile; ?>
+                 </ul> <!-- col-md-9 -->
             	<?php if ( function_exists('wp_pagenavi') ) wp_pagenavi( array('query' => $post_list) );  ?>
             <div class="clear"></div>
                     </div>
@@ -137,21 +137,21 @@ include dirname(__FILE__).'/sitebar.php';
 	
 
             <?php
-include dirname(__FILE__).'/footer_t.php'; 
-?>
+            include dirname(__FILE__).'/footer_t.php'; 
+            ?>
     </body>
     </html>
-    <?php
-    include dirname(__FILE__).'/footer_js.php'; 
-    ?>
-    <script>    
-          $(function() {
-      $("img.lazy").show().lazyload({
-      	  skip_invisible : false,
-          effect: "fadeIn"
-          });
+            <?php
+            include dirname(__FILE__).'/footer_js.php'; 
+            ?>
+   <script>    
+            $(function() {
+            $("img.lazy").show().lazyload({
+            skip_invisible : false,
+            effect: "fadeIn"
+            });
 
-  });
+            });
 
     </script>
   <script type="text/javascript">
