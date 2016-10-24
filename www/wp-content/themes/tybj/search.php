@@ -83,9 +83,9 @@ include dirname(__FILE__).'/header_list.php';
                   <?php $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
 <?php if (have_posts()) : ?>  
 			<div class="tag-description">
-		<!-- 	<div class="tag-title">恭喜您，您搜索的关键字有结果啦！</div> -->
+		<div class="tag-title">恭喜您，您搜索的关键字有结果啦！</div> 
 			<h4 class="tag-content"><?php printf( __( '关键字"%s"的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); echo '搜到 ' . $wp_query->found_posts . ' 篇文章'; ?></h4>
-		</div><!-- .tag-description -->
+		</div>
 	<?php while (have_posts()) : the_post(); 
                     //判断是否是第一条
                     if($query_index==1){?>
