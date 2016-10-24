@@ -626,86 +626,103 @@ class WP {
 	 *
 	 * @global WP_Query $wp_query
  	 */
-	public function handle_404() {
-		global $wp_query;
-
-		/**
-		 * Filter whether to short-circuit default header status handling.
-		 *
-		 * Returning a non-false value from the filter will short-circuit the handling
-		 * and return early.
-		 *
-		 * @since 4.5.0
-		 *
-		 * @param bool     $preempt  Whether to short-circuit default header status handling. Default false.
-		 * @param WP_Query $wp_query WordPress Query object.
-		 */
-		if ( false !== apply_filters( 'pre_handle_404', false, $wp_query ) ) {
-			return;
-		}
-
-		// If we've already issued a 404, bail.
-		if ( is_404() )
-			return;
-
-		// Never 404 for the admin, robots, or if we found posts.
-		if ( is_admin() || is_robots() || $wp_query->posts ) {
-
-			$success = true;
-			if ( is_singular() ) {
-				$p = false;
-
-				if ( $wp_query->post instanceof WP_Post ) {
-					$p = clone $wp_query->post;
-				}
-
-				// Only set X-Pingback for single posts that allow pings.
-				if ( $p && pings_open( $p ) ) {
-					@header( 'X-Pingback: ' . get_bloginfo( 'pingback_url' ) );
-				}
-
-				// check for paged content that exceeds the max number of pages
-				$next = '<!--nextpage-->';
-				if ( $p && false !== strpos( $p->post_content, $next ) && ! empty( $this->query_vars['page'] ) ) {
-					$page = trim( $this->query_vars['page'], '/' );
-					$success = (int) $page <= ( substr_count( $p->post_content, $next ) + 1 );
-				}
-			}
-
-			if ( $success ) {
-				status_header( 200 );
-				return;
-			}
-		}
-
-		// We will 404 for paged queries, as no posts were found.
-		if ( ! is_paged() ) {
-
-			// Don't 404 for authors without posts as long as they matched an author on this site.
-			$author = get_query_var( 'author' );
-			if ( is_author() && is_numeric( $author ) && $author > 0 && is_user_member_of_blog( $author ) ) {
-				status_header( 200 );
-				return;
-			}
-
-			// Don't 404 for these queries if they matched an object.
-			if ( ( is_tag() || is_category() || is_tax() || is_post_type_archive() ) && get_queried_object() ) {
-				status_header( 200 );
-				return;
-			}
-
-			// Don't 404 for these queries either.
-			if ( is_home() || is_search() || is_feed() ) {
-				status_header( 200 );
-				return;
-			}
-		}
-
-		// Guess it's time to 404.
-		$wp_query->set_404();
-		status_header( 404 );
-		nocache_headers();
+	 public	function handle_404() {
+	global $wp_query;
+	if ( !is_admin() && ( 0 == count( $wp_query->posts ) ) && !is_404() && !is_robots() && !is_search() && !is_home() ) {
+	// Don’t 404 for these queries if they matched an object.
+	if ( ( is_tag() || is_category() || is_tax() || is_author() ) && $wp_query->get_queried_object() ) {
+	if ( !is_404() )
+	status_header( 200 );
+	return;
 	}
+	$wp_query->set_404();
+	status_header( 404 );
+	nocache_headers();
+	} elseif ( !is_404() ) {
+	status_header( 200 );
+	}
+	}
+ 	
+	// public function handle_404() {
+	// 	global $wp_query;
+
+	// 	/**
+	// 	 * Filter whether to short-circuit default header status handling.
+	// 	 *
+	// 	 * Returning a non-false value from the filter will short-circuit the handling
+	// 	 * and return early.
+	// 	 *
+	// 	 * @since 4.5.0
+	// 	 *
+	// 	 * @param bool     $preempt  Whether to short-circuit default header status handling. Default false.
+	// 	 * @param WP_Query $wp_query WordPress Query object.
+	// 	 */
+	// 	if ( false !== apply_filters( 'pre_handle_404', false, $wp_query ) ) {
+	// 		return;
+	// 	}
+
+	// 	// If we've already issued a 404, bail.
+	// 	if ( is_404() )
+	// 		return;
+
+	// 	// Never 404 for the admin, robots, or if we found posts.
+	// 	if ( is_admin() || is_robots() || $wp_query->posts ) {
+
+	// 		$success = true;
+	// 		if ( is_singular() ) {
+	// 			$p = false;
+
+	// 			if ( $wp_query->post instanceof WP_Post ) {
+	// 				$p = clone $wp_query->post;
+	// 			}
+
+	// 			// Only set X-Pingback for single posts that allow pings.
+	// 			if ( $p && pings_open( $p ) ) {
+	// 				@header( 'X-Pingback: ' . get_bloginfo( 'pingback_url' ) );
+	// 			}
+
+	// 			// check for paged content that exceeds the max number of pages
+	// 			$next = '<!--nextpage-->';
+	// 			if ( $p && false !== strpos( $p->post_content, $next ) && ! empty( $this->query_vars['page'] ) ) {
+	// 				$page = trim( $this->query_vars['page'], '/' );
+	// 				$success = (int) $page <= ( substr_count( $p->post_content, $next ) + 1 );
+	// 			}
+	// 		}
+
+	// 		if ( $success ) {
+	// 			status_header( 200 );
+	// 			return;
+	// 		}
+	// 	}
+
+	// 	// We will 404 for paged queries, as no posts were found.
+	// 	if ( ! is_paged() ) {
+
+	// 		// Don't 404 for authors without posts as long as they matched an author on this site.
+	// 		$author = get_query_var( 'author' );
+	// 		if ( is_author() && is_numeric( $author ) && $author > 0 && is_user_member_of_blog( $author ) ) {
+	// 			status_header( 200 );
+	// 			return;
+	// 		}
+
+	// 		// Don't 404 for these queries if they matched an object.
+	// 		if ( ( is_tag() || is_category() || is_tax() || is_post_type_archive() ) && get_queried_object() ) {
+	// 			status_header( 200 );
+	// 			return;
+	// 		}
+
+	// 		// Don't 404 for these queries either.
+	// 		if ( is_home() || is_search() || is_feed() ) {
+	// 			status_header( 200 );
+	// 			return;
+	// 		}
+	// 	}
+
+	// 	// Guess it's time to 404.
+	// 	$wp_query->set_404();
+	// 	status_header( 404 );
+	// 	nocache_headers();
+	// }
 
 	/**
 	 * Sets up all of the variables required by the WordPress environment.
