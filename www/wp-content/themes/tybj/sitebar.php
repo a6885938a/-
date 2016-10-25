@@ -1,7 +1,7 @@
-             <div id="sitebar" class="sitebar-right">
+            <div id="sitebar" class="sitebar-right">
                             <div id="soutab">
                             <form role="search" method="get" class="search" id="searchform" action="<?php echo home_url( '/' ); ?>">  
-    <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="">
+    <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="%s">
      <input class="butto" value="搜索" type="submit">
 </form>  
 <!--                                 <form method="get" class="search" action="http://www.ishayou.com/">

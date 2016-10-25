@@ -638,3 +638,6 @@
      font-weight: bold;
      font-size: 13px;
  }
+
+.no-result{padding:2%;font-size: 18px; line-height: 18px; text-align: center;}
+.tag-description .tag-content{padding-top:20px;font-size: 18px; line-height: 18px;}

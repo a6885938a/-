@@ -82,9 +82,8 @@ include dirname(__FILE__).'/header_list.php';
                  <ul class="newleft">
                   <?php $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
 <?php if (have_posts()) : ?>  
-			<div class="tag-description">
-		<div class="tag-title">恭喜您，您搜索的关键字有结果啦！</div> 
-			<h4 class="tag-content"><?php printf( __( '关键字"%s"的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); echo '搜到 ' . $wp_query->found_posts . ' 篇文章'; ?></h4>
+			<div class="tag-description hidden-xs">
+			<div class="tag-content"><?php printf( __( '关键字"%s"的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); echo '搜到 ' . $wp_query->found_posts . ' 篇文章'; ?></div>
 		</div>
 	<?php while (have_posts()) : the_post(); 
                     //判断是否是第一条
@@ -125,7 +124,7 @@ include dirname(__FILE__).'/header_list.php';
                   <?php endwhile; ?>  
                   	<?php else : ?>
 		<div id="post-0" class="post no-result">
-				<h2>抱歉,暂时还没有你想找的相关文章!</h2>
+				<span>抱歉,暂时还没有你想找的相关文章!</span>
 		</div><!-- #post-0 -->
 <?php endif; ?>  
 
