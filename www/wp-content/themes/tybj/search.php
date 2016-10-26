@@ -55,6 +55,11 @@ $post_list = new WP_Query(
 );
 
 ?>
+          <?php
+session_start();
+$username=$_POST['username'];
+$_SESSION['username']=123;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,24 +163,4 @@ include dirname(__FILE__).'/sitebar.php';
             <?php
             include dirname(__FILE__).'/footer_js.php'; 
             ?>
-   <script>    
-            $(function() {
-            $("img.lazy").show().lazyload({
-            skip_invisible : false,
-            effect: "fadeIn"
-            });
-
-            });
-
-    </script>
-  <script type="text/javascript">
-    $(function() {
-        var elm = $('.sitebar_list');
-        var startPos = $(elm).offset().top;
-        $.event.add(window, "scroll", function() {
-            var p = $(window).scrollTop();
-            $(elm).css('position', ((p) > startPos) ? 'fixed' : 'static');
-            $(elm).css('top', ((p) > startPos) ? '0px' : '');
-        });
-    });
-    </script>
+ 

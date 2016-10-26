@@ -129,10 +129,14 @@
                                         <!--          图片尺寸555-373 -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/w-1.jpg">
+                                                   <a>
+                                                <img class="swiper-lazy" data-src="<?=ty_of?>images/w-1.jpg">
+                                                </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/w-2.jpg">
+                                            <a >
+                                                <img class="swiper-lazy" data-src="<?=ty_of?>images/w-2.jpg">
+                                                </a>
                                             </div>
                                         </div>
                                         <!-- Add Pagination -->
@@ -274,6 +278,7 @@ include dirname(__FILE__).'/footer_t.php';
         centeredSlides: true,
         autoplay: 4000,
         autoplayDisableOnInteraction: false,
+         lazyLoading: true, // 滚动加载
         loop: true
     });
 

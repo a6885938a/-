@@ -1,7 +1,10 @@
+
+
             <div id="sitebar" class="sitebar-right">
                             <div id="soutab">
                             <form role="search" method="get" class="search" id="searchform" action="<?php echo home_url( '/' ); ?>">  
-    <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="%s">
+    <input class="text" type="text" name="s" placeholder=" 请输入关键词" 
+    value="<?php echo get_search_query() ?>">
      <input class="butto" value="搜索" type="submit">
 </form>  
 <!--                                 <form method="get" class="search" action="http://www.ishayou.com/">
@@ -24,7 +27,6 @@
     foreach ($categorys as $category) {
     	  ?>
                                         <li id="<?php echo $category->term_id ?>" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-603"><a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a></li>
-                                      
                                             <?php } ?>     
                                     </ul>
                                 </div>

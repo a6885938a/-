@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
 
 
@@ -63,23 +62,21 @@ include dirname(__FILE__).'/header_list.php';
                                        <div class="xianguan">
                             <div class="xianguantitle">相关文章！</div>
                             <ul class="pic web-of">
-                       
-
-<?php
-global $post;
-$cats = wp_get_post_categories($post->ID);
-if ($cats) {
-    $args = array(
-          'category__in' => array( $cats[0] ),
-          'post__not_in' => array( $post->ID ),
-          'showposts' => 3,
-          'caller_get_posts' => 1
-      );
-  query_posts($args);
-  if (have_posts()) {
-    while (have_posts()) {
-      the_post(); update_post_caches($posts); ?>
-          <li>
+                                <?php
+                                global $post;
+                                $cats = wp_get_post_categories($post->ID);
+                                if ($cats) {
+                                $args = array(
+                                'category__in' => array( $cats[0] ),
+                                'post__not_in' => array( $post->ID ),
+                                'showposts' => 3,
+                                'caller_get_posts' => 1
+                                );
+                                query_posts($args);
+                                if (have_posts()) {
+                                while (have_posts()) {
+                                the_post(); update_post_caches($posts); ?>
+                                <li>
                                     <a href="<?php the_permalink() ?>" target="_blank">
                                         <div class="pic-left goods-pic ">
                                             <img src="http://dev.thgo8.com/public/wapsite/images/footer/foot_03.png" class="attachment-medium wp-post-image" alt="iji">
@@ -133,17 +130,6 @@ include dirname(__FILE__).'/footer_t.php';
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?>
-  <script type="text/javascript">
-    $(function() {
-        var elm = $('.sitebar_list');
-        var startPos = $(elm).offset().top;
-        $.event.add(window, "scroll", function() {
-            var p = $(window).scrollTop();
-            $(elm).css('position', ((p) > startPos) ? 'fixed' : 'static');
-            $(elm).css('top', ((p) > startPos) ? '0px' : '');
-        });
-    });
-    </script>
     <script type="text/javascript">
 /* <![CDATA[ */
 var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
@@ -173,10 +159,6 @@ var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
     	
     </script>
         <script type="text/javascript">
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
-    } else {
-        $('.xianguan .pic').removeClass('web-of').addClass('pc-of');
-    }
     </script>
     
