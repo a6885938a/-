@@ -4,3 +4,13 @@
                     <p class="site-footer-copyright">2016 @ <a href="#" target="_blank">佛山市南海西樵饼家版权所有</a> | 粤ICP备xxx号-1</p>
                 </div>
             </footer>
+                <!--回到顶部-->
+    <div class="returntop">
+        <div id="rocket-to-top">
+            <div style="opacity:0;display:block;" class="level-2"></div>
+            <div class="level-3"></div>
+        </div>
+    </div>
+    <div id="rocket-wrap-lit" class="visible-xs">
+        <div id="rocket-lit"></div>
+    </div>

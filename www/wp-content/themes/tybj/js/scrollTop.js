@@ -1,11 +1,3 @@
-        //lazzy load
-        $(function() {
-            $("img.lazy").show().lazyload({
-                effect: "fadeIn",
-                threshold: 100
-            });
-        });
-
 //回到顶部.
         $(function() {
             var e = $("#rocket-to-top"),
@@ -94,9 +86,3 @@
  });
 
 
- //检测移动设备
- if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-     $('.wp-pagenavi').addClass('web-page');
- } else {
-     $('.xianguan .pic').removeClass('web-of').addClass('pc-of');
- }

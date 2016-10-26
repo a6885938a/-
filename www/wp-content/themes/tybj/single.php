@@ -59,7 +59,7 @@ include dirname(__FILE__).'/header_list.php';
 		endwhile;
 		?>
                         </div> 
-                                       <div class="xianguan">
+                           <div class="xianguan">
                             <div class="xianguantitle">相关文章！</div>
                             <ul class="pic web-of">
                                 <?php
@@ -79,7 +79,8 @@ include dirname(__FILE__).'/header_list.php';
                                 <li>
                                     <a href="<?php the_permalink() ?>" target="_blank">
                                         <div class="pic-left goods-pic ">
-                                            <img src="http://dev.thgo8.com/public/wapsite/images/footer/foot_03.png" class="attachment-medium wp-post-image" alt="iji">
+                                             <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
+                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1"" />   
                                         </div>
                                     </a>
                                     <div class="pic-right">

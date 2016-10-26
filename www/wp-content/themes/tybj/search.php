@@ -53,12 +53,6 @@ $post_list = new WP_Query(
 	"&cat=" . $cat .
 	"&paged=" . $paged
 );
-
-?>
-          <?php
-session_start();
-$username=$_POST['username'];
-$_SESSION['username']=123;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,18 +79,15 @@ include dirname(__FILE__).'/header_list.php';
                 <div class="row ">
                     <div class="col-md-9 pd0">
                  <ul class="newleft">
-                  <?php $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
-<?php if (have_posts()) : ?>  
+                  <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
+<?php  if (have_posts()) : ?>  
 			<div class="tag-description hidden-xs">
 			<div class="tag-content"><?php printf( __( '关键字"%s"的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); echo '搜到 ' . $wp_query->found_posts . ' 篇文章'; ?></div>
 		</div>
-	<?php while (have_posts()) : the_post(); 
-                    //判断是否是第一条
-                    if($query_index==1){?>
-                    <li class="list first">
-                    <?php }else{?>
+	<?php setPostViews(get_the_ID());//设置获取阅读数在主循环
+     while (have_posts()) : the_post(); 
+                   ?>
                     <li class="list">
-                    <?php }?>
                     <div class="mecc">
                     <h2 class="mecctitle">
                     <a href="<?php the_permalink() ?>" target="_blank">
@@ -107,13 +98,13 @@ include dirname(__FILE__).'/header_list.php';
                     <time><?php the_time('Y-n-j'); ?></time>
                     -
                     <a href="<?php echo get_category_link($category[0]->term_id ) ?>" rel="category tag"><?php 
-                    echo $category[0]->cat_name;?></a>  阅 <?php get_post_views($post -> ID); ?> </address>
+                    echo $category[0]->cat_name;?></a>  阅 <?php echo getPostViews(get_the_ID()) ?> </address>
                     </div>
                     <span class="titleimg ">
                     <a href="<?php the_permalink() ?>" target="_blank">
-                    <img class="lazy" src="/<?=ty_of?>images/loading.jpg"  
-                    <?php if($query_index==1){?>
-                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?> alt="<?php the_title(); ?>" />   
+                    <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
+          
+                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""     />   
 
                     </a>
                     </span>

@@ -498,63 +498,6 @@ lock-warning a:not(.btn) {
     color: #333;
 }
 
-/*回到顶部*/
-#rocket-to-top div {
-    left: 0;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    width: 88px;
-    background: red;
-}
-#rocket-to-top .level-2 {
-    background: url("../images/rocket_button_up.png") no-repeat scroll -88px 0 transparent;
-    display: none;
-    height: 200px;
-    opacity: 0;
-    z-index: 1;
-}
-#rocket-to-top .level-3 {
-    background: none repeat scroll 0 0 transparent;
-    cursor: pointer;
-    display: block;
-    height: 150px;
-    z-index: 2;
-}
-#rocket-to-top {
-    background: url("../images/rocket_button_up.png") no-repeat scroll 0 0 transparent;
-    cursor: default;
-    display: block;
-    height: 200px;
-    margin: -25px 0 0;
-    overflow: hidden;
-    padding: 0;
-    position: fixed;
-    right: 0;
-    top: 70%;
-    width: 88px;
-    z-index: 11;
-}
-#rocket-wrap-lit {
-    display: none;
-    cursor: pointer;
-}
-#rocket-lit {
-    display: none;
-    background: url("../images/to-top.png") no-repeat;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    right: 4px;
-    bottom: 10%;
-}
-@media (max-width: 767px) {
-    .returntop {
-        display: none;
-    }
-}
 
 /*tianyuan*/
 .hor-view {

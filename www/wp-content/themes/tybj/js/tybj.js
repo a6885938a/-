@@ -1,10 +1,4 @@
-        //lazzy load
-          $(function() {
-      $("img.lazy").show().lazyload({
-          effect: "fadeIn",
-          threshold :100
-          });
-  });
+
   
 //回到顶部.
         $(function() {
