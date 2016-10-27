@@ -253,12 +253,15 @@ include dirname(__FILE__).'/footer_t.php';
             <!-- .site-footer -->
         </div>
       <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
+        <script src='/<?=ty_of?>js/tybj.js'></script>
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?>
+  
+
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
-    <script src='/<?=ty_of?>js/tybj.js'></script>
+
     
     <script>
     var swiper = new Swiper('.swiper', {

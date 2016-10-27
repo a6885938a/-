@@ -1,7 +1,7 @@
 <?php include('include.inc.php');  ?>
 <?php
 /**
- * Template Name: 新闻列表
+ * Template Name: act
  *
  */
 
@@ -44,7 +44,7 @@ if( $show_content || $paged == 1  ) $post_content = apply_filters('the_content',
 
 /** 当前显示的是第几页 */
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
+$category = get_the_category();
 /** 用WP_Query获取posts */
 $post_list = new WP_Query(
 	"posts_per_page=" . $posts_per_page .
@@ -60,7 +60,7 @@ $post_list = new WP_Query(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>西樵天园饼家</title>
+    <title>11西樵天园饼家</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -80,14 +80,16 @@ include dirname(__FILE__).'/header_list.php';
                 <div class="row ">
                     <div class="col-md-9 pd0">
                  <ul class="newleft">
-                    <?php $query_index = 0; setPostViews(get_the_ID());  while ( $post_list->have_posts() ) : $query_index++; $post_list->the_post(); ?>
-                    <?php  $category = get_the_category();//定义分类目录
-                    //判断是否是第一条
-                    if($query_index==1){?>
-                    <li class="list first">
-                    <?php }else{?>
+                 <div class="decr hidden-xs"> <span class="title"><?php 
+                    echo $category[0]->cat_name;?> : </span><p><?php 
+                    echo $category[0]->category_description;?></p>
+ </div>
+                      <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
+    <?php setPostViews(get_the_ID());//设置获取阅读数在主循环
+     while (have_posts()) : the_post(); 
+                   ?>
+                    <?php $category = get_the_category();//定义分类目录?>                   
                     <li class="list">
-                    <?php }?>
                     <div class="mecc">
                     <h2 class="mecctitle">
                     <a href="<?php the_permalink() ?>" target="_blank">
@@ -116,9 +118,9 @@ include dirname(__FILE__).'/header_list.php';
                     </div>
                     <div class="clear"></div>
                     </li>
-                    <?php endwhile; ?>
+                    <?php endwhile; ?>  
                  </ul> <!-- col-md-9 -->
-            	<?php if ( function_exists('wp_pagenavi') ) wp_pagenavi( array('query' => $post_list) );  ?>
+                <?php wp_pagenavi();  ?>
             <div class="clear"></div>
                     </div>
                     <div class="col-md-3 column">

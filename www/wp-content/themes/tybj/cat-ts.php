@@ -1,7 +1,7 @@
 <?php include('include.inc.php');  ?>
 <?php
 /**
- * Template Name: 新闻列表
+ * Template Name: act
  *
  */
 
@@ -60,7 +60,7 @@ $post_list = new WP_Query(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>西樵天园饼家</title>
+    <title>特色手信</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -80,8 +80,10 @@ include dirname(__FILE__).'/header_list.php';
                 <div class="row ">
                     <div class="col-md-9 pd0">
                  <ul class="newleft">
-                    <?php $query_index = 0; setPostViews(get_the_ID());  while ( $post_list->have_posts() ) : $query_index++; $post_list->the_post(); ?>
-                    <?php  $category = get_the_category();//定义分类目录
+                      <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
+
+                    <?php $category = get_the_category();//定义分类目录
+
                     //判断是否是第一条
                     if($query_index==1){?>
                     <li class="list first">
@@ -116,7 +118,7 @@ include dirname(__FILE__).'/header_list.php';
                     </div>
                     <div class="clear"></div>
                     </li>
-                    <?php endwhile; ?>
+                 
                  </ul> <!-- col-md-9 -->
             	<?php if ( function_exists('wp_pagenavi') ) wp_pagenavi( array('query' => $post_list) );  ?>
             <div class="clear"></div>

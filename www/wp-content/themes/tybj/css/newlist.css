@@ -156,6 +156,45 @@
      margin-top: 10px;
  }
  
+ .decr {
+  text-align: center;
+    margin-top: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #f2f1f1;
+}
+.decr:before {
+    color: #ededed;
+    content: open-quote;
+    font-size: 6em;
+    line-height: .1em;
+    margin-right: .1em;
+    vertical-align: -.5em;
+}
+.decr .title {
+    display: inline;
+    padding: 15px 0;
+    font-size: 17px;
+    line-height: 33px;
+    color: #555555;
+    font-weight: bold;
+    color: #a91f24;
+}
+.decr p {
+    display: inline;
+    width: auto;
+    padding: 15px 0;
+    font-size: 17px;
+    line-height: 33px;
+    color: #555555;
+}
+.decr:after {
+    color: #ededed;
+    content: close-quote;
+    font-size: 6em;
+    line-height: .1em;
+    margin-left: .25em;
+    vertical-align: -.6em;
+}
  .clear {
      clear: both;
  }
