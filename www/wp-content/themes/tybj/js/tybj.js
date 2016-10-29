@@ -1,9 +1,3 @@
-
-  
-
-		
-		
-
   //main
     $(window).scroll(function(){
          // 获得div的高度

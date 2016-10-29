@@ -144,4 +144,3 @@ include dirname(__FILE__).'/sitebar.php';
             <?php
             include dirname(__FILE__).'/footer_js.php'; 
             ?>
- <script src='/<?=ty_of?>js/newlist.js'></script>

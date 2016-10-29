@@ -48,7 +48,7 @@
                         <div class="container">
                             <div class="col-md-12 column">
                                 <div class="hor-view" style="float:left;margin-right:10px; margin-bottom:10px;">
-                                    <a href="ct.html" >
+                                    <a href="<?php echo get_category_link( 6 ) ?>" >
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="hor-gap"></div>
                                 <div class="r ver-view" style="float:left;">
-                                    <a href="sx.html" style="margin-bottom:10px;">
+                                    <a href="<?php echo get_category_link( 7 ) ?>" style="margin-bottom:10px;">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -87,7 +87,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="yb.html" style="margin-bottom:10px;">
+                                    <a href="<?php echo get_category_link( 8 ) ?>" style="margin-bottom:10px;">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -178,7 +178,6 @@
                                     <div class="section-content m-t-60-sm-min services">
                 <ul class="row">
                 <?php $posts = get_posts('numberposts=6&orderby=post_date&date='. $category->term_id);
-
                  foreach($posts as $post){?>
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
@@ -234,11 +233,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                            <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script> -->
                             <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max hidden-xs" style="width:550px;height:350px;border:#ccc solid 1px;  padding:0;" id="dituContent"> </div>
                         </div>
                     </div>
                 </div>
+                   
+                <div class="sitebar_list "></div>
+                <!-- 获取滚动高度 -->
+
                 <!-- #contact -->
             </main>
             <!-- .site-main -->
@@ -256,8 +259,9 @@ include dirname(__FILE__).'/footer_t.php';
         <script src='/<?=ty_of?>js/tybj.js'></script>
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
-    ?>
-  
+    ?> 
+
+     
 
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
