@@ -19,7 +19,6 @@
 <?php
 include dirname(__FILE__).'/header_list.php'; 
 ?>
-   
         <main class="site-main-1">
                 <div class="product bn-dec">
                     <img src="/<?=ty_of?>images/ct/ct-banner.jpg" class="hidden-xs">
@@ -41,66 +40,29 @@ include dirname(__FILE__).'/header_list.php';
                 </div>
                 <div class="section ">
                     <div class="container">
-                                 <div class="row bn-det split--left">
-                            <div class=" col-sm-push-6 col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter right over 2s">
-                                <div class="col-inner clearfix ">
-                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/ct/hts.jpg">
-                                </div>
-                            </div>
-                            <div class="col-sm-pull-6 col-sm-6 pd50">
-                                <div class="col-inner">
-                                    <div class="section-heading ">
-                                        <h3>核桃酥</h3>
-                                    </div>
-                                    <!-- .section-heading -->
-                                    <div class="section-content" style="text-align:left;">
-                                        <p>传统糕点核桃酥并非核桃为材料，而是因貌似核桃而得名。我们采用优质面粉，原只新鲜鸡蛋，加上独特的烘焙技术，才能做出 充满历史风味的核桃酥。外层松脆可口，入口即化，回味无穷。
-                                        </p>
-                                        <p><a href="" class="btn">了解更多</a></p>
-                                    </div>
-                                    <!-- .section-content -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row bn-det split--right">
-                            <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
-                                <div class="col-inner clearfix ">
-                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/ct/lpb.jpg">
-                                </div>
-                            </div>
-                            <div class="col-sm-6 pd50">
-                                <div class="col-inner">
-                                    <div class="section-heading ">
-                                        <h3>老婆饼</h3>
-                                    </div>
-                                    <!-- .section-heading -->
-                                    <div class="section-content" style="text-align:left;">
-                                        <p>起源自广东潮州点心老婆饼，外皮烤成诱人的金黄色，里头一层层的油酥薄如棉纸，酥松得不得了，一咬下去碎屑便掉了满地，每一口都尝得到蜜糖般的香甜滋味！老婆作的饼　受到老板青睐！</p>
-                                        <p><a href="" class="btn">了解更多</a></p>
-                                    </div>
-                                    <!-- .section-content -->
-                                </div>
-                            </div>
-                        </div>
                     <?php if (have_posts()) :$ashu_i=0; ?>
                     <?php setPostViews(get_the_ID());//设置获取阅读数在主循环
                 global $query_string;
                  query_posts($query_string . "&order=ASC&cat=6");
                     while (have_posts()) : the_post();$ashu_i++; 
                     ?>
-                
-                    <?php if($ashu_i==1){ ?>
+                    <?php if($ashu_i%2 ==0){ ?>
                         <div class="row bn-det split--left">
                             <div class=" col-sm-push-6 col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter right over 2s"> 
-                            <?php }  else { ?>
-                               <div class="row bn-det split--right">
-                 <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
-                   <?php } ?>
                                 <div class="col-inner clearfix ">
                                     <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
                                 </div>
                             </div>
                             <div class="col-sm-pull-6 col-sm-6 pd50">
+                              <?php }  else { ?>
+                               <div class="row bn-det split--right">
+                 <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
+                 <div class="col-inner clearfix ">
+                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
+                                </div>
+                            </div>
+                             <div class="col-sm-6 pd50">
+                   <?php } ?>
                                 <div class="col-inner">
                                     <div class="section-heading ">
                                         <h3><?php the_title(); ?> </h3>
@@ -118,13 +80,6 @@ include dirname(__FILE__).'/header_list.php';
                 <?php endif; ?>
                         </div>
             </main>
-  
-
-
-
-
-	
-
             <?php
             include dirname(__FILE__).'/footer_t.php'; 
             ?>

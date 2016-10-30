@@ -1,5 +1,6 @@
 <?php include('include.inc.php');  ?>
 <?php
+
 /**
  * Template Name: Article List
  *
@@ -79,14 +80,12 @@ include dirname(__FILE__).'/header_list.php';
                 <div class="row ">
                     <div class="col-md-9 pd0">
                  <ul class="newleft">
-                  <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
-<?php if (have_posts()) : ?>  
+                  <?php  global $query_string;  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
+<?php if (have_posts()) :  ?>  
 			<div class="tag-description hidden-xs">
 			<div class="tag-content"><?php printf( __( '关键字"%s"的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); echo '搜到 ' . $wp_query->found_posts . ' 篇文章'; ?></div>
 		</div>
-	<?php setPostViews(get_the_ID());//设置获取阅读数在主循环
-     while (have_posts()) : the_post(); 
-                   ?>
+	<?php  while (have_posts()) : the_post(); ?>
                     <li class="list">
                     <div class="mecc">
                     <h2 class="mecctitle">
@@ -123,8 +122,6 @@ include dirname(__FILE__).'/header_list.php';
 				<span>抱歉,暂时还没有你想找的相关文章!</span>
 		</div><!-- #post-0 -->
 <?php endif; ?>  
-
-
                  </ul> <!-- col-md-9 -->
 
             	<?php wp_pagenavi();  ?>

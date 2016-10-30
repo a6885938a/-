@@ -1,4 +1,6 @@
 <?php include('include.inc.php');  ?>
+<?php     // Start the 获取文章次数
+setPostViews(get_the_ID()); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +14,6 @@
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-
-
 </head>
 
 <body class="is-loaded is-scroll">
@@ -25,8 +25,7 @@ include dirname(__FILE__).'/header_list.php';
                     <div class="col-md-9 act pd0">
                         <div class="newleft">
 							<?php
-                            // Start the 获取文章次数
-                            setPostViews(get_the_ID());
+                        
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 
@@ -56,8 +55,7 @@ include dirname(__FILE__).'/header_list.php';
 			// }
 
 			// End of the loop.
-		endwhile;
-		?>
+		endwhile;?>
                         </div> 
                            <div class="xianguan">
                             <div class="xianguantitle">相关文章！</div>
@@ -88,7 +86,7 @@ include dirname(__FILE__).'/header_list.php';
                                         <address class="xianaddress">
                                             <time>
                                                 <?php the_time('Y-n-j'); ?> </time>
-                                            阅 <?php get_post_views($post -> ID); ?> </address>
+                                            阅 <?php echo getPostViews(get_the_ID()) ?> </address>
                                     </div>
                                 </li>
                         

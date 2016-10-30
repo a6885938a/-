@@ -1,3 +1,21 @@
+  //检测移动设备
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+       
+        } else {
+            $('body a').attr('target','_blank');
+        }
+   var swiper = new Swiper('.swiper', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: 4000,
+        autoplayDisableOnInteraction: false,
+         lazyLoading: true, // 滚动加载
+        loop: true
+    });
   //main
     $(window).scroll(function(){
          // 获得div的高度
@@ -61,8 +79,7 @@ function set_cur(n){
 };
 //scrollReveal
    (function($) {
-
         'use strict';
-
         window.scrollReveal = new scrollReveal({ reset: true, move: '50px' });
       })();
+

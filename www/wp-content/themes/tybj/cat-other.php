@@ -85,8 +85,7 @@ include dirname(__FILE__).'/header_list.php';
                     echo $category[0]->category_description;?></p>
  </div>
                       <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
-    <?php setPostViews(get_the_ID());//设置获取阅读数在主循环
-     while (have_posts()) : the_post(); 
+    <?php while (have_posts()) : the_post(); 
                    ?>
                     <?php $category = get_the_category();//定义分类目录?>                   
                     <li class="list">

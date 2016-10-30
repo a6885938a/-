@@ -5,6 +5,7 @@
                 </div>
             </footer>
                 <!--回到顶部-->
+                <div class="sitebar_list"></div><!-- 获取newlist高度 -->
     <div class="returntop">
         <div id="rocket-to-top">
             <div style="opacity:0;display:block;" class="level-2"></div>

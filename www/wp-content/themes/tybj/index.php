@@ -115,18 +115,13 @@
                 <div id="brief_1" class="section block-default align-c-xs-max">
                     <div class="container">
                         <div class="row ">  
-               
-
-       
                                 <div class="section-heading " style="text-align:center;padding-bottom: 50px; ">
                                         <h2>走进天园</h2>
                                         <h5>Company Profile</h5>
                                     </div>
-                   
                             <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
                                 <div class="col-inner clearfix ">
                                     <div class="swiper-container swiper">
-                                        <!--          图片尺寸555-373 -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                    <a>
@@ -144,7 +139,6 @@
                                         <div class="swiper-button-next"></div>
                                         <div class="swiper-button-prev"></div>
                                     </div>
-                                    <!-- <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/jjbg.jpg"> -->
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -172,7 +166,6 @@
                                             <h2>天园资讯</h2>
                                             <h5>News  Information Customers</h5>
                                             <h6>更多>></h6>
-                                             
                                         </a>
                                     </div>
                                     <div class="section-content m-t-60-sm-min services">
@@ -182,7 +175,7 @@
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">
-                            <figure><img class="lazy"  src="/<?=ty_of?>images/loading.jpg"   data-original="<?php echo catch_that_image() ?>" ></figure>
+                            <figure><img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=238&w=238&zc=1""></figure>
                         </div>
                         <h3><?php the_title(); ?></h3>
                     </a>
@@ -233,16 +226,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script> -->
+                            <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
                             <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max hidden-xs" style="width:550px;height:350px;border:#ccc solid 1px;  padding:0;" id="dituContent"> </div>
                         </div>
                     </div>
                 </div>
                    
-                <div class="sitebar_list "></div>
-                <!-- 获取滚动高度 -->
-
-                <!-- #contact -->
             </main>
             <!-- .site-main -->
             <?php
@@ -256,33 +245,12 @@ include dirname(__FILE__).'/footer_t.php';
             <!-- .site-footer -->
         </div>
       <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
-        <script src='/<?=ty_of?>js/tybj.js'></script>
     <?php
     include dirname(__FILE__).'/footer_js.php'; 
     ?> 
-
-     
-
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
-
-    
-    <script>
-    var swiper = new Swiper('.swiper', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        spaceBetween: 0,
-        centeredSlides: true,
-        autoplay: 4000,
-        autoplayDisableOnInteraction: false,
-         lazyLoading: true, // 滚动加载
-        loop: true
-    });
-
-  
-    </script>
+        <script src='/<?=ty_of?>js/tybj.js'></script>
 </body>
 
 </html>

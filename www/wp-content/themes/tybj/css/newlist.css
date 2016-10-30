@@ -693,8 +693,79 @@
      font-size: 18px;
      line-height: 18px;
  }
+ /*news*/
+.services ul {
+    padding: 0;
+    margin: 40px 0 0;
+    display: inline-block;
+    width: 100%;
+}
+.services ul li {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 1%;
+}
+.services ul li:hover {
+    color: #333;
+    box-shadow: 0 0 10px #ccc;
+}
+.services ul li:hover h3,.services ul li:hover div {
+    color: #333;
+}
+.services ul li a
+{
+    color: #333;
+}
+.services ul li a.goods-pic {
+    width: 320px;
+    height: 250px;
+    border: 0 none;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.services ul li a figure {
+    margin: 0;
+    height: 250px;
+    display: inline-block;
+    text-align: center;
+}
+.services ul li a figure:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.services ul li img {
+    max-width: 320px;
+    max-height: 250px;
+    vertical-align: middle;
+    text-align: center;
+}
+.services ul li a h3 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.services ul li a .post_text {
+  height: 72px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: .3px;
+    overflow: hidden;
+}
  /*分类页面*/
- 
+ .product img, #pricing img {
+    width: 100%;
+}
  .bn-dec {
      font-size: 18px;
      background: #f0f0f0;

@@ -8,3 +8,9 @@ WP-PageNavi
 
 分类目录前缀 ：
 标签前缀：act-put
+
+
+home:
+自定义结构：http://www.xqtybj.me /index.php/%post_id%.html
+分类目录前缀 ：
+标签前缀：act-put
