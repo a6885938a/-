@@ -13,7 +13,7 @@
     <?php include('header_css.php');  ?>
      <link rel='stylesheet' href='<?=ty_of?>css/tybj.css<?=version?>'>
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">
-
+     <link rel="stylesheet" type="text/css" href="<?=ty_of?>js/loadjs.js">
 </head>
 
 <body class="is-loaded">

@@ -20,7 +20,7 @@ setPostViews(get_the_ID()); ?>
 <?php
 include dirname(__FILE__).'/header_list.php'; 
 ?>
- <div id="main" class="container mt10">
+ <div id="main singlewp" class="container mt10 c-self">
                 <div class="row ">
                     <div class="col-md-9 act pd0">
                         <div class="newleft">
@@ -75,14 +75,14 @@ include dirname(__FILE__).'/header_list.php';
                                 while (have_posts()) {
                                 the_post(); update_post_caches($posts); ?>
                                 <li>
-                                    <a href="<?php the_permalink() ?>" target="_blank">
+                                    <a href="<?php the_permalink() ?>">
                                         <div class="pic-left goods-pic ">
                                              <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1"" />   
                                         </div>
                                     </a>
                                     <div class="pic-right">
-                                        <a rel="bookmark" href="" title="  <?php the_title(); ?> " class="link" target="_blank">  <?php the_title(); ?> </a>
+                                        <a rel="bookmark" href="" title="  <?php the_title(); ?> " class="link" >  <?php the_title(); ?> </a>
                                         <address class="xianaddress">
                                             <time>
                                                 <?php the_time('Y-n-j'); ?> </time>
@@ -106,7 +106,7 @@ else {
                             </ul>
                         </div>
             </div><!-- col-md-9 -->
-                <div class="col-md-3 column">
+                <div class="col-md-3 column sitebar-right ">
                   <?php
 include dirname(__FILE__).'/sitebar.php'; 
 ?><!-- col-md-3 -->

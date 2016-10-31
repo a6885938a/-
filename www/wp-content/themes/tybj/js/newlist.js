@@ -103,4 +103,5 @@
             $('.wp-pagenavi').addClass('web-page');
         } else {
             $('.xianguan .pic').removeClass('web-of').addClass('pc-of');
+             $('body a').not('.navbar-nav a,.c-self a,.wp-pagenavi a').attr('target','_blank');
         }

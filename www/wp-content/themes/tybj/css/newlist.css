@@ -204,10 +204,12 @@
      clear: both;
  }
  /*sitebar-right*/
- 
+     
+ .sitebar-right{background:#FAFAFA;}
  #soutab {
      margin: 5% 0;
      overflow: hidden;
+     height: auto;
  }
  
  .search {
@@ -306,6 +308,7 @@
  
  .sitebar_list {
      padding-top: 20px;
+     padding-left:-15px;
      background: #FAFAFA;
  }
  
@@ -319,7 +322,7 @@
  
  .sitebar_list_ul li {
      list-style-type: decimal;
-     padding: 8px 8px 0 0px;
+     padding: 8px 8px 0 8px;
      border-bottom: 1px dashed #ededed;
  }
  
@@ -386,22 +389,23 @@
  }
  
  .xianguan .xianguantitle {
-     padding: 2% 0 0 2%;
+     padding: 2% 0;
+     margin:0 2%;
      line-height: 25px;
      font-size: 18px;
      color: #000;
+     border-bottom: 1px dashed #ededed;
      font-weight: bold;
  }
  
  .xianguan .pic {
      width: 100%;
-     margin-top: 30px;
      margin-left: -30px;
  }
  
  .xianguan .pic li {
      width: 100%;
-     border-top: 1px dashed #ededed;
+     border-bottom: 1px dashed #ededed;
      padding: 20px 0px;
      overflow: hidden;
  }

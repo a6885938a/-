@@ -76,7 +76,7 @@ $post_list = new WP_Query(
 include dirname(__FILE__).'/header_list.php'; 
 ?>
              <!--newslist-->
-         <div id="main" class="container mt10">
+         <div id="main searchwp" class="container mt10">
                 <div class="row ">
                     <div class="col-md-9 pd0">
                  <ul class="newleft">
@@ -89,7 +89,7 @@ include dirname(__FILE__).'/header_list.php';
                     <li class="list">
                     <div class="mecc">
                     <h2 class="mecctitle">
-                    <a href="<?php the_permalink() ?>" target="_blank">
+                    <a href="<?php the_permalink() ?>" >
                     <?php the_title(); ?> 
                     </a>
                     </h2>
@@ -100,7 +100,7 @@ include dirname(__FILE__).'/header_list.php';
                     echo $category[0]->cat_name;?></a>  阅 <?php echo getPostViews(get_the_ID()) ?> </address>
                     </div>
                     <span class="titleimg ">
-                    <a href="<?php the_permalink() ?>" target="_blank">
+                    <a href="<?php the_permalink() ?>" >
                     <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
           
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""     />   
@@ -128,7 +128,7 @@ include dirname(__FILE__).'/header_list.php';
 
             <div class="clear"></div>
                     </div>
-                    <div class="col-md-3 column">
+                    <div class="col-md-3 column sitebar-right">
                   <?php
 include dirname(__FILE__).'/sitebar.php'; 
 ?>

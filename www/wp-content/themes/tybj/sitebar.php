@@ -1,17 +1,12 @@
 
 
-            <div id="sitebar" class="sitebar-right">
+            <div id="sitebar" class="sitebar-right c-self">
                             <div id="soutab">
                             <form role="search" method="get" class="search" id="searchform" action="<?php echo home_url( '/' ); ?>">  
     <input class="text" type="text" name="s" placeholder=" 请输入关键词" 
     value="<?php echo get_search_query() ?>">
      <input class="butto" value="搜索" type="submit">
 </form>  
-<!--                                 <form method="get" class="search" action="http://www.ishayou.com/">
-                                    <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="">
-                                    <input class="butto" value="搜索" type="submit">
-                                </form>  -->
-
                             </div>
                             <div class=" hidden-xs">
                                 <span class="tagtitle">分类目录</span>

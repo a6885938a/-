@@ -28,7 +28,7 @@ include dirname(__FILE__).'/header_list.php';
                     <?php if (have_posts()) :$ashu_i=0; ?>
                     <?php setPostViews(get_the_ID());//设置获取阅读数在主循环
                 global $query_string;
-                 query_posts($query_string . "&order=ASC&cat=8");
+                 query_posts($query_string . "&order=ASC&cat=7");
                     while (have_posts()) : the_post();$ashu_i++; 
                     ?>
                     <?php if($ashu_i%2 ==0){ ?>
