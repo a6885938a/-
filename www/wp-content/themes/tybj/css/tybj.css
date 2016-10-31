@@ -29,6 +29,11 @@
 .p-a-0 {
     padding: 0px !important;
 }
+.tr-c{text-align:center;}
+.pb50{padding-bottom: 50px;}
+.mb10{margin-bottom: 10px;}
+.mt_20{margin-top:-22%;}
+.mt-50{margin-top:-50px}
 
 
 /**
@@ -425,7 +430,7 @@ lock-warning a:not(.btn) {
 
 
 /*video*/
-#video1 {
+#video {
     display: block;
 }
 .video_play {
@@ -437,11 +442,13 @@ lock-warning a:not(.btn) {
     height: 768px;
     background: url(../images/video_img.jpg);
     overflow: hidden;
+    -webkit-filter:brightness(.7);filter: brightness(0.7);
 }
 .section-heading p {
     font-size: 18px;
     text-align: center;
 }
+.v-banner{width:100%;padding:0 8%}
 .divas-caption p {
     font: 10px;
 }
@@ -462,6 +469,9 @@ lock-warning a:not(.btn) {
     background-attachment: fixed;
     background-size: cover;
     overflow: hidden;
+}
+.site-of {
+float:left;margin-right:10px; margin-bottom:10px;
 }
 .product .container {}
 .product .col-md-12,
@@ -487,6 +497,7 @@ lock-warning a:not(.btn) {
     margin-bottom: 10px;
     text-indent: 30px;
 }
+
 #pricing {
     color: #313131;
 }
@@ -497,7 +508,7 @@ lock-warning a:not(.btn) {
 #pricing .section-heading a {
     color: #333;
 }
-
+#contact .map-size{width:550px;height:350px;border:#ccc solid 1px;  padding:0;}
 
 /*tianyuan*/
 .hor-view {

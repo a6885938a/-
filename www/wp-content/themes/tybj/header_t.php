@@ -15,7 +15,7 @@
                                 <li class="bri"><a>走进天园</a></li>
                                 <li class="pri"><a>媒体报道</a></li>
                                 <li class="con"><a>联系我们</a></li>
-                                <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li>
+                                <li class="audio-toggle" style="display: none;"><a href="#"><i class="fa fa-volume-up"></i></a></li>
                             </ul>
                         </div>
                         <!-- .navbar-collapse -->

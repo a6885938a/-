@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
 }
+.rel{position: relative;}
 .pd50 {
     padding: 50px;
 }.font-sub {

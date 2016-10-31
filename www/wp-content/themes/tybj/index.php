@@ -13,6 +13,7 @@
     <?php include('header_css.php');  ?>
      <link rel='stylesheet' href='<?=ty_of?>css/tybj.css<?=version?>'>
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">
+
 </head>
 
 <body class="is-loaded">
@@ -23,17 +24,17 @@
             <main class="site-main-1">
                 <!--change-->
                 <div id="home" class="section block-primary position-r align-c-xs-max" style="  overflow: hidden;">
-                    <div class="video_play" style="   -webkit-filter:brightness(.7);filter: brightness(0.7);">
-                        <video id="video1" autoplay loop muted="muted" poster="<?=ty_of?>images/video_img.jpg" webkit-playsinline />
-                        <source src="<?=ty_of?>images/video_p1.mp4" type="video/mp4" -webkit-playsinline=true; />
+                    <div class="video_play">
+                        <video id="video" autoplay loop muted="muted" poster="<?=ty_of?>images/video_img.jpg" webkit-playsinline />
                         </video>
                     </div>
                     <div class="container">
                         <div class="row row-table">
                             <div class="col-sm-12">
-                                <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " style=" margin-top:-40px;">
+                                <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " >
                                     <div class="section-heading ">
-                                        <h1 style=" text-align:center;"><img style="width:100%;padding:0 8%" src="<?=ty_of?>images/wenzi.png" ></h1>
+                                        <img class="v-banner hidden-xs mt-50" src="<?=ty_of?>images/wenzi.png" >
+                                           <img class="v-banner visible-xs mt_20" src="<?=ty_of?>images/h-wenzi.png" >
                                     </div>
                                     <!-- .section-heading -->
                                 </div>
@@ -44,10 +45,10 @@
                 <!-- #home -->
                 <!-- #about -->
                 <div id="about" class="section p-a-0 align-c">
-                    <div class="product" style="position: relative;">
+                    <div class="product rel" >
                         <div class="container">
                             <div class="col-md-12 column">
-                                <div class="hor-view" style="float:left;margin-right:10px; margin-bottom:10px;">
+                                <div class="hor-view site-of">
                                     <a href="<?php echo get_category_link( 6 ) ?>" >
                                         <div class="grid">
                                             <div class="figure">
@@ -72,7 +73,7 @@
                                 </div>
                                 <div class="hor-gap"></div>
                                 <div class="r ver-view" style="float:left;">
-                                    <a href="<?php echo get_category_link( 7 ) ?>" style="margin-bottom:10px;">
+                                    <a class="mb10" href="<?php echo get_category_link( 7 ) ?>">
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -87,7 +88,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="<?php echo get_category_link( 8 ) ?>" style="margin-bottom:10px;">
+                                    <a class="mb10" href="<?php echo get_category_link( 8 ) ?>" >
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
@@ -115,7 +116,7 @@
                 <div id="brief_1" class="section block-default align-c-xs-max">
                     <div class="container">
                         <div class="row ">  
-                                <div class="section-heading " style="text-align:center;padding-bottom: 50px; ">
+                                <div class="section-heading tr-c pb50">
                                         <h2>走进天园</h2>
                                         <h5>Company Profile</h5>
                                     </div>
@@ -227,7 +228,7 @@
                                 </div>
                             </div>
                             <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
-                            <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max hidden-xs" style="width:550px;height:350px;border:#ccc solid 1px;  padding:0;" id="dituContent"> </div>
+                            <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max hidden-xs map-size" id="dituContent"> </div>
                         </div>
                     </div>
                 </div>
@@ -240,8 +241,6 @@ include dirname(__FILE__).'/footer_t.php';
             <!-- .site-footer -->
         </div>
     </div>
-
-
             <!-- .site-footer -->
         </div>
       <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
@@ -250,7 +249,7 @@ include dirname(__FILE__).'/footer_t.php';
     ?> 
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
-        <script src='/<?=ty_of?>js/tybj.js'></script>
+    <script src='/<?=ty_of?>js/tybj.js'></script>
 </body>
 
 </html>
