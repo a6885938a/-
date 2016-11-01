@@ -553,3 +553,5 @@ $pee = preg_replace('/<p.*?>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
 return $pee;
 }
 add_filter( 'the_content', 'img_unautop', 30 );
+//去除文章摘要P标签
+remove_filter( 'the_excerpt', 'wpautop' );

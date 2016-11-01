@@ -5,12 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>传统礼饼</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <title>天园_传统礼饼</title>
+    <meta name="keywords" content="西樵大饼,核桃酥,鸡蛋糕,红菱,白菱,龙凤喜饼">
+    <meta name="description" content="西樵传统礼饼是婚嫁的传统食品,尽管时下婚礼形式越来越不拘一格,但买喜饼,送喜饼,仍是不少新人的“规定动作”。在馅料口味上,传统的喜饼大体分为四种：西樵大饼、核桃酥、鸡蛋糕、红菱、白菱、龙凤喜饼,如今随着岁月变迁,又出现了五仁馅、冬蓉、豆蓉、叉烧等的新鲜口味。这些传统风味的喜饼,一直以来,都较受长辈们喜爱。">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">

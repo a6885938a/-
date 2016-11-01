@@ -5,12 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>天园月饼</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>天园_月饼</title>
+    <meta name="description" content="月饼是久负盛名的中国传统小吃之一,中秋节节日食俗。月饼圆又圆,又是合家分吃,象征着团圆和睦,在中秋节这一天是必食之品。古代月饼被作为祭品于中秋节所食。据说中秋节吃月饼的习俗于唐朝开始。北宋之时,在宫廷内流行,但也流传到民间,当时俗称“小饼”和“月团”。">
+    <meta name="keywords" content="双黄莲蓉月饼,单黄莲蓉月饼,伍仁月饼,豆沙月饼,麒麟送子,水果月饼">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">

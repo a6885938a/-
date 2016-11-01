@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>西樵天园饼家</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="西樵大饼,天园饼家,西樵论坛,西樵山,旅游大饼,特色手信,传统礼饼,鸡蛋糕,核桃酥,月饼,龙凤礼饼,鸡仔饼,嫁女饼,非物质文化遗产">
+    <meta name="description" content="天园饼家始建于清光绪二十四（1898年）,是首家制作正宗西樵大饼的饼坊,至今已鼎承六代之传承,逾百年历史之久,并荣膺“非物质文化遗产”西樵大饼传承人。天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名,产品远销海内外。">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
      <link rel='stylesheet' href='<?=ty_of?>css/tybj.css<?=version?>'>
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">

@@ -60,7 +60,7 @@ $post_list = new WP_Query(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>西樵天园饼家</title>
+    <title><?php echo get_search_query()?>_天园</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">

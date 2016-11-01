@@ -6,10 +6,8 @@ setPostViews(get_the_ID()); ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>西樵天园饼家</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <title><?php the_title(); ?>_天园资讯</title>
+    <meta name="description" content="<?php the_excerpt();?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
@@ -110,17 +108,11 @@ else {
                   <?php
 include dirname(__FILE__).'/sitebar.php'; 
 ?><!-- col-md-3 -->
-
                     </div>
                     </div>
             </div>
                 <!--newslist-->
-
-
-
 		<!-- 外部的html结构应该替换成自己模板的结构 -->
-	
-
             <?php
 include dirname(__FILE__).'/footer_t.php'; 
 ?>
@@ -135,29 +127,4 @@ var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
     <script type='text/javascript' src='../wp-content/plugins/kodex-posts-likes/public/js/kodex-posts-likes-public.js'></script>
-    <script>
-     //    $('.kodex_button').click(function(){
-     //    	console.log(123);
-    	// 	$('.kodex_buttons button .icon').removeClass('tgood').addClass('tgood').hide();
-    	// });
-    	//    $('.kodex_button_active').on('click',function(){
-    	// 	$('.kodex_buttons button .icon').removeClass('tgood');
-    	// };
-    // $('.kodex_button').on('click',function(){
-    // 	var like = $('.kodex_like_button').hasClass('kodex_button_active');
-    // 	if(like){
-    // 		$('.kodex_buttons button .icon').removeClass('tgood');
-    // 	}else{
-    // 		$('.kodex_buttons button .icon').addClass('tgood');
-    // 	}
-    // });
-    //     $('.kodex_button_active').on('click',function(){
-    // 		$('.kodex_buttons button .icon').removeClass('tgood');
-    // });
-
-    	
-    </script>
-        <script type="text/javascript">
-
-    </script>
     

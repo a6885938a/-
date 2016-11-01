@@ -60,12 +60,9 @@ $post_list = new WP_Query(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>11西樵天园饼家</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <title>天园_<?php echo $category[0]->cat_name;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
@@ -78,15 +75,16 @@ include dirname(__FILE__).'/header_list.php';
              <!--newslist-->
          <div id="main" class="container mt10">
                 <div class="row ">
-                    <div class="col-md-9 pd0">
-                 <ul class="newleft">
                  <div class="decr hidden-xs"> <span class="title"><?php 
                     echo $category[0]->cat_name;?> : </span><p><?php 
                     echo $category[0]->category_description;?></p>
  </div>
+                    <div class="col-md-9 pd0">
+
+                 <ul class="newleft">
+                
                       <?php  $posts=query_posts($query_string .'&posts_per_page=8'); ?>  
-    <?php while (have_posts()) : the_post(); 
-                   ?>
+    <?php while (have_posts()) : the_post();                    ?>
                     <?php $category = get_the_category();//定义分类目录?>                   
                     <li class="list">
                     <div class="mecc">
@@ -117,9 +115,11 @@ include dirname(__FILE__).'/header_list.php';
                     </div>
                     <div class="clear"></div>
                     </li>
-                    <?php endwhile; ?>  
+
+                    <?php endwhile; ?> 
+                             
                  </ul> <!-- col-md-9 -->
-                <?php wp_pagenavi();  ?>
+       <?php wp_pagenavi();  ?> 
             <div class="clear"></div>
                     </div>
                     <div class="col-md-3 column">

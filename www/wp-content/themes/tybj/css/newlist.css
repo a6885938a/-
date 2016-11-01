@@ -166,9 +166,9 @@
  .decr:before {
      color: #ededed;
      content: open-quote;
-     font-size: 6em;
-     line-height: .1em;
-     margin-right: .1em;
+     font-size: 4em;
+     line-height: .05em;
+     margin-right: .05em;
      vertical-align: -.5em;
  }
  
@@ -194,9 +194,9 @@
  .decr:after {
      color: #ededed;
      content: close-quote;
-     font-size: 6em;
+     font-size: 4em;
      line-height: .1em;
-     margin-left: .25em;
+     margin-left: .125em;
      vertical-align: -.6em;
  }
  
@@ -306,7 +306,7 @@
      font-weight: normal;
  }
  
- .sitebar_list {
+ .sitebar-right .sitebar_list {
      padding-top: 20px;
      padding-left:-15px;
      background: #FAFAFA;

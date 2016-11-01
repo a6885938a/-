@@ -5,12 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>特色手信</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <title>天园_特色手信</title>
+    <meta name="keywords" content="杏仁饼,鸡仔饼">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
     <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
        <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
