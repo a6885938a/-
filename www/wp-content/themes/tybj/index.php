@@ -17,8 +17,8 @@
 </head>
 
 <body class="is-loaded">
-    <div class="site">
-        <div class="site-canvas1">
+<div class="site">
+<div class="site-canvas1">
             <?php include('header_t.php'); ?>
             <!-- .site-header -->
             <main class="site-main-1">
