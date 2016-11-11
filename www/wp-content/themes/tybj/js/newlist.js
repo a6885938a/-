@@ -1,4 +1,3 @@
-
         //lazzy load
         $(function() {
             $("img.lazy").show().lazyload({
