@@ -555,3 +555,8 @@ return $pee;
 add_filter( 'the_content', 'img_unautop', 30 );
 //去除文章摘要P标签
 remove_filter( 'the_excerpt', 'wpautop' );
+//保护后台登录
+add_action('login_enqueue_scripts','login_protection');  
+function login_protection(){  
+    if($_GET['tybj'] != 'good')header('Location: /404.php');  
+}
