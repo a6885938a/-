@@ -560,3 +560,6 @@ add_action('login_enqueue_scripts','login_protection');
 function login_protection(){  
     if($_GET['tybj'] != 'good')header('Location: /404.php');  
 }
+
+
+
