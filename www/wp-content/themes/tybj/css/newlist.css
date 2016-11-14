@@ -567,11 +567,12 @@
  
  .kodex_buttons button .icon {
      display: block;
-     padding: 0 10px;
+     margin-left:4px;
+    width:40%;
      float: left;
      background: url(../images/zan.png) no-repeat;
-     background-size: 20px auto;
-     background-position: 15px 6px;
+     background-size: 100%;
+     background-position: 100% 50%;
      text-align: center;
      font-size: 18px;
  }
@@ -635,11 +636,11 @@
  
  .kodex_buttons button .counter {
      display: block;
-     float: left;
-     font-size: 16px;
-     padding: 0 10px;
+     float: right;
+     font-size: 24px;
+     padding-right:14px;
      height: 32px;
-     line-height: 32px;
+     line-height: 36px;
      font-weight: bold;
  }
  
