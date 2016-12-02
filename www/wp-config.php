@@ -40,6 +40,7 @@ define('DB_COLLATE', '');
 /** 禁用文章修订版 */
 define('WP_POST_REVISIONS', false);
 
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 /**#@+
  * 身份认证密钥与盐。

@@ -561,5 +561,5 @@ function login_protection(){
     if($_GET['tybj'] != 'good')header('Location: /404.php');  
 }
 
-
+add_filter('automatic_updater_disabled', '__return_true');	// 彻底关闭自动更新
 
