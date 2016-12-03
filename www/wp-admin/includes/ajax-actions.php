@@ -3074,7 +3074,7 @@ function wp_ajax_destroy_sessions() {
 function wp_ajax_update_plugin() {
 	global $wp_filesystem;
 
-	$plugin = urldecode( $_POST['plugin'] );
+    $plugin = plugin_basename( sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) );
 
 	$status = array(
 		'update'     => 'plugin',
@@ -3119,11 +3119,7 @@ function wp_ajax_update_plugin() {
 		 * Preferably something can be done to ensure `update_plugins` isn't empty.
 		 * For now, surface some sort of error here.
 		 */
-		if ( $plugin_update_data === true ) {
-			$status['error'] = __( 'Plugin update failed.' );
- 			wp_send_json_error( $status );
-		}
-
+if ( $plugin_update_data === true ) {$status['error'] = __( 'Plugin update failed.' ); wp_send_json_error( $status ); }
 		$plugin_data = get_plugins( '/' . $result[ $plugin ]['destination_name'] );
 		$plugin_data = reset( $plugin_data );
 
@@ -3141,18 +3137,7 @@ function wp_ajax_update_plugin() {
 		$status['error'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.' );
 
 		// Pass through the error from WP_Filesystem if one was raised
-		if ( is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {
-			$status['error'] = $wp_filesystem->errors->get_error_message();
-		}
-
-		wp_send_json_error( $status );
-
-	} else {
-		// An unhandled error occured
-		$status['error'] = __( 'Plugin update failed.' );
-		wp_send_json_error( $status );
-	}
-}
+if ( is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->get_error_code() ) {     $status['error'] = $wp_filesystem->errors->get_error_message();   } wp_send_json_error( $status ); } else {// An unhandled error occured$status['error'] = __( 'Plugin update failed.' ); wp_send_json_error( $status ); } }
 
 /**
  * AJAX handler for saving a post from Press This.
