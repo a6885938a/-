@@ -10,16 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
-    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
 </head>
 <body class="is-loaded is-scroll">
-<?php
-include dirname(__FILE__).'/header_list.php'; 
-?>
+        <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="/<?=ty_of?>images/sx/sx-banner.jpg" class="hidden-xs">
+                    <img src="<?=ty_img?>sx/sx-banner.jpg" class="hidden-xs">
                 </div>
                 <div class="section ">
                     <div class="container">
@@ -33,7 +31,7 @@ include dirname(__FILE__).'/header_list.php';
                         <div class="row bn-det split--left">
                             <div class=" col-sm-push-6 col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter right over 2s"> 
                                 <div class="col-inner clearfix ">
-                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
+                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_img?>loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
                                 </div>
                             </div>
                             <div class="col-sm-pull-6 col-sm-6 pd50">
@@ -41,7 +39,7 @@ include dirname(__FILE__).'/header_list.php';
                                <div class="row bn-det split--right">
                  <div class="col-sm-6 m-b-60-xs-max p-r-60-md-min op0" data-scroll-reveal="enter left over 2s">
                  <div class="col-inner clearfix ">
-                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
+                                    <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="<?=ty_img?>loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=500&w=500&zc=1"">
                                 </div>
                             </div>
                              <div class="col-sm-6 pd50">
@@ -63,12 +61,8 @@ include dirname(__FILE__).'/header_list.php';
                 <?php endif; ?>
                         </div>
             </main>
-            <?php
-            include dirname(__FILE__).'/footer_t.php'; 
-            ?>
+       <?php include('footer_t.php');?>
     </body>
     </html>
-            <?php
-            include dirname(__FILE__).'/footer_js.php'; 
-            ?>
+       <?php include('footer_js.php');?>
  <script src='/<?=ty_of?>js/newlist.js'></script>

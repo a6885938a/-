@@ -12,16 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
-    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
 </head>
 <body class="is-loaded is-scroll">
-<?php
-include dirname(__FILE__).'/header_list.php'; 
-?>
+    <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="/<?=ty_of?>images/yb/yb-banner.jpg" class="hidden-xs">
+                    <img src="<?=ty_img?>yb/yb-banner.jpg" class="hidden-xs">
                      <div class="container section">
                         <div class="row">
                             <div class="header-text text-center  col-md-8 col-md-offset-2">
@@ -33,7 +31,7 @@ include dirname(__FILE__).'/header_list.php';
                         </div>
                     </div>
                 </div>
-                             <div class="" style="background:url(/<?=ty_of?>images/yb/bg.jpg);">
+                             <div class="" style="background:url(<?=ty_img?>yb/bg.jpg);">
                         <div class=" services">
         
                             <ul class="row bn-det">
@@ -44,9 +42,9 @@ include dirname(__FILE__).'/header_list.php';
                     while (have_posts()) : the_post();$ashu_i++; 
                     ?>
                                 <li class="col-xs-12 col-sm-6 col-md-4 op0 " data-scroll-reveal="enter top over 1s ">
-                                    <a href="prescription ">
+                                    <a href="<?php the_permalink() ?>">
                                         <div class="goods-pic">
-                                            <figure><img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=250&w=250&zc=1""></figure>
+                                            <figure><img class="lazy" src="<?=ty_img?>loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=250&w=250&zc=1""></figure>
                                         </div>
                                         <h3><?php the_title(); ?></h3>
                                         <p><a href="<?php the_permalink() ?>" class="btn">了解更多</a></p>
@@ -60,12 +58,8 @@ include dirname(__FILE__).'/header_list.php';
                         </div>
                     </div>
             </main>
-            <?php
-            include dirname(__FILE__).'/footer_t.php'; 
-            ?>
+   <?php include('footer_t.php');?>
     </body>
     </html>
-            <?php
-            include dirname(__FILE__).'/footer_js.php'; 
-            ?>
- <script src='/<?=ty_of?>js/newlist.js'></script>
+         <?php include('footer_js.php');?>
+ <script src='<?=ty_of?>js/newlist.js'></script>

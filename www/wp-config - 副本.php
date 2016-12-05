@@ -26,7 +26,6 @@ define('DB_NAME', 'tybj');
 define('DB_USER', 'root');
 
 /** MySQL数据库密码 */
-/** 正式服务器的这里添加密码就可以了 */
 define('DB_PASSWORD', '');
 
 /** MySQL主机 */
@@ -61,8 +60,11 @@ define('AUTH_SALT',        '*aVC% S,wSJXJtIVjJ7FjNIAANmCK&Tbr$aqI~>k]q6WDw5u_o_P
 define('SECURE_AUTH_SALT', 'S7:%kSYWDqW,EYJTRigGOi-6|nTLvOhl2)P2X.F9cxdcNov^n{GmM{B-}sr{M*-Q');
 define('LOGGED_IN_SALT',   'Cg)[.%Z_9z%GqIsuTN1zdF+pd%E.?n(rIgL1yCC8-glyxP(*X>dJ/1m*k0u_w[wy');
 define('NONCE_SALT',       'fI$P,>=U-pJej6DSzfTQdM]8b^Y9Xy?N$OQO3]>a>UF|k%pvuLaN..AU-qv;e<-7');
-
-
+/**
+修改上传图片路径
+ */
+define( 'WP_CONTENT_DIR', '/wp-content/uploads' );  
+define( 'WP_CONTENT_URL', '//img.tybj-food/' );
 /**#@-*/
 
 /**

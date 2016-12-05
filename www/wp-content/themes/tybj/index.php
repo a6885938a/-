@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <script src="<?=ty_of?>webp.js"></script>
-     <link rel='stylesheet' href='<?=ty_of?>css/tybj.css<?=version?>'>
+     <link rel='stylesheet' href='<?=ty_of?>css/tybj.css'>
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>js/loadjs.js">
 </head>
@@ -26,7 +25,7 @@
                 <!--change-->
                 <div id="home" class="section block-primary position-r align-c-xs-max" style="  overflow: hidden;">
                     <div class="video_play">
-                        <video id="video" autoplay loop muted="muted" poster="<?=ty_of?>images/video_img.jpg" webkit-playsinline />
+                        <video id="video" autoplay loop muted="muted" poster="<?=ty_img?>video_img.jpg" webkit-playsinline />
                         </video>
                     </div>
                     <div class="container">
@@ -34,8 +33,8 @@
                             <div class="col-sm-12">
                                 <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " >
                                     <div class="section-heading ">
-                                        <img class="v-banner hidden-xs mt-50" src="<?=ty_of?>images/wenzi.png" >
-                                           <img class="v-banner visible-xs mt_20" src="<?=ty_of?>images/h-wenzi.png" >
+                                        <img class="v-banner hidden-xs mt-50" src="<?=ty_img?>wenzi.png" >
+                                           <img class="v-banner visible-xs mt_20" src="<?=ty_img?>h-wenzi.png" >
                                     </div>
                                     <!-- .section-heading -->
                                 </div>
@@ -54,7 +53,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/01.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>01.jpg" alt="img18">
                                                     <figcaption>
                                                         <h2>传统 <span>喜饼</span></h2>
                                                         <p>西樵大饼
@@ -78,7 +77,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/02.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>02.jpg" alt="img18">
                                                     <figcaption class="li2">
                                                         <h2 style="float:right; width:60px;"> <span>特产手信</span></h2>
                                                         <p>鸡仔饼
@@ -93,7 +92,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/03.jpg" alt="img18">
+                                                    <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>03.jpg" alt="img18">
                                                     <figcaption>
                                                         <h2><span>月饼系列</span></h2>
                                                         <p>双黄莲蓉
@@ -127,12 +126,12 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                    <a>
-                                                <img class="swiper-lazy" data-src="<?=ty_of?>images/w-1.jpg">
+                                                <img class="swiper-lazy" data-src="<?=ty_img?>w-1.jpg">
                                                 </a>
                                             </div>
                                             <div class="swiper-slide">
                                             <a >
-                                                <img class="swiper-lazy" data-src="<?=ty_of?>images/w-2.jpg">
+                                                <img class="swiper-lazy" data-src="<?=ty_img?>w-2.jpg">
                                                 </a>
                                             </div>
                                         </div>
@@ -237,7 +236,7 @@ $post_list = new WP_Query(
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">
-                            <figure><img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=238&w=238&zc=1""></figure>
+                            <figure><img class="lazy" src="<?=ty_img?>loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=238&w=238&zc=1""></figure>
                         </div>
                         <h3><?php the_title(); ?></h3>
                     </a>
@@ -261,7 +260,7 @@ $post_list = new WP_Query(
                             <div class="col-sm-6 col-md-5">
                                 <div class="col-inner">
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_1.png" alt=""> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>picture/cook_1.png" alt=""> </div>
                                         <div class="icon-box-heading">
                                             <h4>销售热线</h4>
                                         </div>
@@ -270,7 +269,7 @@ $post_list = new WP_Query(
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_2.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>picture/cook_2.png"> </div>
                                         <div class="icon-box-heading">
                                             <h4>邮箱地址</h4>
                                         </div>
@@ -279,7 +278,7 @@ $post_list = new WP_Query(
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="<?=ty_of?>images/loading.jpg" data-original="<?=ty_of?>images/picture/cook_3.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="<?=ty_img?>loading.jpg" data-original="<?=ty_img?>picture/cook_3.png"> </div>
                                         <div class="icon-box-heading">
                                             <h4>工厂店址</h4>
 
@@ -296,21 +295,19 @@ $post_list = new WP_Query(
                    
             </main>
             <!-- .site-main -->
-            <?php
-include dirname(__FILE__).'/footer_t.php'; 
-?>
+
+    <?php include('footer_t.php');  ?>
             <!-- .site-footer -->
         </div>
     </div>
             <!-- .site-footer -->
         </div>
       <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
-    <?php
-    include dirname(__FILE__).'/footer_js.php'; 
-    ?> 
+
+        <?php include('footer_js.php');  ?>
     <script src='<?=ty_of?>js/bd-map.js'></script>
     <script src="<?=ty_of?>js/swiper.min.js"></script>
-    <script src='/<?=ty_of?>js/tybj.js'></script>
+    <script src='<?=ty_of?>js/tybj.js'></script>
 </body>
 
 </html>

@@ -67,14 +67,12 @@ $post_list = new WP_Query(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">
-<?php
-include dirname(__FILE__).'/header_list.php'; 
-?>
+                <?php include('header_list.php');?>
              <!--newslist-->
          <div id="main searchwp" class="container mt10">
                 <div class="row ">
@@ -101,7 +99,7 @@ include dirname(__FILE__).'/header_list.php';
                     </div>
                     <span class="titleimg ">
                     <a href="<?php the_permalink() ?>" >
-                    <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
+                    <img class="lazy" src="<?=ty_of?>/loadbg.jpg"  
           
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""     />   
 
@@ -129,26 +127,13 @@ include dirname(__FILE__).'/header_list.php';
             <div class="clear"></div>
                     </div>
                     <div class="col-md-3 column sitebar-right">
-                  <?php
-include dirname(__FILE__).'/sitebar.php'; 
-?>
-
+                <?php include('sitebar.php');?>
                     </div>
                 </div>
             </div>
                 <!--newslist-->
-
-
-
 		<!-- 外部的html结构应该替换成自己模板的结构 -->
-	
-
-            <?php
-            include dirname(__FILE__).'/footer_t.php'; 
-            ?>
+                <?php include('footer_t.php');?>
     </body>
     </html>
-            <?php
-            include dirname(__FILE__).'/footer_js.php'; 
-            ?>
- 
+         <?php include('footer_js.php');?>

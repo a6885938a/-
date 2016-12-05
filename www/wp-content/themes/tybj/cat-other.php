@@ -64,8 +64,8 @@ $post_list = new WP_Query(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">
@@ -123,10 +123,7 @@ include dirname(__FILE__).'/header_list.php';
             <div class="clear"></div>
                     </div>
                     <div class="col-md-3 column">
-                  <?php
-include dirname(__FILE__).'/sitebar.php'; 
-?>
-
+   <?php include('sitebar.php');?>
                     </div>
                 </div>
             </div>
@@ -136,13 +133,8 @@ include dirname(__FILE__).'/sitebar.php';
 
 		<!-- 外部的html结构应该替换成自己模板的结构 -->
 	
-
-            <?php
-            include dirname(__FILE__).'/footer_t.php'; 
-            ?>
+   <?php include('footer_t.php');?>
     </body>
     </html>
-            <?php
-            include dirname(__FILE__).'/footer_js.php'; 
-            ?>
- <script src='/<?=ty_of?>js/newlist.js'></script>
+         <?php include('footer_js.php');?>
+ <script src='<?=ty_of?>js/newlist.js'></script>
