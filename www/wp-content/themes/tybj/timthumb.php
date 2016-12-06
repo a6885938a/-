@@ -128,6 +128,7 @@ if(! defined('WEBSHOT_XVFB_RUNNING') )	define ('WEBSHOT_XVFB_RUNNING', false);		
 
 
 // If ALLOW_EXTERNAL is true and ALLOW_ALL_EXTERNAL_SITES is false, then external images will only be fetched from these domains and their subdomains. 
+/*
 if(! isset($ALLOWED_SITES)){
 	$ALLOWED_SITES = array (
 		'flickr.com',
@@ -141,6 +142,7 @@ if(! isset($ALLOWED_SITES)){
 		'tinypic.com',
 	);
 }
+*/
 // -------------------------------------------------------------
 // -------------- STOP EDITING CONFIGURATION HERE --------------
 // -------------------------------------------------------------
