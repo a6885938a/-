@@ -22,7 +22,8 @@ var gulp = require('gulp'),
      del = require('del'),//也是个删除··· 
 // vinylPaths = require('vinyl-paths'),//操作pipe中文件路径的，加md5的时候用到了
 // runSequence = require('run-sequence');//控制task顺序
-// 
+
+// cnpm install --save-dev gulp-sass gulp-uglify gulp-minify-css gulp-concat gulp-rename del
      ty = 'wp-content/themes/tybj/';
 //默认任务
 gulp.task('default', ['clean'], function() {
