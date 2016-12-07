@@ -41,18 +41,18 @@ gulp.task('watch', function() {
 });
 
 //删除任务
-gulp.task('clean', function(cb) {
-    del([N_TY + 'dist/css', N_TY + 'dist/js'], cb)
+gulp.task('clean', function() {
+    del([N_TY + 'dist/css', N_TY + 'dist/js'])
         //监听 '+ ty +'dist
 });
 
 //js压缩任务
 gulp.task('minify-js', function() {
     return gulp.src(TY + 'js/*.js')
-        .pipe(concat('main.js'))
+      //  .pipe(concat('main.js'))
         //合并所有js到main.js    
-        .pipe(gulp.dest(N_TY + 'dist/js')) //输出main.js到文件夹      
-        .pipe(rename({ suffix: '.min' })) //rename压缩后的文件名       
+     //   .pipe(gulp.dest(N_TY + 'dist/js')) //输出main.js到文件夹      
+    //    .pipe(rename({ suffix: '.min' })) //rename压缩后的文件名       
         .pipe(uglify()) //压缩      
         .pipe(gulp.dest(N_TY + 'dist/js')); //输出;
 });
