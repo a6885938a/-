@@ -11,7 +11,7 @@ setPostViews(get_the_ID()); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
+    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">
@@ -73,8 +73,7 @@ setPostViews(get_the_ID()); ?>
                                 <li>
                                     <a href="<?php the_permalink() ?>">
                                         <div class="pic-left goods-pic ">
-                                             <img class="lazy" src="<?=ty_img?>loadbg.jpg"  
-                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1"" />   
+                                             <img class="lazy"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1"" />   
                                         </div>
                                     </a>
                                     <div class="pic-right">

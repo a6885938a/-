@@ -25,7 +25,7 @@ var gulp = require('gulp'),
     tinypng = require('gulp-tinypng-compress'),//熊猫深度压缩
    // tinypng = require('gulp-tinypng'),
     cache = require('gulp-cache'), //，在很多情况下我们只修改了某些图片，没有必要压缩所有图片，使用”gulp-cache”只压缩修改的图片，没有修改的图片直接从缓存文件读取（C:UsersAdministratorAppDataLocalTempgulp-cache）
-    TY = 'wp-content/themes/tybj/public/',
+    TY = 'wp-content/themes/tybj/common/',
     N_TY = 'wp-content/themes/tybj/';
 // cnpm install --save-dev gulp-sass gulp-uglify gulp-minify-css gulp-concat gulp-rename del
 
@@ -40,13 +40,13 @@ gulp.task('watch', function() {
     //监听 '+ ty +'dist
 });
 
-//删除任务
-gulp.task('clean', function() {
-    del([N_TY + 'dist/css', N_TY + 'dist/js'])
+        //删除任务
+gulp.task('clean', function(cb) {
+    del([N_TY + 'dist/css', N_TY + 'dist/js'],cb)
         //监听 '+ ty +'dist
 });
 
-//js压缩任务
+       //js压缩任务
 gulp.task('minify-js', function() {
     return gulp.src(TY + 'js/*.js')
       //  .pipe(concat('main.js'))
@@ -62,14 +62,14 @@ gulp.task('cssup', function(callback) {
   runSequence('clean','minifycss','autoprefixer',callback);
 });
 
-// scss任务
+        // scss任务
 gulp.task('sass', function() {
     return gulp.src(TY + 'css/*.scss') //获取该任务需要的文件
         .pipe(sass()) //该任务调用的模块
         .pipe(gulp.dest(N_TY + 'dist/css')); //将在'+ ty +'dist文件生成
 });
 
-//压缩css
+          //压缩css
 
 gulp.task('minifycss',function() {
 
@@ -77,7 +77,7 @@ gulp.task('minifycss',function() {
         .pipe(minifycss()) //执行压缩
         .pipe(gulp.dest(N_TY + 'dist/css')); //输出文件夹     
 });
-//增加私有变量前缀
+         //增加私有变量前缀
 gulp.task('autoprefixer', function () {
     return gulp.src([N_TY + 'dist/css/*.css', '!'+N_TY+'dist/css/swiper.min.css', '!'+N_TY+'dist/css/!bootstrap.min.css'])  
         .pipe(autoprefixer({
@@ -91,7 +91,7 @@ gulp.task('autoprefixer', function () {
 /*css类*/
 
 /*img类*/
-//压缩图片
+        //压缩图片
 gulp.task('imagemin', function() {
     gulp.src([TY + '/images/*/*.{png,jpg,gif,svg}', TY + '/images/*.{png,jpg,gif,svg}'])
         .pipe(cache(imagemin({
@@ -102,7 +102,7 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest(N_TY + 'dist/images'));
 });
 
-//熊猫压缩图片
+        //熊猫压缩图片
 gulp.task('tinypng', function () {
     gulp.src(TY + '/images/*.{png,jpg}')
 //     gulp.src([TY + '/images/*/*.{png,jpg,gif,svg}', TY + '/images/*.{png,jpg,gif,svg}'])

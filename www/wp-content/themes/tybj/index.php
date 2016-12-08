@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-     <link rel='stylesheet' href='<?=ty_of?>css/tybj.css'>
-     <link rel="stylesheet" type="text/css" href="<?=ty_of?>css/swiper.min.css">
-     <link rel="stylesheet" type="text/css" href="<?=ty_of?>js/loadjs.js">
+     <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css'>
+     <link rel="stylesheet" type="text/css" href="<?=ty_of?>public/css/swiper.min.css">
+     <script src='<?=ty_of?>public/js/loadjs.js'></script>
 </head>
 
 <body class="is-loaded">
@@ -302,12 +302,11 @@ $post_list = new WP_Query(
     </div>
             <!-- .site-footer -->
         </div>
-      <script src='<?=ty_of?>js/scrollReveal.min.js'></script>
-
+      <script src='<?=ty_of?>public/js/scrollReveal.min.js'></script>
         <?php include('footer_js.php');  ?>
-    <script src='<?=ty_of?>js/bd-map.js'></script>
-    <script src="<?=ty_of?>js/swiper.min.js"></script>
-    <script src='<?=ty_of?>js/tybj.js'></script>
+    <script src='<?=ty_of?>public/js/bd-map.js'></script>
+    <script src="<?=ty_of?>public/js/swiper.min.js"></script>
+    <script src='<?=ty_of?>dist/js/tybj.js'></script>
 </body>
 
 </html>

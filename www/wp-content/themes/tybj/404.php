@@ -67,8 +67,8 @@ $post_list = new WP_Query(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>dist/css/articlelist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">

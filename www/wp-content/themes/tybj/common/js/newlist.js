@@ -1,14 +1,13 @@
-        //lazzy load
-        $(function() {
-            $("img.lazy").show().lazyload({
-                effect: "fadeIn",
-                threshold: 0,
-                   skip_invisible:false
-            });
-        });
 
-        //回到顶部.
         $(function() {
+                 //lazzy load
+             $("img.lazy").show().lazyload({
+                effect: "fadeIn",
+                threshold: 300,
+                placeholder: "/wp-content/themes/tybj/dist/images/loadbg.jpg",
+                skip_invisible:false
+            });
+                     //回到顶部.
             var e = $("#rocket-to-top"),
                 t = $(document).scrollTop(),
                 n,
@@ -83,12 +82,8 @@
             $('#rocket-lit').click(function() {
                 $("html,body").animate({ scrollTop: $("body").offset().top }, 500);
             });
-        });
-    
-
-       //相关新闻
-            $(function() {
-            var elm = $('.sitebar_list');
+      //相关新闻
+             var elm = $('.sitebar_list');
             var startPos = $(elm).offset().top;
             $.event.add(window, "scroll", function() {
                 var p = $(window).scrollTop();
@@ -96,6 +91,10 @@
                 $(elm).css('top', ((p) > startPos) ? '0px' : '');
             });
         });
+    
+
+ 
+  
 
          //检测移动设备
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

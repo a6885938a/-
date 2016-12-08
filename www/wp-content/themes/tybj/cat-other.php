@@ -64,8 +64,8 @@ $post_list = new WP_Query(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>dist/css/articlelist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">
@@ -89,7 +89,7 @@ include dirname(__FILE__).'/header_list.php';
                     <li class="list">
                     <div class="mecc">
                     <h2 class="mecctitle">
-                    <a href="<?php the_permalink() ?>" target="_blank">
+                    <a href="<?php the_permalink() ?>" >
                     <?php the_title(); ?> 
                     </a>
                     </h2>
@@ -100,9 +100,8 @@ include dirname(__FILE__).'/header_list.php';
                     echo $category[0]->cat_name;?></a>  阅  <?php echo getPostViews(get_the_ID()) ?>  </address>
                     </div>
                     <span class="titleimg ">
-                    <a href="<?php the_permalink() ?>" target="_blank">
-                    <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
-                    <?php if($query_index==1){?>
+                    <a href="<?php the_permalink() ?>">
+                    <img class="lazy" <?php if($query_index==1){?>
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?>/>   
 
                     </a>
@@ -137,4 +136,3 @@ include dirname(__FILE__).'/header_list.php';
     </body>
     </html>
          <?php include('footer_js.php');?>
- <script src='<?=ty_of?>js/newlist.js'></script>

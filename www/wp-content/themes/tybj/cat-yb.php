@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
-    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>dist/css/articlelist.css" rel="stylesheet">
 </head>
 <body class="is-loaded is-scroll">
     <?php include('header_list.php'); ?>
@@ -44,7 +44,7 @@
                                 <li class="col-xs-12 col-sm-6 col-md-4 op0 " data-scroll-reveal="enter top over 1s ">
                                     <a href="<?php the_permalink() ?>">
                                         <div class="goods-pic">
-                                            <figure><img class="lazy" src="<?=ty_img?>loadbg.jpg"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=250&w=250&zc=1""></figure>
+                                            <figure><img class="lazy" data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=250&w=250&zc=1""></figure>
                                         </div>
                                         <h3><?php the_title(); ?></h3>
                                         <p><a href="<?php the_permalink() ?>" class="btn">了解更多</a></p>
@@ -62,4 +62,3 @@
     </body>
     </html>
          <?php include('footer_js.php');?>
- <script src='<?=ty_of?>js/newlist.js'></script>
