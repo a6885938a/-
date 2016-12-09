@@ -67,8 +67,8 @@ $post_list = new WP_Query(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
     <?php include('header_css.php');  ?>
-    <link href="<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
+       <link href="<?=ty_of?>dist/css/articlelist.css" rel="stylesheet">
 </head>
 
 <body class="is-loaded is-scroll">
@@ -100,9 +100,7 @@ $post_list = new WP_Query(
                     </div>
                     <span class="titleimg ">
                     <a href="<?php the_permalink() ?>" >
-                    <img class="lazy" src="<?=ty_of?>/loadbg.jpg"  
-          
-                    data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""     />   
+                    <img class="lazy"  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""/>   
 
                     </a>
                     </span>
