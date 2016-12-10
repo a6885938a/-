@@ -13,7 +13,7 @@
     <?php include('header_css.php');  ?>
      <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css'>
      <link rel="stylesheet" type="text/css" href="<?=ty_of?>public/css/swiper.min.css">
-     <script src='<?=ty_of?>public/js/loadjs.js'></script>
+     <script src='<?=ty_of?>dist/js/loadjs.js'></script>
 </head>
 
 <body class="is-loaded">
@@ -228,17 +228,9 @@ $post_list = new WP_Query(
 );
 
 ?>
-<<<<<<< Updated upstream
-
-
 <?php  $posts=query_posts($query_string .'&posts_per_page=6&ignore_sticky_posts=1'); ?>  
     <?php while (have_posts()) : the_post();?>
-                   
-=======
-                 <?php  $posts=query_posts($query_string .'&posts_per_page=1'); ?>  
-    <?php while (have_posts()) : the_post();                    ?>
-                    <?php $category = get_the_category();//定义分类目录?>   
->>>>>>> Stashed changes
+              <?php $category = get_the_category();//定义分类目录?>              
                 <li class="col-xs-12 col-sm-6 col-md-4 op0" data-scroll-reveal="enter top over 1s ">
                     <a href="<?php the_permalink(); ?>">
                         <div class="goods-pic">

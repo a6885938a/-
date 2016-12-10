@@ -6,6 +6,7 @@
   padding-right: 13px;
   white-space: nowrap;
 }
+.textgood{background:url(../images/logo1.png);}
 .del{display: flex;}
 .iw_poi_content {
   font: 12px arial, sans-serif;
