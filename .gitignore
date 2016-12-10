@@ -2,3 +2,5 @@ tianyuan/.gitignore
 tianyuan/123.txt
 node_modules*
 sftp-config*
+package*
+/www/package,json
