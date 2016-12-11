@@ -152,7 +152,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
-		<h1><img src="/wp-content/themes/tybj/images/logo.png" alt=""></h1>
+		<h1><img src="/wp-content/themes/tybj/dist/images/logo.png" alt=""></h1>
 	<?php
 
 	unset( $login_header_url, $login_header_title );
