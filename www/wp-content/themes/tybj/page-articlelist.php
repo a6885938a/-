@@ -7,7 +7,7 @@
 
 /** 如果你需要为该页面引入自定义的脚本的样式表，写在这里,不需要自定义样式就删除下面两行代码 */
 //wp_enqueue_script( 'articleList', get_template_directory_uri() . '/articlelist.js' );
-wp_enqueue_style( 'articleList', get_template_directory_uri() . '/articlelist.css');
+wp_enqueue_style( 'articleList', get_template_directory_uri() . '/articlelist-406bca6078.css');
 
 // get_header(); 
 
@@ -61,14 +61,13 @@ $post_list = new WP_Query(
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>西樵天园饼家</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="天园饼家始建于清光绪二十四（1898年）,是首家制作正宗西樵大饼的饼坊,至今已鼎承六代之传承,逾百年历史之久,并荣膺“非物质文化遗产”西樵大饼传承人。天园饼家主经营传统西樵大饼、鸡蛋糕、核桃酥、月饼、龙凤礼饼、鸡仔饼、嫁女饼等更是中外驰名,产品远销海内外。">
+    <meta name="keywords" content="西樵大饼,天园饼家,西樵论坛,西樵山,旅游大饼,特色手信,传统礼饼,鸡蛋糕,核桃酥,月饼,龙凤礼饼,鸡仔饼,嫁女饼,非物质文化遗产">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
-    <?php include('header_css.php');  ?>
-    <link href="/<?=ty_of?>css/newlist.css" rel="stylesheet">
-       <link href="/<?=ty_of?>css/articlelist.css" rel="stylesheet">
+    <?php include('header_css.php');?>
+    <?php include('header_js.php');?>
 </head>
 
 <body class="is-loaded is-scroll">

@@ -100,5 +100,6 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** 设置WordPress变量和包含文件。 */
+define('CONCATENATE_SCRIPTS', false);
 require_once(ABSPATH . 'wp-settings.php');
 

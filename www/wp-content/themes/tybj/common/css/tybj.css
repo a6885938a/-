@@ -6,12 +6,9 @@
   padding-right: 13px;
   white-space: nowrap;
 }
-<<<<<<< HEAD
-.textbg{  background-image: url(../images/logo1.png);}
 .good{  background-image: url(../images/zan.png);}
-=======
+
 .textgood{background:url(../images/logo1.png);}
->>>>>>> de83e3fc2ea7bec64870dad7f93a7b97b7844d1b
 .del{display: flex;}
 .iw_poi_content {
   font: 12px arial, sans-serif;

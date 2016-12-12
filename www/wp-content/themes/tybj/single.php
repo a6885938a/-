@@ -10,8 +10,8 @@ setPostViews(get_the_ID()); ?>
     <meta name="description" content="<?php the_excerpt();?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="assets/img/favicon.ico">
-    <?php include('header_css.php');  ?>
-    <link href="<?=ty_of?>dist/css/newlist.css" rel="stylesheet">
+    <?php include('header_css.php');?>
+    <?php include('header_js.php');?>
 </head>
 
 <body class="is-loaded is-scroll">
@@ -102,7 +102,6 @@ else {
                         </div>
             </div><!-- col-md-9 -->
                 <div class="col-md-3 column sitebar-right ">
-
                     <?php include('sitebar.php');?>
 <!-- col-md-3 -->
                     </div>
