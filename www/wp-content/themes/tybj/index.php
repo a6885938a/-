@@ -17,7 +17,7 @@
     <script src='<?=ty_of?>dist/js/loadjs.js'></script>
 </head>
 
-<body class="is-loaded">
+<body class="loaded">
 <div class="site">
 <div class="site-canvas1">
             <?php include('header_t.php'); ?>
@@ -163,8 +163,7 @@
                             <div class="col-xs-12">
                                 <div class="col-inner">
                                     <div class="section-heading">
-                                        <a href="<?php $comment_count = get_post(110)->guid; 
-                                        echo $comment_count;?> " class="color:#333;">
+                                        <a href="/?page_id=110" class="color:#333;">
                                             <h2>天园资讯</h2>
                                             <h5>News  Information Customers</h5>
                                             <h6>更多>></h6>

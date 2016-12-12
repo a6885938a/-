@@ -17,7 +17,7 @@
         <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="<?=ty_img?>ct/ct-banner.jpg" class="hidden-xs">
+                    <img src="<?=ty_img?>dist/images/ct/ct-banner.jpg" class="hidden-xs">
                     <div class="container section">
                         <div class="row">
                             <div class="header-text text-center  col-md-8 col-md-offset-2">
@@ -81,4 +81,3 @@
     </body>
     </html>
        <?php include('footer_js.php');?>
- <script src='<?=ty_of?>dist/js/newlist.js'></script>

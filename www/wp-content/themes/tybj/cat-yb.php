@@ -18,7 +18,7 @@
     <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="<?=ty_img?>yb/yb-banner.jpg" class="hidden-xs">
+                    <img src="<?=ty_img?><?=ty_img?>dist/images/yb/yb-banner.jpg" class="hidden-xs">
                      <div class="container section">
                         <div class="row">
                             <div class="header-text text-center  col-md-8 col-md-offset-2">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                             <div class="" style="background:url(<?=ty_img?>yb/bg.jpg);">
+                             <div style="background:url(<?=ty_img?>dist/images/yb/bg.jpg);">
                         <div class=" services">
         
                             <ul class="row bn-det">

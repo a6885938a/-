@@ -22,9 +22,9 @@
 
       if ($(window).scrollTop() > 0) {
           // 滚动到指定位置
-          $(".is-loaded").addClass("is-scroll");
+          $(".loaded").addClass("is-scroll");
       } else {
-          $(".is-loaded").removeClass("is-scroll");
+          $(".loaded").removeClass("is-scroll");
       }
   });
 
