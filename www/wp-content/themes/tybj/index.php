@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="/assets/img/favicon.ico">
     <?php include('header_css.php');?>
-    <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css'>
+    <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css?v=3a1ce15d96?v=0243c53694'>
     <link rel="stylesheet" type="text/css" href="<?=ty_of?>public/css/swiper.min.css">
     <?php include('header_js.php');?>
     <script src='<?=ty_of?>dist/js/loadjs.js'></script>
