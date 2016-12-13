@@ -18,7 +18,7 @@
     <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="<?=ty_img?><?=ty_img?>dist/images/yb/yb-banner.jpg" class="hidden-xs">
+                    <img src="<?=ty_img?>dist/images/yb/yb-banner.jpg" class="hidden-xs">
                      <div class="container section">
                         <div class="row">
                             <div class="header-text text-center  col-md-8 col-md-offset-2">

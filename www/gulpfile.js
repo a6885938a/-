@@ -65,9 +65,16 @@ gulp.task('minifyjs', function() {
 /*
 运行css
  */
-gulp.task('cssup',['cleancss'], function(callback) {
-    runSequence('base64', 'autoprefixer', 'minifycss', callback);
+
+gulp.task('watch', function() {
+    return gulp.watch(TY + 'css/*.scss', ['sass']);
+    //监听 '+ ty +'dist
 });
+gulp.task('cssup',['cleancss'], function(callback) {
+    runSequence('base64', 'autoprefixer', 'minifycss','rev', callback);
+});
+
+
 // 删除css任务
 gulp.task('cleancss', function() {
     del([N_TY + 'css'])
@@ -77,11 +84,13 @@ gulp.task('cleancss', function() {
 gulp.task('sass', function() {
     return gulp.src(TY + 'css/*.scss') //获取该任务需要的文件
         .pipe(sass()) //该任务调用的模块
-        .pipe(gulp.dest(N_TY + 'css')); //将在'+ ty +'dist文件生成
+      // .pipe(minifycss())  执行压缩
+        .pipe(gulp.dest(N_TY + 'css')); //dist文件生成
+         runSequence('minifycss','rev');
 });
 // base64任务
 gulp.task('base64', function () {
-    return gulp.src(TY + 'css/*.css') //压缩的文件   
+    return gulp.src(N_TY + 'css/*.css') //dist的文件   
         .pipe(base64({
             baseDir: N_TY + 'images',
             extensions: ['svg', 'png', /\.jpg#datauri$/i],
@@ -99,7 +108,18 @@ gulp.task('rev', function() {
 
 //压缩css
 gulp.task('minifycss', function() {
-    return gulp.src(N_TY + 'css/*.css') //压缩的文件   
+    return gulp.src(N_TY + 'css/*.css') //压缩的文件  
+         .pipe(autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: true,
+            remove: true //是否去掉不必要的前缀 默认：true 
+        }))
+            .pipe(base64({
+            baseDir: N_TY + 'images',
+            extensions: ['svg', 'png', /\.jpg#datauri$/i],
+            maxImageSize: 5*1024, // bytes 图片K数是四写五入，5不包含该5KB
+            debug: true
+        })) 
         .pipe(minifycss()) //执行压缩
         .pipe(rev()) //- 文件名加MD5后缀
         .pipe(gulp.dest(N_TY + 'css'))//输出文件夹    
