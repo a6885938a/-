@@ -101,7 +101,7 @@ include dirname(__FILE__).'/header_list.php';
                     </div>
                     <span class="titleimg ">
                     <a href="<?php the_permalink() ?>" target="_blank">
-                    <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg"  
+                    <img class="lazy" src="/<?=ty_of?>images/loadbg.jpg?v=062bdb31aa?v=062bdb31aa"  
                     <?php if($query_index==1){?>
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""  <?php }else{?>  data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=200&w=300&zc=1""  <?php }?>/>   
 

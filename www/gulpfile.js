@@ -14,7 +14,10 @@ var gulp = require('gulp'),
 
     // gulpif  = require('gulp-if'),//if判断，用来区别生产环境还是开发环境的
     rev  = require('gulp-rev'),//加MD5后缀
+    jshint  = require('gulp-jshint'),//检查js 需要安装两个插件 cnpm install jshint gulp-jshint --save-dev
     revCollector = require('gulp-rev-collector'),
+
+     inject = require('gulp-inject'),//inject 注入css js
     //revReplace = require('gulp-rev-replace'),//替换引用的加了md5后缀的文件名，修改过，用来加cdn前缀
     // addsrc = require('gulp-add-src'),//pipeline中途添加文件夹，这里没有用到
     base64 = require('gulp-base64'),
@@ -30,12 +33,12 @@ var gulp = require('gulp'),
     HtmlTY = 'wp-content/themes/tybj/',
     N_TY = 'wp-content/themes/tybj/dist/';
 
+
+
 // cnpm install --save-dev gulp-sass gulp-uglify gulp-minify-css gulp-concat gulp-rename del
 
 //默认任务
-gulp.task('default', ['clean'], function() {
-    gulp.start('minifycss', 'minifyjs')
-});
+
 
 //监听sass修改任务
 gulp.task('watch', function() {
@@ -49,16 +52,25 @@ gulp.task('clean', function(cb) {
         //监听 '+ ty +'dist
 });
 
-
+//js压缩任务
+gulp.task('lint', function () {
+   return gulp.src(N_TY + 'js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));// 输出检查结果
+});
 //js压缩任务
 gulp.task('minifyjs', function() {
-    return gulp.src(TY + 'js/*.js')
+    return gulp.src(N_TY + 'js/*.js')
         //  .pipe(concat('main.js'))
         //合并所有js到main.js    
         //   .pipe(gulp.dest(N_TY + 'js')) //输出main.js到文件夹      
-        //    .pipe(rename({ suffix: '.min' })) //rename压缩后的文件名       
+        //    .pipe(rename({ suffix: '.min' })) //rename压缩后的文件名   
+        //      .pipe(gulp.dest(N_TY + 'js'))//输出文件夹      
         .pipe(uglify()) //压缩      
-        .pipe(gulp.dest(N_TY + 'js')); //输出;
+        .pipe(rev()) //- 文件名加MD5后缀
+        .pipe(gulp.dest(N_TY + 'js'))//输出文件夹    
+        .pipe(rev.manifest())  //- 生成一个rev-manifest.json
+        .pipe(gulp.dest(N_TY + 'rev/js'));     //- 将 rev-manifest.json 保存到 rev 目录内       
 });
 
 /*css类*/
@@ -83,10 +95,10 @@ gulp.task('cleancss', function() {
 // scss任务
 gulp.task('sass', function() {
     return gulp.src(TY + 'css/*.scss') //获取该任务需要的文件
-        .pipe(sass()) //该任务调用的模块
       // .pipe(minifycss())  执行压缩
+        .pipe(sass()) //该任务调用的模块
         .pipe(gulp.dest(N_TY + 'css')); //dist文件生成
-         runSequence('minifycss','rev');
+      
 });
 // base64任务
 gulp.task('base64', function () {
@@ -100,10 +112,24 @@ gulp.task('base64', function () {
         .pipe(gulp.dest(N_TY + 'css')); //输出文件夹     
 });
 //添加替换HTML路径
-gulp.task('rev', function() {
-    gulp.src([N_TY + 'rev/*.json', HtmlTY + '*.php'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+gulp.task('miniHtml', function() {
+    gulp.src([N_TY + 'rev/*/*.json', HtmlTY + '*.php'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
         .pipe(revCollector())                                   //- 执行文件内css名的替换
         .pipe(gulp.dest(HtmlTY));                     //- 替换后的文件输出的目录
+});
+//Images 根据MD5获取版本号
+gulp.task('revImg', function(){
+    return gulp.src([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}'])
+        .pipe(rev())
+        .pipe(gulp.dest(N_TY + 'images'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest(N_TY + 'rev/images'));
+});
+//CSS里更新引入文件版本号
+gulp.task('revCss', function () {
+    return gulp.src([N_TY + 'rev/images/*.json', N_TY + 'css/*.css'])
+        .pipe(revCollector())
+        .pipe(gulp.dest(N_TY + 'css'));
 });
 
 //压缩css
@@ -124,7 +150,7 @@ gulp.task('minifycss', function() {
         .pipe(rev()) //- 文件名加MD5后缀
         .pipe(gulp.dest(N_TY + 'css'))//输出文件夹    
         .pipe(rev.manifest())  //- 生成一个rev-manifest.json
-        .pipe(gulp.dest(N_TY + 'rev'));     //- 将 rev-manifest.json 保存到 rev 目录内       
+        .pipe(gulp.dest(N_TY + 'rev/css'));     //- 将 rev-manifest.json 保存到 rev 目录内       
 });
 //增加私有变量前缀
 gulp.task('autoprefixer', function() {
@@ -167,4 +193,41 @@ gulp.task('tinypng', function() {
 //用了gulp-cache，原来10来分钟的事情，几十秒就搞定了。用了小半年，一直也没什么问题。gulp-cache的原理是 监控到图片被改变了，替换了，才去压缩。在一般的使用场景都不会有问题，但如果仅仅是改变了图片名字，则不会被替换。eg： 把2016.png改成2017.png,压缩出来的结果图片为2016.png。
 gulp.task('cleanCash', function(done) {
     return cache.clearAll(done);
+});
+
+//开发构建
+gulp.task('dev', function (ck) {
+    runSequence(
+         ['sass'],
+         ['revImg'],//Images 根据MD5获取版本号
+         ['revCss'],//CSS里更新引入文件版本号
+         ['minifycss', 'minifyjs'],//压缩css,js
+         ['miniHtml'],//添加替换HTML路径
+    ck);
+});
+
+gulp.task('watchDev', function() {
+    return gulp.watch(N_TY, ['dev']);
+    //监听 '+ ty +'dist
+});
+
+/* 本地服务,自动刷新 */
+gulp.task('server', function (done) {
+    // condition = false;
+    // runSequence(
+    //      ['sass'],
+    //      ['revImg'],//Images 根据MD5获取版本号
+    //      ['revCss'],//CSS里更新引入文件版本号
+    //      ['minifycss', 'minifyjs'],//压缩css,js
+    //      ['miniHtml'],//添加替换HTML路径
+    // done);
+    gulp.watch(N_TY + 'css/*.css', function () {     //监控所有CSS文件
+      runSequence(['minifycss'], ['miniHtml'], done);
+    });
+    gulp.watch(N_TY + 'js/*.js', function () {     //监控所有JS文件
+      runSequence(['minifyjs'], ['miniHtml'], done);
+    });
+    gulp.watch(([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}']), function () {     //监控所有JS文件
+      runSequence(['revImg'], ['revCss'], done);
+    });
 });
