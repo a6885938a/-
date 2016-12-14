@@ -28,7 +28,7 @@
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                             <div class="navbar-brand-wrap">
-                                <a class="navbar-brand" href="index.html"> <img src="images/logo.png" alt=""> </a>
+                                <a class="navbar-brand" href="index.html"> <img src="images/logo.png?v=7cfb768026?v=7cfb768026" alt=""> </a>
                             </div>
                         </div>
                         <!-- .navbar-header -->
@@ -51,7 +51,7 @@
                 <!--change-->
                 <div id="home" class="section block-primary position-r align-c-xs-max" style="  overflow: hidden;">
                     <div class="video_play" style="   -webkit-filter:brightness(.7);filter: brightness(0.7);">
-                        <video id="video1" autoplay loop muted="muted" poster="images/video_img.jpg" webkit-playsinline />
+                        <video id="video1" autoplay loop muted="muted" poster="images/video_img.jpg?v=3ee69f60d5?v=3ee69f60d5" webkit-playsinline />
                         <source src="images/video_p1.mp4" type="video/mp4" -webkit-playsinline=true; />
                         </video>
                     </div>
@@ -60,7 +60,7 @@
                             <div class="col-sm-12">
                                 <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " style=" margin-top:-40px;">
                                     <div class="section-heading ">
-                                        <h1 style=" text-align:center;"><img style="width:100%;padding:0 8%" src="images/wenzi.png" ></h1>
+                                        <h1 style=" text-align:center;"><img style="width:100%;padding:0 8%" src="images/wenzi.png?v=84ae28862f?v=84ae28862f" ></h1>
                                     </div>
                                     <!-- .section-heading -->
                                 </div>
@@ -79,7 +79,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/01.jpg" alt="img18">
+                                                    <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/01.jpg?v=72aef8e273?v=72aef8e273" alt="img18">
                                                     <figcaption>
                                                         <h2>传统 <span>喜饼</span></h2>
                                                         <p>西樵大饼
@@ -103,7 +103,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/02.jpg" alt="img18">
+                                                    <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/02.jpg?v=cf4fc25f29?v=cf4fc25f29" alt="img18">
                                                     <figcaption class="li2">
                                                         <h2 style="float:right; width:60px;"> <span>特产手信</span></h2>
                                                         <p>鸡仔饼
@@ -118,7 +118,7 @@
                                         <div class="grid">
                                             <div class="figure">
                                                 <figure class="effect-apollo">
-                                                    <img class="lazy" src="images/loading.jpg" data-original="images/03.jpg" alt="img18">
+                                                    <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/03.jpg?v=1723ab468d?v=1723ab468d" alt="img18">
                                                     <figcaption>
                                                         <h2><span>月饼系列</span></h2>
                                                         <p>双黄莲蓉
@@ -156,10 +156,10 @@
                                         <!--          图片尺寸555-373 -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-1.jpg">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/w-1.jpg?v=01ec65e37f?v=01ec65e37f">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/w-2.jpg">
+                                                <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/w-2.jpg?v=8eae48e0dc?v=8eae48e0dc">
                                             </div>
                                         </div>
                                         <!-- Add Pagination -->
@@ -167,7 +167,7 @@
                                         <div class="swiper-button-next"></div>
                                         <div class="swiper-button-prev"></div>
                                     </div>
-                                    <!-- <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg" data-original="images/jjbg.jpg"> -->
+                                    <!-- <img class="img-responsive float-l-sm-min m-x-auto-xs-max lazy " src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/jjbg.jpg"> -->
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -260,7 +260,7 @@
                             <div class="col-sm-6 col-md-5">
                                 <div class="col-inner">
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_1.png" alt=""> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px"> <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="picture/cook_1.png?v=d677cd94b9?v=d677cd94b9" alt=""> </div>
                                         <div class="icon-box-heading">
                                             <h4>销售热线</h4>
                                         </div>
@@ -269,7 +269,7 @@
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_2.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.2s"> <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="picture/cook_2.png?v=d41d8cd98f?v=f17082a4f6"> </div>
                                         <div class="icon-box-heading">
                                             <h4>邮箱地址</h4>
                                         </div>
@@ -278,7 +278,7 @@
                                         </div>
                                     </div>
                                     <div class="icon-box _left">
-                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="images/loading.jpg" data-original="picture/cook_3.png"> </div>
+                                        <div class="icon-box-media" data-scroll-reveal="enter left over 1s and move 20px after 0.4s"> <img class="lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="picture/cook_3.png?v=a4ecfc9c1c?v=a4ecfc9c1c"> </div>
                                         <div class="icon-box-heading">
                                             <h4>工厂店址</h4>
                                         </div>
@@ -296,7 +296,7 @@
             <!-- .site-main -->
             <footer class="site-footer block-invert">
                 <div class="container">
-                    <div data-scroll-reveal="enter bottom over 2s move 20px"><img class="site-footer-logo img-responsive lazy" src="images/loading.jpg" data-original="images/logo.png" width="140"> </div>
+                    <div data-scroll-reveal="enter bottom over 2s move 20px"><img class="site-footer-logo img-responsive lazy" src="images/loading.jpg?v=7465ce9c70?v=7465ce9c70" data-original="images/logo.png?v=7cfb768026?v=7cfb768026" width="140"> </div>
                     <p class="site-footer-copyright">2016 @ <a href="#" target="_blank">佛山市南海西樵饼家版权所有</a> | 粤ICP备xxx号-1</p>
                 </div>
             </footer>
@@ -317,7 +317,7 @@
     <script src='http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js'></script>
     <script src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script>
     <script src='js/scrollReveal.min.js'></script>
-    <script src='js/tybj.js'></script>
+    <script src='js/tybj.js?v=c3104e22c8?v=c3104e22c8?v=c3104e22c8?v=c3104e22c8'></script>
     <script src='js/bd-map.js'></script>
     <script src="js/swiper.min.js"></script>
     <script>

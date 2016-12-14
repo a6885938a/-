@@ -98,7 +98,7 @@ $post_list = new WP_Query(
                     </div>
                     <span class="titleimg ">
                     <a href="<?php the_permalink() ?>" >
-                    <img class="lazy" src="<?=ty_of?>/loadbg.jpg"  
+                    <img class="lazy" src="<?=ty_of?>/loadbg.jpg?v=062bdb31aa?v=062bdb31aa"  
           
                     data-original="<?php bloginfo('template_url');?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=400&w=600&zc=1""     />   
 
