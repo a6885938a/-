@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     jshint  = require('gulp-jshint'),//检查js 需要安装两个插件 cnpm install jshint gulp-jshint --save-dev
     revCollector = require('gulp-rev-collector'),
 
-     inject = require('gulp-inject'),//inject 注入css js
+   //  inject = require('gulp-inject'),   inject 注入css js
     //revReplace = require('gulp-rev-replace'),//替换引用的加了md5后缀的文件名，修改过，用来加cdn前缀
     // addsrc = require('gulp-add-src'),//pipeline中途添加文件夹，这里没有用到
     base64 = require('gulp-base64'),
@@ -230,4 +230,9 @@ gulp.task('server', function (done) {
     gulp.watch(([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}']), function () {     //监控所有JS文件
       runSequence(['revImg'], ['revCss'], done);
     });
+});
+
+
+gulp.task('hello', function() {
+  console.log('Hello World!');
 });

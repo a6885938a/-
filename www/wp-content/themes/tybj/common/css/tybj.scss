@@ -1,7 +1,35 @@
 //sass style
 //-----------------------------------
 // header顶部样式 
+
 @charset "UTF-8";
+
+@mixin bg($url) {
+    background-image:url($url);
+    @at-root(with: all) .webps & {
+        background-image: url($url + '.webp');
+    }
+}
+.textgood3{
+  @include bg('../images/logo1.png'); //传递参数
+}
+
+@mixin center-block {
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo{
+    @include center-block;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+.opacity-80{
+  @include opacity(80); //传递参数
+}
+
 .iw_poi_title {
     color: #CC5522;
     font-size: 14px;
@@ -11,8 +39,8 @@
     white-space: nowrap;
 }
 
-.textgood{background:url(../images/logo1.png)}
-.textgood2{background:url(../images/logo1.png)}
+
+.textgood2{background-image:url(../images/logo1.png)}
 .iw_poi_content {
     font: 12px arial, sans-serif;
     overflow: visible;
