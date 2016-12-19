@@ -1,3 +1,9 @@
+@mixin bg($url) {
+    background:url($url);
+    @at-root(with: all) .webps & {
+        background: url($url + '.webp');
+    }
+}
  body {
      font-family: STHeiti, Microsoft YaHei, Helvetica, Arial, sans-serif;
      font-size: 14px;
@@ -570,7 +576,8 @@
      margin-left:4px;
     width:40%;
      float: left;
-     background: url(../images/zan.png) no-repeat;
+      @include bg('../images/zan.png') ; 
+     background: no-repeat;
      background-size: 100%;
      background-position: 100% 50%;
      text-align: center;

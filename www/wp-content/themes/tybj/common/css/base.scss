@@ -2,7 +2,12 @@
  * site header
  * --------------------------------------------------
  */
-
+@mixin bg($url) {
+    background:url($url);
+    @at-root(with: all) .webps & {
+        background: url($url + '.webp');
+    }
+}
 body {
     font-family: "microsoft yahei", sans-serif
 }
@@ -582,7 +587,8 @@ site-footer {
 }
 
 #rocket-to-top .level-2 {
-    background: url("../images/rocket_button_up.png") no-repeat scroll -88px 0 transparent;
+      @include bg('../images/rocket_button_up.png'); 
+    background:no-repeat scroll -88px 0 transparent;
     display: none;
     height: 200px;
     opacity: 0;
@@ -598,7 +604,8 @@ site-footer {
 }
 
 #rocket-to-top {
-    background: url("../images/rocket_button_up.png") no-repeat scroll 0 0 transparent;
+       @include bg('../images/rocket_button_up.png'); 
+    background: no-repeat scroll 0 0 transparent;
     cursor: default;
     display: block;
     height: 200px;
@@ -619,7 +626,7 @@ site-footer {
 
 #rocket-lit {
     display: none;
-    background: url("../images/to-top.png") no-repeat;
+          @include bg('../images/to-top.png'); 
     width: 40px;
     height: 40px;
     position: fixed;
