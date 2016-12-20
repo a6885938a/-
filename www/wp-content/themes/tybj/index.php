@@ -37,11 +37,12 @@
            var  pic=document.getElementsByTagName("img");
 
         if(c_webp){
-
         for (var i = 0; i < pic.length; i++) {
-                  pic[i].src='.jpg'
-                       
+                  pic[i].src= "http://www.baidu.com/img/baidu.gif";
+
               }
+    document.getElementsByTagName("img").src= "http://www.baidu.com/img/baidu.gif";
+
         }
 }(document));
 

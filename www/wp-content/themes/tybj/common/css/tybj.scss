@@ -5,15 +5,30 @@
 @charset "UTF-8";
 
 @mixin bg($url) {
-    background:url($url);
+    background-image:url($url);
     @at-root(with: all) .webps & {
-        background: url($url + '.webp');
+        background-image: url($url + '.webp');
     }
 }
 .textgood3{
-  @include bg('../images/logo1.png'); 
+  @include bg('../images/logo1.png'); //传递参数
 }
 
+@mixin center-block {
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo{
+    @include center-block;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+.opacity-80{
+  @include opacity(80); //传递参数
+}
 
 .iw_poi_title {
     color: #CC5522;
@@ -22,7 +37,6 @@
     overflow: hidden;
     padding-right: 13px;
     white-space: nowrap;
-    & .1{  font-size: 14px;}
 }
 
 
@@ -114,7 +128,7 @@
 }
 
 .block-warning {
-     @include bg('../images/zwbg.jpg');
+    background: url(../images/zwbg.jpg);
     color: white;
 }
 
@@ -414,7 +428,7 @@
     top: 0;
     width: 1920px;
     height: 768px;
-         @include bg('../images/video_img.jpg');
+    background: url(../images/video_img.jpg);
     overflow: hidden;
     -webkit-filter:brightness(.7);filter: brightness(0.7);
 }
@@ -437,7 +451,7 @@
     height: 620px;
     position: absolute;
     top: 0;
-     @include bg('../images/ry-bg.jpg');
+    background-image: url(../images/ry-bg.jpg);
     background-repeat: no-repeat;
     background-position: center 0px;
     background-attachment: fixed;

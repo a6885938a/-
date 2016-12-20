@@ -11,6 +11,7 @@
 const process = require('child_process');
 const fs = require('fs');
 const chokidar = require('chokidar');
+// cnpm install --save-dev chokidar
 
 const log = console.log.bind(console);
 const ignoreFiles = /(^\..+)|(.+[\/\\]\..+)|(.+?\.webp$)/; // 忽略文件.开头和.webp结尾的
