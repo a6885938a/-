@@ -1,7 +1,20 @@
 //sass style
 //-----------------------------------
 // header顶部样式 
+
 @charset "UTF-8";
+
+@mixin bg($url) {
+    background:url($url);
+    @at-root(with: all) .webps & {
+        background: url($url + '.webp');
+    }
+}
+.textgood3{
+  @include bg('../images/logo1.png'); 
+}
+
+
 .iw_poi_title {
     color: #CC5522;
     font-size: 14px;
@@ -9,10 +22,11 @@
     overflow: hidden;
     padding-right: 13px;
     white-space: nowrap;
+    & .1{  font-size: 14px;}
 }
 
-.textgood{background:url(../images/logo1.png)}
-.textgood2{background:url(../images/logo1.png)}
+
+.textgood2{background-image:url(../images/logo1.png)}
 .iw_poi_content {
     font: 12px arial, sans-serif;
     overflow: visible;
@@ -100,7 +114,7 @@
 }
 
 .block-warning {
-    background: url(../images/zwbg.jpg);
+     @include bg('../images/zwbg.jpg');
     color: white;
 }
 
@@ -400,7 +414,7 @@
     top: 0;
     width: 1920px;
     height: 768px;
-    background: url(../images/video_img.jpg);
+         @include bg('../images/video_img.jpg');
     overflow: hidden;
     -webkit-filter:brightness(.7);filter: brightness(0.7);
 }
@@ -423,7 +437,7 @@
     height: 620px;
     position: absolute;
     top: 0;
-    background-image: url(../images/ry-bg.jpg);
+     @include bg('../images/ry-bg.jpg');
     background-repeat: no-repeat;
     background-position: center 0px;
     background-attachment: fixed;
