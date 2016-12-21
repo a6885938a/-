@@ -33,18 +33,26 @@
     }else{
         addRootTag();
     }
-          var c_webp=document.cookie.indexOf("A");
-           var  pic=document.getElementsByTagName("img");
+      
+
+
+}(document));
+        function changeImage(){
+        var c_webp=document.cookie.indexOf("A");
+     var  pic=document.getElementsByTagName("img");
+      
 
         if(c_webp){
-        for (var i = 0; i < pic.length; i++) {
-                  pic[i].src= "http://www.baidu.com/img/baidu.gif";
-
+            for (var i = 0; i < pic.length; i++) {
+                // var  pic=document.getElementById("img");
+                    console.log(pic);
+                  pic[i].src= "1.gif";
               }
-    document.getElementsByTagName("img").src= "http://www.baidu.com/img/baidu.gif";
-
         }
-}(document));
+
+
+};
+changeImage();
 
     </script>
     <?php include('header_css.php');?>
@@ -72,7 +80,7 @@
                             <div class="col-sm-12">
                                 <div class="col-inner op0" data-scroll-reveal="enter left over 1.5s " >
                                     <div class="section-heading ">
-                                        <img class="v-banner hidden-xs mt-50" src="<?=ty_img?>dist/images/wenzi.png" >
+                                        <img id="img" class="v-banner hidden-xs mt-50" src="<?=ty_img?>dist/images/wenzi.png" >
                                            <img class="v-banner visible-xs mt_20" src="<?=ty_img?>dist/images/h-wenzi.png" >
                                     </div>
                                     <!-- .section-heading -->
@@ -343,6 +351,9 @@ $post_list = new WP_Query(
     <script src='<?=ty_of?>public/js/bd-map.js'></script>
     <script src="<?=ty_of?>public/js/swiper.min.js"></script>
     <script src='<?=ty_of?>dist/js/tybj.js'></script>
+    <script>
+
+    </script>
 </body>
 
 </html>
