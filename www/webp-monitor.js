@@ -22,7 +22,7 @@ let imgCon = 'wp-content/uploads'; // upload
 
 // 得到对应的webp格式的文件名，默认为文件名后加上.webp
 function getWebpImgName(path) {
-    return `${path}.webp`;
+    return `${path}_.webp`;
 }
 
 // 得到shell命令

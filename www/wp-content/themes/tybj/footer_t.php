@@ -1,6 +1,6 @@
  <footer class="site-footer block-invert align-c">
                 <div class="container">
-                    <div class="hidden-xs" data-scroll-reveal="enter bottom over 2s move 20px"><img class="site-footer-logo img-responsive" src="<?=ty_img?>dist/images/logo.png"" width="140"> </div>
+                    <div class="hidden-xs" data-scroll-reveal="enter bottom over 2s move 20px"><img class="site-footer-logo img-responsive" src="<?=ty_img?>dist/images/logo.png?v=66f2c9fe9d"" width="140"> </div>
                     <p class="site-footer-copyright">Copyright ©2015 -<script type="text/javascript">document.write(new Date().getFullYear())</script> 西樵天园饼家 版权所有 | <span style="white-spacing:nowrap;">粤ICP备16090217号-1</span></p>
                 </div>
             </footer>

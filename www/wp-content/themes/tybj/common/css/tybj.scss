@@ -7,7 +7,7 @@
 @mixin bg($url) {
     background-image:url($url);
     @at-root(with: all) .webps & {
-        background-image: url($url + '.webp');
+        background-image: url($url + '_.webp');
     }
 }
 .textgood3{
@@ -40,7 +40,6 @@
 }
 
 
-.textgood2{background-image:url(../images/logo1.png)}
 .iw_poi_content {
     font: 12px arial, sans-serif;
     overflow: visible;

@@ -587,8 +587,7 @@ site-footer {
 }
 
 #rocket-to-top .level-2 {
-      @include bg('../images/rocket_button_up.png'); 
-    background:no-repeat scroll -88px 0 transparent;
+    background:url(../images/rocket_button_up.png) no-repeat scroll -88px 0 transparent;
     display: none;
     height: 200px;
     opacity: 0;
@@ -604,8 +603,7 @@ site-footer {
 }
 
 #rocket-to-top {
-       @include bg('../images/rocket_button_up.png'); 
-    background: no-repeat scroll 0 0 transparent;
+    background:url(../images/rocket_button_up.png) no-repeat scroll 0 0 transparent;
     cursor: default;
     display: block;
     height: 100px;
@@ -626,7 +624,7 @@ site-footer {
 
 #rocket-lit {
     display: none;
-          @include bg('../images/to-top.png'); 
+      background-image:url(../images/to-top.png);
     width: 40px;
     height: 40px;
     position: fixed;

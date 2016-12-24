@@ -1,7 +1,7 @@
 @mixin bg($url) {
     background:url($url);
     @at-root(with: all) .webps & {
-        background: url($url + '.webp');
+        background: url($url + '_.webp');
     }
 }
  body {
@@ -576,8 +576,8 @@
      margin-left:4px;
     width:40%;
      float: left;
-      @include bg('../images/zan.png') ; 
-     background: no-repeat;
+ 
+     background:url(../images/zan.png) no-repeat;
      background-size: 100%;
      background-position: 100% 50%;
      text-align: center;
