@@ -119,7 +119,7 @@ gulp.task('base64', function() {
 gulp.task('revImg', function() {
     return gulp.src([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}'])
         .pipe(rev())
-        .pipe(gulp.dest(N_TY + 'images'))
+        // .pipe(gulp.dest(N_TY + 'images'))
         .pipe(rev.manifest())
         .pipe(gulp.dest(N_TY + 'rev/images'));
 });
@@ -266,6 +266,6 @@ gulp.task('server', function(done) {
         runSequence(['minifyjs'], ['miniHtml'], done);
     });
     gulp.watch(([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}']), function() { //监控所有JS文件
-        runSequence(['revCss'],['miniHtml'], done);
+        runSequence(['replace_remove'],['revImg'], ['revCss'],['miniHtml'],['replace_add'], done);
     });
 });
