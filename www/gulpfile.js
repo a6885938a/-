@@ -62,19 +62,13 @@ gulp.task('minifyjs', function() {
         //      .pipe(gulp.dest(N_TY + 'js'))//输出文件夹      
         .pipe(uglify()) //压缩      
         .pipe(rev()) //- 文件名加MD5后缀
-     .pipe(gulp.dest(N_TY + 'js')) //输出文件夹    
+        .pipe(gulp.dest(N_TY + 'js')) //输出文件夹    
         .pipe(rev.manifest()) //- 生成一个rev-manifest.json
         .pipe(gulp.dest(N_TY + 'rev/js')); //- 将 rev-manifest.json 保存到 rev 目录内       
 });
 
 //server_js压缩任务
-gulp.task('s_minifyjs', function() {
-    return gulp.src(N_TY + 'js/*.js')
-        .pipe(uglify()) //压缩      
-        .pipe(rev()) //- 文件名加MD5后缀
-        .pipe(rev.manifest()) //- 生成一个rev-manifest.json
-        .pipe(gulp.dest(N_TY + 'rev/js')); //- 将 rev-manifest.json 保存到 rev 目录内       
-});
+
 /*css类*/
 /*
 运行css
@@ -157,7 +151,7 @@ gulp.task('minifycss', function() {
         }))
         .pipe(minifycss()) //执行压缩
         .pipe(rev()) //- 文件名加MD5后缀
-     .pipe(gulp.dest(N_TY + 'css')) //输出文件夹    
+        .pipe(gulp.dest(N_TY + 'css')) //输出文件夹    
         .pipe(rev.manifest()) //- 生成一个rev-manifest.json
         .pipe(gulp.dest(N_TY + 'rev/css')); //- 将 rev-manifest.json 保存到 rev 目录内       
 });
@@ -207,37 +201,37 @@ gulp.task('cleanCash', function(done) {
 //开发构建
 gulp.task('dev', function(ck) {
     runSequence(
-       'replace_remove',
+        'replace_remove',
         'sass', //Images 根据MD5获取版本号
-       'revImg',
+        'revImg',
         //['revCss'], //CSS里更新引入文件版本号
-       'minifycss', 'minifyjs', //压缩css,js
-        'miniHtml',
-        ['replace_add'], ck
+        'minifycss', 'minifyjs', //压缩css,js
+        'miniHtml', ['replace_add'], ck
     );
 
 });
 gulp.task('replace_remove', function() {
-    setTimeout(function(){
-    gulp.src(HtmlTY + 'index.php')
-        .pipe(replace("<?=$A_webps?>", ''))
-        .pipe(gulp.dest(HtmlTY));
-            },10000)
+    setTimeout(function() {
+        gulp.src(HtmlTY + 'index.php')
+            .pipe(replace('<?=$A_webps?>', ''))
+            .pipe(gulp.dest(HtmlTY));
+    }, 200)
 });
 gulp.task('miniHtml', function() {
-         setTimeout(function(){
-    gulp.src([N_TY + 'rev/*/*.json', HtmlTY + 'index.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
-        .pipe(revCollector()) //- 执行文件内css名的替换
-        // .pipe(revappend()) //图片版本号                 
-        .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
-            },1000)
+    setTimeout(function() {
+        gulp.src([N_TY + 'rev/*/*.json', HtmlTY + 'index.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+            .pipe(revCollector()) //- 执行文件内css名的替换
+            // .pipe(revappend()) //图片版本号                 
+            .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
+    }, 0)
 });
+
 gulp.task('replace_add', function() {
-        setTimeout(function(){
-    gulp.src(HtmlTY + 'index.php')
-        .pipe(replace('.jpg?v=', '.jpg<?=$A_webps?>?v='))
-        .pipe(gulp.dest(HtmlTY));
-    },8000)
+    setTimeout(function() {
+        gulp.src(HtmlTY + 'index.php')
+            .pipe(replace('.jpg?v=', '.jpg<?=$A_webps?>?v='))
+            .pipe(gulp.dest(HtmlTY));
+    }, 4000)//必须大于s_img_miniHtml的2000
 });
 
 
@@ -246,6 +240,43 @@ gulp.task('watchDev', function() {
     //监听 '+ ty +'dist
 });
 
+//服务器构建
+gulp.task('s_js_miniHtml', function() {
+
+        gulp.src([N_TY + 'rev/js/*.json', HtmlTY + 'index.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+            .pipe(revCollector()) //- 执行文件内css名的替换
+            // .pipe(revappend()) //图片版本号                 
+            .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
+
+});
+gulp.task('s_css_miniHtml', function() {
+
+        gulp.src([N_TY + 'rev/css/*.json', HtmlTY + 'index.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+            .pipe(revCollector()) //- 执行文件内css名的替换
+            // .pipe(revappend()) //图片版本号                 
+            .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
+
+});
+gulp.task('s_img_miniHtml', function() {
+    setTimeout(function() {
+        gulp.src([N_TY + 'rev/images/*.json', HtmlTY + 'index.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+            .pipe(revCollector()) //- 执行文件内css名的替换
+            // .pipe(revappend()) //图片版本号                 
+            .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
+    }, 2000)
+});
+gulp.task('s_minifycss', function() {
+    return gulp.src(N_TY + 'css/*.css') //压缩的文件  
+        .pipe(rev()) //- 文件名加MD5后缀
+        .pipe(rev.manifest()) //- 生成一个rev-manifest.json
+        .pipe(gulp.dest(N_TY + 'rev/css')); //- 将 rev-manifest.json 保存到 rev 目录内       
+});
+gulp.task('s_minifyjs', function() {
+    return gulp.src(N_TY + 'js/*.js')
+        .pipe(rev()) //- 文件名加MD5后缀
+        .pipe(rev.manifest()) //- 生成一个rev-manifest.json
+        .pipe(gulp.dest(N_TY + 'rev/js')); //- 将 rev-manifest.json 保存到 rev 目录内       
+});
 /* 本地服务,自动刷新 */
 gulp.task('server', function(done) {
     // condition = false;
@@ -257,14 +288,16 @@ gulp.task('server', function(done) {
     //      ['miniHtml'],//添加替换HTML路径
     // done);
     gulp.watch(N_TY + 'css/*.css', function() { //监控所有CSS文件
-        runSequence(['minifycss'], ['miniHtml'], done);
+        runSequence(['s_minifycss'], ['s_css_miniHtml'], done);
     });
     gulp.watch(N_TY + 'js/*.js', function() { //监控所有JS文件
-        runSequence(['replace_remove'],['s_minifyjs'],['miniHtml'],['replace_add'], done);
+        runSequence(['s_minifyjs'], ['s_js_miniHtml'], done);
     });
     gulp.watch(([N_TY + '/images/*/*.{png,jpg,gif,svg}', N_TY + '/images/*.{png,jpg,gif,svg}']), function() { //监控所有JS文件
-        runSequence(['replace_remove'],['revImg'], ['revCss'],['miniHtml'],['replace_add'], done);
-    });
+          setTimeout(function() {
+        runSequence(['replace_remove'], ['revImg'], ['s_img_miniHtml'], ['replace_add'], done);
+       }, 30000)
+    });//多个图片出现增加或删减时出现重复替换
 });
 
 
