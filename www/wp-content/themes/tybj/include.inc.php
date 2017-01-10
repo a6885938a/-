@@ -11,5 +11,6 @@ $A_webps='_.webp';
 }else{
 	$A_webps='';
 }
+define('Iswebps',$A_webps);
 ?>
 

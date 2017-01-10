@@ -563,3 +563,5 @@ function login_protection(){
 
 add_filter('automatic_updater_disabled', '__return_true');	// 彻底关闭自动更新
 
+
+

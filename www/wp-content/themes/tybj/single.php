@@ -1,4 +1,20 @@
-<?php include('include.inc.php');  ?>
+<?php 
+//详情页lazyload
+include('include.inc.php');
+ //lazyload Iswebps
+function add_image_placeholders( $content ) {
+    // Don't lazyload for feeds, previews, mobile
+    if( is_feed() || is_preview() || ( function_exists( 'is_mobile' ) && is_mobile() ) )
+        return $content;
+    if ( false !== strpos( $content, 'data-original' ) )
+        return $content;
+    $placeholder_image = apply_filters( 'lazyload_images_placeholder_image', get_template_directory_uri() . '' );
+    $content = preg_replace( '#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', sprintf( '<img class="lazy" src="%s" data-original="${2}'.Iswebps.'"${3}><noscript><img${1}src="${2}"${3}></noscript>', $placeholder_image ), $content );
+    return $content;
+}
+add_filter( 'the_content', 'add_image_placeholders', 99 );
+  ?>
+
 <?php     // Start the 获取文章次数
 setPostViews(get_the_ID()); ?>
 <!DOCTYPE html>
@@ -113,11 +129,24 @@ else {
 
    </body>
     </html>
+         
         <?php include('footer_js.php');?>
+   
     <script type="text/javascript">
 /* <![CDATA[ */
 var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
 /* ]]> */
+
 </script>
+<!-- <script>
+                  $(function() {
+                 //lazzy load
+             $("img.lazy_s").show().lazyload({
+                effect: "fadeIn",
+                threshold: 10000,
+                placeholder: "/wp-content/themes/tybj/dist/images/loadbg.jpg",
+                skip_invisible:false
+            });
+        </script> -->
     <script type='text/javascript' src='../wp-content/plugins/kodex-posts-likes/public/js/kodex-posts-likes-public.js'></script>
     
