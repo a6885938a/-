@@ -12,7 +12,7 @@
     <link rel="icon" href="/assets/img/favicon.ico">
 
     <?php include('header_css.php');?>
-    <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css?v=82fc17c61a'>
+    <link rel='stylesheet' href='<?=ty_of?>dist/css/tybj.css?v=b4d4f7ce5d'>
     <link rel="stylesheet" type="text/css" href="<?=ty_of?>public/css/swiper.min.css">
     <?php include('header_js.php');?>
     <script src='<?=ty_of?>dist/js/loadjs.js?v=cafdda5e80'></script>

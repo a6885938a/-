@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     // webserver = require('gulp-webserver'),//一个简单的server，用python的SimpleHttpServer会锁文件夹
     // gulpif  = require('gulp-if'),//if判断，用来区别生产环境还是开发环境的
     rev = require('gulp-rev'), //加MD5后缀
-    jshint = require('gulp-jshint'), //检查js 需要安装两个插件 cnpm install jshint gulp-jshint --save-dev
+    // jshint = require('gulp-jshint'), //检查js 需要安装两个插件 cnpm install jshint gulp-jshint --save-dev
     revCollector = require('gulp-rev-collector'),
     //  inject = require('gulp-inject'),   inject 注入css js
     //revReplace = require('gulp-rev-replace'),//替换引用的加了md5后缀的文件名，修改过，用来加cdn前缀
@@ -33,6 +33,8 @@ var gulp = require('gulp'),
     HtmlTY = 'wp-content/themes/tybj/',
     N_TY = 'wp-content/themes/tybj/dist/';
 // cnpm install --save-dev gulp-rev-format gulp-sass gulp-uglify gulp-minify-css gulp-concat gulp-rename del
+// 
+// cnpm install --save-dev gulp-jshint
 
 //监听sass修改任务
 gulp.task('watch', function() {
@@ -204,7 +206,7 @@ gulp.task('dev', function(ck) {
         'replace_remove',
         'sass', //Images 根据MD5获取版本号
         'revImg',
-        //['revCss'], //CSS里更新引入文件版本号
+        ['revCss'], //CSS里更新引入文件版本号
         'minifycss', 'minifyjs', //压缩css,js
         'miniHtml', ['replace_add'], ck
     );

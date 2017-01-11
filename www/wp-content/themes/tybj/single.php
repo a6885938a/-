@@ -138,15 +138,6 @@ var kodex_posts_likes = {"ajaxurl":"..\/..\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 
 </script>
-<!-- <script>
-                  $(function() {
-                 //lazzy load
-             $("img.lazy_s").show().lazyload({
-                effect: "fadeIn",
-                threshold: 10000,
-                placeholder: "/wp-content/themes/tybj/dist/images/loadbg.jpg",
-                skip_invisible:false
-            });
-        </script> -->
+
     <script type='text/javascript' src='../wp-content/plugins/kodex-posts-likes/public/js/kodex-posts-likes-public.js'></script>
     
