@@ -6,7 +6,7 @@
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
-
+	
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="content">
@@ -21,7 +21,11 @@ $category = get_the_category(); echo $category[0]->cat_name;?></a> - 阅 <?php e
 	<?php twentysixteen_excerpt(); ?>
 
 
-	<?php twentysixteen_post_thumbnail(); ?>
+
+<div class="post-thumbnail">
+		<img src="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+echo $large_image_url[0];?><?=Iswebps?>">	
+		</div>
 
 	<div class="entry-content">
 		<?php

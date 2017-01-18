@@ -261,7 +261,7 @@ gulp.task('s_css_miniHtml', function() {
 });
 gulp.task('s_img_miniHtml', function() {
     setTimeout(function() {
-        gulp.src([N_TY + 'rev/images/*.json', HtmlTY + 'index.php',HtmlTY + 'cat-yb.php',HtmlTY + 'cat-ts.php',HtmlTY + 'cat-ct.php',HtmlTY + 'cat-ct.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+        gulp.src([N_TY + 'rev/images/*.json', HtmlTY + '*.php',HtmlTY + 'cat-yb.php',HtmlTY + 'cat-ts.php',HtmlTY + 'cat-ct.php',HtmlTY + 'cat-ct.php']) //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
             .pipe(revCollector()) //- 执行文件内css名的替换
             // .pipe(revappend()) //图片版本号                 
             .pipe(gulp.dest(HtmlTY)); //- 替换后的文件输出的目录
