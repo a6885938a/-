@@ -1,4 +1,3 @@
-console.log('test');
 (function(doc){
     // 给html根节点加上webps类名
     function addRootTag(){

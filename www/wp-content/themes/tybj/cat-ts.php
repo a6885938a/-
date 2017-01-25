@@ -16,7 +16,7 @@
         <?php include('header_list.php'); ?>
         <main class="site-main-1">
                 <div class="product bn-dec">
-                    <img src="<?=ty_img?>dist/images/sx/sx-banner.jpg<?=$A_webps?>?v=8c77b33d61" class="hidden-xs">
+                    <img src="<?=ty_img?>dist/images/sx/sx-banner.jpg<?=$A_webps?>?v=709837cd51" class="hidden-xs">
                 </div>
                 <div class="section ">
                     <div class="container">

@@ -7,7 +7,7 @@
     windows下可以去google官方下载
     安装完成后运行cwebp -h 如果显示了使用帮助则表示安装成功
  */
-
+// cnpm install --save-dev chokidar需要安装--切记
 const process = require('child_process');
 const fs = require('fs');
 const chokidar = require('chokidar');
