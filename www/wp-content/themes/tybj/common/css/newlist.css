@@ -1,0 +1,40 @@
+/*
+Error: Invalid GBK character "\xE5"
+        on line 237 of D:\git-project\www\tianyuan\www\wp-content\themes\tybj\common\css\newlist.scss
+
+232:      float: left;
+233:      color: #949494;
+234:      border: none;
+235:      display: block;
+236:      letter-spacing: 1.5px;
+237:      font-family: "Microsoft Yahei", "冬青黑体简体中文 w3";
+238:      outline: none;
+239:      text-indent: 5px;
+240:  }
+241:  
+242:  .search .butto {
+
+Backtrace:
+D:\git-project\www\tianyuan\www\wp-content\themes\tybj\common\css\newlist.scss:237
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1323:in `rescue in block in find_encoding_error'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1320:in `block in find_encoding_error'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each_with_index'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `find_encoding_error'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/util.rb:896:in `check_sass_encoding'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:423:in `check_encoding!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:379:in `_to_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:18:in `load'
+C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE5\"\A         on line 237 of D:\git-project\www\tianyuan\www\wp-content\themes\tybj\common\css\newlist.scss\A \A 232:      float: left;\A 233:      color: #949494;\A 234:      border: none;\A 235:      display: block;\A 236:      letter-spacing: 1.5px;\A 237:      font-family: \"Microsoft Yahei\", \"冬青黑体简体中文 w3\";\A 238:      outline: none;\A 239:      text-indent: 5px;\A 240:  }\A 241:  \A 242:  .search .butto {"; }

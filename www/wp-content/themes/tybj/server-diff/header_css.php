@@ -1,0 +1,1 @@
+<link href="<?=ty_of?>??public/css/bootstrap.min.css,dist/css/base.css?v=c7ff79e37e,dist/css/newlist.css?v=4fb755ee4c,dist/css/articlelist.css?v=c2ee05ea29" rel="stylesheet">
