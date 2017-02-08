@@ -1,0 +1,16 @@
+开通评论
+详情登陆，识别微信登陆评论
+微信登录绑定
+如果是微信页面web，footer位置显示分类地图进入
+安装 linux 流量监控
+
+了解gulp 监控文件更新技术
+更新dist等目录到正式
+
+//nginx安装 tengin，进行css,js拼接（nodejs熊猫压缩）
+设置ddos攻击
+//webp文件监控
+
+bdmap
+http://map.baidu.com/mobile/webapp/index/index/qt=inf&uid=12586576%2C2607122/vt=map#place/detail/qt=ninf&wd=%E8%A5%BF%E6%A8%B5%E5%A4%A9%E5%9B%AD&c=138&searchFlag=bigBox&version=5&exptype=dep&src_from=webapp_all_bigbox&uid=e101510c45a227b08af15dfd&industry=cater&qid=12142460488701111055/showall=1&detail_from=list&vt=map
+
