@@ -14,3 +14,11 @@
 bdmap
 http://map.baidu.com/mobile/webapp/index/index/qt=inf&uid=12586576%2C2607122/vt=map#place/detail/qt=ninf&wd=%E8%A5%BF%E6%A8%B5%E5%A4%A9%E5%9B%AD&c=138&searchFlag=bigBox&version=5&exptype=dep&src_from=webapp_all_bigbox&uid=e101510c45a227b08af15dfd&industry=cater&qid=12142460488701111055/showall=1&detail_from=list&vt=map
 
+log建议:
+注册页面--
+用户名,规则不够人性化,容易丢失客户,如
+数字和英文组合
+只可以
+a6886321
+不能够,
+a6886321a
