@@ -1,0 +1,32 @@
+function?a()?{
+var?c?=?'<div?id="browserZoomTip"?class="browser-zoom-tip"><div?class="wrapper"><a?href="javascript:void(0);"?class="close">&times;</ a><i></i>您的浏览器目前处于缩放状态哦，会导致页面显示不正常，您可以在键盘上同时按下<b>Ctrl</b>+<b>0</b>键恢复初始状态。<a?href="javascript:void(0);"?class="noagain">不再提示</ a></div></div>',
+b?=?detectZoom();
+if?(b?!=?100?&&?$("#browserZoomTip").length?==?0)?{
+$("body").prepend(c);
+$("#browserZoomTip").find(".close").click(function()?{
+$("#browserZoomTip").remove()
+});
+$("#browserZoomTip").find(".noagain").click(function()?{
+index.setData("zoomTip",?1);
+$("#browserZoomTip").remove();
+$(window).unbind("resize.zoom")
+})
+}
+if?(b?==?100?&&?$("#browserZoomTip").length?>?0)?{
+$("#browserZoomTip").remove()
+}
+}
+
+　C?2017/2/9?11:24:55
+
+detectZoom?=?function()?{
+var?f?=?0,
+e?=?0,
+e?=?window.screen,
+h?=?navigator.userAgent.toLowerCase(),
+g?=?/mac/ig.test(h);
+(window.devicePixelRatio?!==?void?0?&&?!g)???f?=?window.devicePixelRatio?:?~h.indexOf("msie")???e.deviceXDPI?&&?e.logicalXDPI?&&?(f?=?e.deviceXDPI?/?e.logicalXDPI)?:?window.outerWidth?!==?void?0?&&?window.innerWidth?!==?void?0?&&?(f?=?window.outerWidth?/?window.innerWidth);
+f?&&?(f?=?Math.round(f?*?100));
+window.devicePixelRatio?&&?window.devicePixelRatio?===?1?&&?(e?=?Math.round(window.outerWidth?/?window.innerWidth?*?100),?Math.abs(f?-?e)?>?2?&&?(f?=?e));
+return?f
+}; 
