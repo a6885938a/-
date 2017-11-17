@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<img src="./jf_wx_01.jpg" alt="">
+<img src="./jf_wx_02.jpg" alt="">
+
+</body>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.8.3/jquery.js"></script>
+<script>
+
+if ('serviceWorker' in navigator) {
+  
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
+
+    if(reg.installing) {
+      console.log('Service worker installing');
+    } else if(reg.waiting) {
+      console.log('Service worker installed');
+    } else if(reg.active) {
+      console.log('Service worker active');
+    }
+
+  }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+}
+</script>
+
+</html>

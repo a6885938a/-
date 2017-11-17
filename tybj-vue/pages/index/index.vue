@@ -1,17 +1,30 @@
 <template>
+  <section class="container">
+    <div>
 
-  <div>
-    <p>Hi from {{ name }}</p>
-    <nuxt-link to="/">Home page</nuxt-link>
-  </div>
+      <h1 class="title">
+  
+
+      </h1>
+      <h2 class="subtitle">
+      
+      </h2>
+      <div class="links">
+        <a href="https://nuxtjs.org/" target="_blank" class="button--green">children</a>
+        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">children</a>
+      </div>
+    </div>
+  </section>
 </template>
 <script>
+import Logo from '~/components/Logo.vue'
+
 export default {
-  layout: 'dark',
-  asyncData({ req }) {
-    return {
-      name: req ? 'server' : 'client'
-    }
+  components: {
+    Logo
+  },
+  head: {
+    title: 'ewqf'
   }
 }
 
