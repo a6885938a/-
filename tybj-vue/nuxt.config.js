@@ -22,6 +22,10 @@ module.exports = {
       href: '/favicon.ico'
     }]
   },
+  css: [
+    'src/css/base.scss',
+    'swiper/dist/css/swiper.css'
+  ],
   /*
    ** Customize the progress bar color
    */
@@ -49,37 +53,50 @@ module.exports = {
       console.log('Before enter...')
     }
   },
+
   /*
    ** Build configuration
    */
   build: {
+    vendor: ['vue-awesome-swiper'],
+    module: {
+      rules: [{
+        test: /\.(png|jpe?g|jpg|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 5100, // 4KO
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      }, {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1 KO
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      }]
+
+    },
     /*
      ** Run ESLint on save
      */
     extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          // enforce: 'pre',
-          // test: /\.(js|vue)$/,
-          // loader: 'eslint-loader',
-          // exclude: /(node_modules)/
-        })
-      }
+
+
+      // if (ctx.dev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     // enforce: 'pre',
+      //     // test: /\.(js|vue)$/,
+      //     // loader: 'eslint-loader',
+      //     // exclude: /(node_modules)/
+      //   })
+      // }
     }
   },
 
-  generate: {
-    routes: [
-      '/about'
+  plugins: [{
+    src: '~/plugins/nuxt-swiper-plugin.js',
+    ssr: false
+  }]
 
-    ]
-  },
-  // plugins: [
-  //   // copy sw.js  path.resolve(__dirname, 'sw.js所在路径')
-  //   new CopyWebpackPlugin([{
-  //     from: path.resolve(__dirname, '/src/js/sw.js'),
-  //     to: config.build.assetsRoot,
-  //     ignore: ['.*']
-  //   }])
-  // ]
 }
