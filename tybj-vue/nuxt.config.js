@@ -59,6 +59,24 @@ module.exports = {
    */
   build: {
     vendor: ['vue-awesome-swiper'],
+    module: {
+      rules: [{
+        test: /\.(png|jpe?g|jpg|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 5100, // 4KO
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      }, {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1 KO
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      }]
+
+    },
     /*
      ** Run ESLint on save
      */
@@ -75,24 +93,10 @@ module.exports = {
       // }
     }
   },
-  // module: {
-  //   rules: [{
-  //     test: [/\.scss$/, /\.sass$/],
-  //     use: [{
-  //       loader: "style-loader" // creates style nodes from JS strings 
-  //     }, {
-  //       loader: "css-loader?sourceMap" // translates CSS into CommonJS 
-  //         // loader: "css-loader" // translates CSS into CommonJS 
 
-
-  //     }, {
-  //       loader: "sass-loader?&outputStyle=expanded&sourceMap=true&sourceMapContents=true" // compiles Sass to CSS 
-
-  //       // loader: "sass-loader" // compiles Sass to CSS 
-  //     }]
-  //   }, ]
-
-  // }
-  plugins: ['./plugins/nuxt-swiper-plugin']
+  plugins: [{
+    src: '~/plugins/nuxt-swiper-plugin.js',
+    ssr: false
+  }]
 
 }

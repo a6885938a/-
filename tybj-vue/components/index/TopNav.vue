@@ -1,6 +1,7 @@
 <template>
    <div class='th-nav wbox rel'>
-   <img class="logo" src="../../src/images/logo.png"/>
+   <img :src='Bimg'/>
+   <!-- <img class="logo" src="../../src/images/logo.png"/> -->
             <div class="th-nav-title of bg">天园饼家</div>
             </div>
         
@@ -21,4 +22,8 @@ left: .2rem;
 top:.05rem;
 }
 </style>
+<script>
+import Bimg from '../../src/images/a.jpg'
+	
+</script>
 
