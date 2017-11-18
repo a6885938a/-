@@ -22,6 +22,10 @@ module.exports = {
       href: '/favicon.ico'
     }]
   },
+  css: [
+    'src/css/base.scss',
+    'swiper/dist/css/swiper.css'
+  ],
   /*
    ** Customize the progress bar color
    */
@@ -49,37 +53,46 @@ module.exports = {
       console.log('Before enter...')
     }
   },
+
   /*
    ** Build configuration
    */
   build: {
+    vendor: ['vue-awesome-swiper'],
     /*
      ** Run ESLint on save
      */
     extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          // enforce: 'pre',
-          // test: /\.(js|vue)$/,
-          // loader: 'eslint-loader',
-          // exclude: /(node_modules)/
-        })
-      }
+
+
+      // if (ctx.dev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     // enforce: 'pre',
+      //     // test: /\.(js|vue)$/,
+      //     // loader: 'eslint-loader',
+      //     // exclude: /(node_modules)/
+      //   })
+      // }
     }
   },
+  // module: {
+  //   rules: [{
+  //     test: [/\.scss$/, /\.sass$/],
+  //     use: [{
+  //       loader: "style-loader" // creates style nodes from JS strings 
+  //     }, {
+  //       loader: "css-loader?sourceMap" // translates CSS into CommonJS 
+  //         // loader: "css-loader" // translates CSS into CommonJS 
 
-  generate: {
-    routes: [
-      '/about'
 
-    ]
-  },
-  // plugins: [
-  //   // copy sw.js  path.resolve(__dirname, 'sw.js所在路径')
-  //   new CopyWebpackPlugin([{
-  //     from: path.resolve(__dirname, '/src/js/sw.js'),
-  //     to: config.build.assetsRoot,
-  //     ignore: ['.*']
-  //   }])
-  // ]
+  //     }, {
+  //       loader: "sass-loader?&outputStyle=expanded&sourceMap=true&sourceMapContents=true" // compiles Sass to CSS 
+
+  //       // loader: "sass-loader" // compiles Sass to CSS 
+  //     }]
+  //   }, ]
+
+  // }
+  plugins: ['./plugins/nuxt-swiper-plugin']
+
 }

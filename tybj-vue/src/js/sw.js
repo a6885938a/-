@@ -1,5 +1,5 @@
 this.addEventListener('install', function(event) {
-  console.log(1);
+
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([

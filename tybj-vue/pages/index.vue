@@ -1,15 +1,14 @@
 <template>
+<div>
+<TopNav/>
+<Swiper/>
   <section class="container">
+
     <div>
-<img src="../src/images/jf_wx_01.jpg" alt="">
+
       <logo />
      <div id="example-1">
-  <button @click="show = !show">
-    Toggle render
-  </button>
-  <transition name="slide-fade">
-    <p v-if="show">hello</p>
-  </transition>
+
 </div>
 
       <h1 class="title">
@@ -26,16 +25,18 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script>
-
 import Logo from '~/components/Logo.vue'
-
+import TopNav from '../components/index/TopNav.vue'
+import Swiper from '../components/index/Swiper.vue'
 
 export default {
   components: {
-    Logo
+    TopNav,
+    Swiper
   }
 }
 
