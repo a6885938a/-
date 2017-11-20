@@ -2,7 +2,8 @@
   <div class="container">
     <h1>Blog</h1>
     <ul>
-    <!-- <li >{{users}}</li> -->
+    
+    <li >    {{ username }}</li>
 <!--       <li v-for="post in users">
         <nuxt-link :to="{ name: 'posts-id', params: { id: post.id } }">{{ post}}</nuxt-link>
       </li> -->
@@ -16,25 +17,33 @@ import axios from 'axios'
 
 export default {
 // data () {
-//       return { users:''}
+//       return { users:'1'}
 //   },
  // return axios.get('./api.json')
  //    .then((res) => {
  //      return { users:'1'}
  //    })
 
-asyncData() {
-    // We can return a Promise instead of calling the callback
-    return axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => {
-        return { users: '2'}
-        // console.log(res.data.slice(0, 5));
-      })
-  },
-created () {
-    console.log(this.users)
-    // console.log(this.msg)
-  }
+   async asyncData () {
+      const asyncData = {};
+      await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          asyncData.username = 'John Smith';
+          resolve();
+        }, 2000)
+      });
+      return asyncData;
+    }
+  //   return axios.get('https://jsonplaceholder.typicode.com/posts')
+  //     .then((res) => {
+  //       return { users: '2'}
+  //       // console.log(res.data.slice(0, 5));
+  //     })
+  // },
+// created () {
+//     console.log(this.users)
+//     // console.log(this.msg)
+//   }
   // data () {
   //   let { data } = await axios.get('https://jsonplaceholder.typicode.com/posts')
   //     return { users:data.title}
