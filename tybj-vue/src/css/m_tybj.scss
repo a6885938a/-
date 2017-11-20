@@ -1,0 +1,96 @@
+$redColor:#fb0304; //banner
+$yellowColor: #F5A623;
+
+.swiper-pagination-bullet-active {
+  background: $redColor;
+}
+
+
+//分类菜单
+.app-scroller-wrap {
+  width: 100%;
+  height: .8rem;
+  position: relative;
+  background-color: #333;
+  margin-bottom: .2rem;
+
+  /* winphone8和android4+ */
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  z-index: 100;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+      .app-scroller {
+            position: absolute;
+            left: 0;
+            display: table;
+            table-layout: fixed;
+            padding-right: 0.1rem;
+            white-space: nowrap;
+
+            width: auto;
+            font-size: 0;
+
+            li {
+                height: .74rem; // padding:0 2rem;
+                -webkit-box-flex: 1;
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                list-style: none;
+                border-bottom:.06rem solid #333;
+                           // border-bottom:2px solid $yellowColor;
+                a {
+                    height: .8rem;
+                    color: #FFD8B9;
+                    padding: 0 .3rem;
+                    /*padding: 0 .2rem;*/
+                    display: block;
+                }
+                &.act a {
+                    color: $yellowColor;
+                }
+                &.act {
+                    border-bottom:.06rem solid  $yellowColor
+                    /*pointer-events:none;*/
+                }
+            }
+        }
+                .choose-items-wp {
+            position: relative;
+            li {
+                span {
+                    font-size: .28rem;
+                    height: .8rem;
+
+                    line-height: .8rem;
+                    display: inline-block;
+                    &.quick-box {
+                        margin: 0 auto;
+                        height: .4rem;
+                        width: .4rem;
+                        display: block;
+                        background-size: .4rem .4rem; // background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #333), color-stop(100%, #333));
+                    }
+                    img {
+                        height: .4rem;
+                    }
+                } // &.act span {
+                //     &.quick-box {
+                //         background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $activeColor), color-stop(100%, $activeColor));
+                //     }
+                // }
+            }
+            p {
+                position: absolute;
+
+                top: .75rem;
+                left: 0px;
+                border-top: 0.06rem solid $yellowColor;
+                text-align: center;
+                z-index: 100;
+            }
+        }

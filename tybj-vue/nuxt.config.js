@@ -24,7 +24,9 @@ module.exports = {
   },
   css: [
     'src/css/base.scss',
-    'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.css',
+    'src/css/m_tybj.scss'
+
   ],
   /*
    ** Customize the progress bar color
@@ -45,7 +47,7 @@ module.exports = {
   //  {
   //   transform: translateX(10px);
   //   opacity: 0;
-  // }
+  // }  
   transition: {
     name: 'fade',
     mode: 'out-in',
@@ -58,7 +60,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    vendor: ['vue-awesome-swiper'],
+    vendor: ['vue-awesome-swiper', 'axios'],
     module: {
       rules: [{
         test: /\.(png|jpe?g|jpg|gif|svg)$/,
@@ -97,6 +99,25 @@ module.exports = {
   plugins: [{
     src: '~/plugins/nuxt-swiper-plugin.js',
     ssr: false
-  }]
+  }],
+
+  proxy: [
+      ['/api/dog', {
+        target: 'https://dog.ceo/',
+        pathRewrite: {
+          '^/api/dog': '/api/breeds/image/random'
+        }
+      }]
+    ]
+    // proxy: [
+    //   [
+    //     '/wap', {
+    //       target: 'http://dev.thgo8.com', // api主机
+    //       pathRewrite: {
+    //         '^/wap': '/'
+    //       }
+    //     }
+    //   ]
+    // ]
 
 }

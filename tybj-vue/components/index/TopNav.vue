@@ -9,6 +9,7 @@
 <style>
 .th-nav{
 	 background-image: linear-gradient(135deg, #222, #C72730);
+	     border-bottom: 0px	;
 }
 .th-nav-title{
 color:#fff;
@@ -22,8 +23,5 @@ left: .2rem;
 top:.05rem;
 }
 </style>
-<script>
 
-	
-</script>
 

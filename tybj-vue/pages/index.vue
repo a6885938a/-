@@ -1,42 +1,41 @@
 <template>
-<div>
-<TopNav/>
-<Swiper/>
-  <section class="container">
+  <div>
+    <TopNav/>
+    <Swiper/>
+    <Model/>
 
-    <div>
-
-      <logo />
-     <div id="example-1">
-
-</div>
-
-      <h1 class="title">
-
+      <!-- <Cate /> -->
+    <section class="container">
+      <div>
+  
+        <div id="example-1">
+        </div>
+        <h1 class="title">
       <nuxt-link to="/about">  Go to /about</nuxt-link>
-
       </h1>
-      <h2 class="subtitle">
+        <h2 class="subtitle">
       
       </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        <div class="links">
+          <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
+          <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </template>
-
 <script>
 import Logo from '~/components/Logo.vue'
 import TopNav from '../components/index/TopNav.vue'
 import Swiper from '../components/index/Swiper.vue'
+import Model from '../components/index/Model.vue'
+
 
 export default {
   components: {
     TopNav,
-    Swiper
+    Swiper,
+    Model
   }
 }
 
@@ -45,14 +44,17 @@ export default {
 .fade-enter-active {
   transition: all .3s ease;
 }
+
 .fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.fade-enter, .fade-leave-to
- {
+
+.fade-enter,
+.fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
 }
+
 .container {
   min-height: 100vh;
   display: flex;
