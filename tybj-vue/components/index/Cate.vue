@@ -1,13 +1,14 @@
 <template>
   <div class="app-scroller-wrap">
     <div class="app-scroller">
-      <!-- <ul class="choose-items-wp" v-for="post in posts"> -->
-        <li>
-          <img :src="dog" />
+      <ul id="chooseTit" class="choose-items-wp">
+      <!-- <li ><a><span>全部</span></a></li> -->
+      <li :id="post.id" v-for="post in cate_name"><a><span>{{post.title}}</span></a></li>
+       
          <!--  <nuxt-link :to="{ name: 'posts-id', params: { id: post.id } }">{{ post.title }}</nuxt-link> -->
-        </li>
+        <!-- </li> -->
         <!-- <li v-for="post in posts"><a><span>{{post.cate_name}}</span></a></li> -->
-        <!-- <li class="act"><a><span>全部</span></a></li>
+       <!--  <li class="act"><a><span>全部</span></a></li>
 	   <li><a><span>西樵大饼</span></a></li>
 	   <li><a><span>媒体报道</span></a></li>
 	      <li><a><span>西樵大饼</span></a></li>
@@ -27,11 +28,19 @@
 <script>
 // import axios from 'axios'
 export default {
-
-  async asyncData({ app }) {
-    const { data: { message: dog } } = await app.$axios.get('/api/dog')
-    return { dog }
-  }
+props:['cate_name'],
+ // new Vue({
+ //            el: 'chooseTit',
+ //            methods:{
+ //                getIndex:function($index){
+ //                    this.click=$index;
+ //                }
+ //            }
+ //        });
+  // async asyncData({ app }) {
+  //   const { data: { message: dog } } = await app.$axios.get('/api/dog')
+  //   return { dog }
+  // }
 
   // async asyncData({ app }) {
   //   const ip = await app.$axios.$get('http://icanhazip.com')

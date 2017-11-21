@@ -2,40 +2,58 @@
   <div>
     <TopNav/>
     <Swiper/>
-    <Model/>
+    <Cate :cate_name="posts"/>
+    <div id="app">
+     <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">反转字符串</button>
+</div>
 
-      <!-- <Cate /> -->
-    <section class="container">
-      <div>
   
-        <div id="example-1">
-        </div>
-        <h1 class="title">
-      <nuxt-link to="/about">  Go to /about</nuxt-link>
-      </h1>
-        <h2 class="subtitle">
-      
-      </h2>
-        <div class="links">
-          <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 <script>
 import Logo from '~/components/Logo.vue'
 import TopNav from '../components/index/TopNav.vue'
 import Swiper from '../components/index/Swiper.vue'
-import Model from '../components/index/Model.vue'
+import Cate from '../components/index/Cate.vue'
+
+// import Model from '../components/index/Model.vue'
+import axios from 'axios'
 
 
 export default {
+
+  data(){
+    return{
+    message: '菜鸟教程'
+    }
+  },
+    methods: {
+    reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+    }
+  },
+   asyncData({ req, params }) {
+    let newArr=[]
+     function ObjStory(id,slug,title,description) //声明对象
+     {
+        this.ID = id;
+        this.slug= slug;
+        this.title= title;
+        this.description = description;
+     }
+     var writer= new ObjStory(0,'all','全部','全部');
+    return axios.get('https://www.tybj-food.com/?json=get_category_index')
+      .then((res) => {
+       res.data.categories.unshift(writer)
+        return { posts: res.data.categories}
+      })
+  },
   components: {
     TopNav,
     Swiper,
-    Model
+    Cate
+    // Model
   }
 }
 
