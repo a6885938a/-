@@ -8,7 +8,7 @@ module.exports = {
       charset: 'utf-8'
     }, {
       name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
+      content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'
     }, {
       name: 'keywords',
       content: '西樵大饼,天园饼家,西樵论坛,西樵山,旅游大饼,特色手信,传统礼饼,鸡蛋糕,核桃酥,月饼,龙凤礼饼,鸡仔饼,嫁女饼,非物质文化遗产'
@@ -26,7 +26,6 @@ module.exports = {
     'src/css/base.scss',
     'swiper/dist/css/swiper.css',
     'src/css/m_tybj.scss'
-
   ],
   /*
    ** Customize the progress bar color
