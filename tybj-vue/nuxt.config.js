@@ -100,24 +100,29 @@ module.exports = {
     src: '~/plugins/nuxt-swiper-plugin.js',
     ssr: false
   }],
-
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  // proxy: [
+  //     ['/api/dog', {
+  //       target: 'https://dog.ceo/',
+  //       pathRewrite: {
+  //         '^/api/dog': '/api/breeds/image/random'
+  //       }
+  //     }]
+  //   ]
   proxy: [
-      ['/api/dog', {
-        target: 'https://dog.ceo/',
+    [
+      '/wap', {
+        target: 'https://www.tybj-food.com', // api主机
+        changeOrigin: true,
+        secure: false,
         pathRewrite: {
-          '^/api/dog': '/api/breeds/image/random'
+          '^/wap': '/'
         }
-      }]
+      }
     ]
-    // proxy: [
-    //   [
-    //     '/wap', {
-    //       target: 'http://dev.thgo8.com', // api主机
-    //       pathRewrite: {
-    //         '^/wap': '/'
-    //       }
-    //     }
-    //   ]
-    // ]
+  ]
 
 }

@@ -3,12 +3,7 @@
     <TopNav/>
     <Swiper/>
     <Cate :cate_name="posts"/>
-    <div id="app">
-     <p>{{ message }}</p>
-      <button v-on:click="reverseMessage">反转字符串</button>
-</div>
-
-  
+ <CateGoods/>
   </div>
 </template>
 <script>
@@ -16,6 +11,8 @@ import Logo from '~/components/Logo.vue'
 import TopNav from '../components/index/TopNav.vue'
 import Swiper from '../components/index/Swiper.vue'
 import Cate from '../components/index/Cate.vue'
+import CateGoods from '../components/index/CateGoods.vue'
+
 
 // import Model from '../components/index/Model.vue'
 import axios from 'axios'
@@ -23,16 +20,7 @@ import axios from 'axios'
 
 export default {
 
-  data(){
-    return{
-    message: '菜鸟教程'
-    }
-  },
-    methods: {
-    reverseMessage: function () {
-          this.message = this.message.split('').reverse().join('')
-    }
-  },
+
    asyncData({ req, params }) {
     let newArr=[]
      function ObjStory(id,slug,title,description) //声明对象
@@ -52,7 +40,8 @@ export default {
   components: {
     TopNav,
     Swiper,
-    Cate
+    Cate,
+    CateGoods
     // Model
   }
 }
