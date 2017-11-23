@@ -2,8 +2,8 @@
   <div>
     <TopNav/>
     <Swiper/>
-    <Cate :cate_name="posts"/>
- <CateGoods/>
+    <Cate :cate_name="posts" v-on:changeAct="changeAct"/>
+ <CateGoods ref="categoods" v-on:changeIsData="changeIsData"/>
   </div>
 </template>
 <script>
@@ -19,7 +19,84 @@ import axios from 'axios'
 
 
 export default {
+data(){
+  return {
+     scrollTop: '',
+     scrollHeight:'',
+     clientHeight:'',
+    isDataing:false
 
+  }
+},
+methods:{
+ menu() {
+    this.scrollTop = this.getScrollTop();
+ this.scrollHeight=this.getScrollHeight();
+ this.clientHeight=this.getClientHeight();
+ // console.log(this.scrollTop);
+ // console.log(this.scrollHeight);
+console.log(this.isDataing);
+// console.log(this.scrollHeight);
+    if ( this.clientHeight + this.scrollTop === this.scrollHeight&&this.isDataing=== false) {
+      // console.log('test');
+      this.isDataing = true;
+          console.log(this.isDataing);
+this.$refs.categoods.getNewsFn()
+    
+    
+    }
+   },
+   changeIsData(val){
+
+this.isDataing=val
+   },
+  changeAct:function(id){
+this.$refs.categoods.getNewsFn(id)
+this.$refs.categoods.changeLoad(true)
+  },
+    getScrollTop(){
+          var scrollTop = 0;
+          if (document.documentElement && document.documentElement.scrollTop) {
+            scrollTop = document.documentElement.scrollTop;
+          } else if (document.body) {
+            scrollTop = document.body.scrollTop;
+          }
+          return scrollTop;
+      },
+            getClientHeight() {
+      
+          var windowHeight = 0;
+          if (document.compatMode === "CSS1Compat") {
+            windowHeight = document.documentElement.clientHeight;
+          } else {
+            windowHeight = document.body.clientHeight;
+          }
+
+          return windowHeight;
+     
+      },
+            getScrollHeight (){
+      
+          var scrollHeight = 0,
+            bodyScrollHeight = 0,
+            documentScrollHeight = 0;
+          if (document.body) {
+            bodyScrollHeight = document.body.scrollHeight;
+          }
+          if (document.documentElement) {
+            documentScrollHeight = document.documentElement.scrollHeight;
+          }
+          scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+          return scrollHeight;
+   
+      }
+       
+
+},
+
+  mounted() {
+   window.addEventListener('scroll', this.menu)
+  },
 
    asyncData({ req, params }) {
     let newArr=[]
@@ -36,7 +113,11 @@ export default {
        res.data.categories.unshift(writer)
         return { posts: res.data.categories}
       })
+  },  
+  created() {
+
   },
+
   components: {
     TopNav,
     Swiper,
