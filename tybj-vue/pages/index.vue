@@ -41,7 +41,7 @@ console.log(this.isDataing);
       // console.log('test');
       this.isDataing = true;
           console.log(this.isDataing);
-this.$refs.categoods.getNewsFn()
+this.$refs.categoods.getMoreData()
     
     
     }
