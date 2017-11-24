@@ -1,6 +1,6 @@
 <template>
   <div>
-   <nuxt-link to="/page">123321</nuxt-link>
+   <nuxt-link to="/page">221</nuxt-link>
     <TopNav/>
     <Swiper/>
     <Cate :cate_name="posts" v-on:changeAct="changeAct"/>
@@ -25,8 +25,9 @@ data(){
      scrollTop: '',
      scrollHeight:'',
      clientHeight:'',
-    isDataing:false
-
+    isDataing:false,
+posts:[],
+newarr:[]
   }
 },
 methods:{
@@ -36,12 +37,12 @@ methods:{
  this.clientHeight=this.getClientHeight();
  // console.log(this.scrollTop);
  // console.log(this.scrollHeight);
-// console.log(this.isDataing);
+console.log(this.isDataing);
 // console.log(this.scrollHeight);
     if ( this.clientHeight + this.scrollTop === this.scrollHeight&&this.isDataing=== false) {
       // console.log('test');
       this.isDataing = true;
-          console.log();
+          console.log(this.isDataing);
 this.$refs.categoods.getMoreData()
     
     
@@ -52,7 +53,7 @@ this.$refs.categoods.getMoreData()
 this.isDataing=val
    },
   changeAct:function(id){
-this.$refs.categoods.changeId(id)
+this.$refs.categoods.getNewsFn(id)
 this.$refs.categoods.changeLoad(true)
   },
     getScrollTop(){
@@ -99,23 +100,64 @@ this.$refs.categoods.changeLoad(true)
    window.addEventListener('scroll', this.menu)
   },
 
-   asyncData({ req, params }) {
-    let newArr=[]
-     function ObjStory(id,slug,title,description) //声明对象
+
+
+ asyncData () {
+  let _self=this
+       function ObjStory(id,slug,title,description) //声明对象
      {
         this.ID = id;
         this.slug= slug;
         this.title= title;
         this.description = description;
      }
-     var writer= new ObjStory(null,'all','全部','http://www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
-    return axios.get('https://www.tybj-food.com/?json=get_category_index')
-      .then((res) => {
-       res.data.categories.unshift(writer)
-        return { posts: res.data.categories}
-      })
-  },  
+
+     function getUserAccount() {
+  return axios.get('https://www.tybj-food.com/?json=get_category_index');
+}
+
+function getUserPermissions() {
+  return axios.get('https://www.tybj-food.com/?json=1');
+}
+     // var writer= new ObjStory(0,'all','全部','//www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
+   axios.all([
+    getUserAccount(),
+    getUserPermissions()
+  ])
+
+  .then(axios.spread( (userResp,reposResp)=> {
+    // 上面两个请求都完成后，才执行这个回调方法
+    console.log(userResp.data.categories instanceof  String);
+    console.log('newarr', reposResp.data);
+     // posts=userResp.data.categories
+return {posts:userResp.data.categories}
+  }));
+ },
+
+
+
+  //  asyncData({ req, params }) {
+  //    function ObjStory(id,slug,title,description) //声明对象
+  //    {
+  //       this.ID = id;
+  //       this.slug= slug;
+  //       this.title= title;
+  //       this.description = description;
+  //    }
+  //    var writer= new ObjStory(0,'all','全部','//www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
+  //   return axios.get('https://www.tybj-food.com/wap/?json=get_category_index')
+  //     .then((res) => {
+  //      res.data.categories.unshift(writer)
+
+  //       return { posts: res.data.categories}
+
+  //     })
+  // },  
+
+
   created() {
+console.log(this.posts)
+console.log(this.newarr)
 
   },
 

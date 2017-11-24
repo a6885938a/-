@@ -99,23 +99,17 @@ module.exports = {
     src: '~/plugins/nuxt-swiper-plugin.js',
     ssr: false
   }],
+
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
-  // proxy: [
-  //     ['/api/dog', {
-  //       target: 'https://dog.ceo/',
-  //       pathRewrite: {
-  //         '^/api/dog': '/api/breeds/image/random'
-  //       }
-  //     }]
-  //   ]
+ 
   proxy: [
     [
       '/wap', {
         target: 'https://www.tybj-food.com', // api主机
-        changeOrigin: true,
+        // changeOrigin: true,
         secure: false,
         pathRewrite: {
           '^/wap': '/'
@@ -123,5 +117,6 @@ module.exports = {
       }
     ]
   ]
+
 
 }

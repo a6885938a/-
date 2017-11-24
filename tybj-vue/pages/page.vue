@@ -1,6 +1,8 @@
 <template>
 
   <div>
+      <!-- <a  href="javascript:"  class="class th-nav-back" @click="go()">123</a> -->
+   <!-- <nuxt-link to="/page">123321</nuxt-link> -->
 
     <GoNav/>
 <main>
@@ -26,6 +28,11 @@
 <script>
 import GoNav from '~/components/GoNav.vue'
 export default {
+  methods:{
+  go () {
+      this.$router.go(-1)
+    }
+  },
   components: {
     GoNav
   }

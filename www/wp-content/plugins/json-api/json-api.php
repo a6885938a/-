@@ -7,7 +7,8 @@ Version: 1.1.1
 Author: Dan Phiffer
 Author URI: http://phiffer.org/
 */
-
+header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求  
+header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');  
 $dir = json_api_dir();
 @include_once "$dir/singletons/api.php";
 @include_once "$dir/singletons/query.php";

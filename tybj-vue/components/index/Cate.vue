@@ -6,7 +6,7 @@
       <li :class="checkIndex(index)" :id="post.id" v-for="(post,index) in cate_name" @click.stop="changeAct(index,post.id)"><a>
 <!-- <div class="opa1" :style="{-webkit-mask-image:'url('+post.description+')'}" >12</div> -->
 
-<div class="opa1" :style="{WebkitMaskImage:'url(' +post.description+')'}" >12</div>
+<div class="opa1" v-bind:style="{'-webkit-mask-image':'url(' +post.description+')'}" >12</div>
 
 <!-- :style="{background: 'url(' +item.bg+')'}" -->
       <span>{{post.title}}</span></a></li>
