@@ -9,13 +9,15 @@ $yellowColor: #F5A623;
 //分类菜单
 .app-scroller-wrap {
   width: 100%;
-  height: .8rem;
+  height: 1rem;
+  // margin-top: .2rem;
   position: relative;
   background-color: #333;
 
   /* winphone8和android4+ */
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
+
   z-index: 100;
   &::-webkit-scrollbar {
     display: none;
@@ -34,25 +36,31 @@ $yellowColor: #F5A623;
   font-size: 0;
 
   li {
-    height: .74rem; // padding:0 2rem;
+    // height: .74rem; // padding:0 2rem;
     -webkit-box-flex: 1;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    list-style: none;
-    border-bottom: .06rem solid #333; // border-bottom:2px solid $yellowColor;
+    list-style: none; // border-bottom: .06rem solid #333; // border-bottom:2px solid $yellowColor;
     a {
-      height: .8rem;
-      color: #FFD8B9;
+      // height: .8rem;
+      color: #fff;
       padding: 0 .3rem;
       /*padding: 0 .2rem;*/
       display: block;
     }
-    &.act a {
-      color: $yellowColor;
+    &.act {
+      a {
+        background: $yellowColor;
+        color: #000;
+        .opa1 {
+               background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #000), color-stop(100%, #000));
+        }
+      }
+
     }
     &.act {
-      border-bottom: .06rem solid $yellowColor
+      // border-bottom: .06rem solid $yellowColor
       /*pointer-events:none;*/
     }
   }
@@ -61,11 +69,28 @@ $yellowColor: #F5A623;
 .choose-items-wp {
   position: relative;
   li {
-    span {
-      font-size: .28rem;
-      height: .8rem;
+    position: relative;
+    .opa1 {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: .1rem;
+      text-align: center;
+      margin-left: -.23rem;
+      width: .46rem;
+      height: .46rem; // -webkit-mask-image:'https://www.tybj-food.com/wp-content/themes/tybj/public/images/i_cake.png'
+      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff));
 
-      line-height: .8rem;
+      // -webkit-mask-image: url(https://www.tybj-food.com/wp-content/themes/tybj/public/images/i_cake.png);
+      -webkit-mask-size: .46rem;
+      -webkit-mask-repeat: no-repeat;
+    }
+    span {
+      font-size: .24rem;
+      height: .4rem;
+      margin-top: .64rem;
+      line-height: .24rem;
+      padding:0 .1rem;
       display: inline-block;
       &.quick-box {
         margin: 0 auto;
@@ -187,19 +212,15 @@ $yellowColor: #F5A623;
 // #PullUp {
 //   -webkit-animation: heightUp 2s 1s ease both; // -webkit-animation: fadeOutUp 2s 1s ease both;
 // }
-
 @-webkit-keyframes heightUp {
   0% {
-    opacity: 1;
-    // -webkit-transform: translateY(0);
+    opacity: 1; // -webkit-transform: translateY(0);
     height: auto; // -webkit-transform: translateY(0)
   }
 
   100% {
     opacity: 0;
-    height: 0;
-
-    // -webkit-transform: translateY(-20px)
+    height: 0; // -webkit-transform: translateY(-20px)
   }
 }
 
@@ -254,4 +275,43 @@ $yellowColor: #F5A623;
   display: inline-block;
   line-height: .4rem;
   margin-right: .1rem;
+}
+
+//page
+main {
+    border: 0;
+    border-bottom-color: #fff;
+    border-image-width: 0;
+}
+article {
+    padding: 0 .3rem .4rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #f6f6f6;
+  .head {
+    font-weight: 400;
+    padding: .54rem 0 0;
+    .title {
+    font-size: .46rem;
+    font-weight: 700;
+    padding: 0 0 .2rem;
+    color: #404040;
+}
+.info {
+    font-size: .28rem;
+    font-weight: 400;
+    margin: 0 0 .12rem;
+    color: #888;
+}
+}
+.content {
+    font-size: .36rem;
+    line-height: 1.5em;
+    word-break: break-all;
+    color: #404040;
+    p {
+    margin: .6rem 0;
+    text-align: justify;
+    text-indent: 2em;
+}
+}
 }

@@ -1,5 +1,6 @@
 <template>
   <div>
+   <nuxt-link to="/page">123321</nuxt-link>
     <TopNav/>
     <Swiper/>
     <Cate :cate_name="posts" v-on:changeAct="changeAct"/>
@@ -35,12 +36,12 @@ methods:{
  this.clientHeight=this.getClientHeight();
  // console.log(this.scrollTop);
  // console.log(this.scrollHeight);
-console.log(this.isDataing);
+// console.log(this.isDataing);
 // console.log(this.scrollHeight);
     if ( this.clientHeight + this.scrollTop === this.scrollHeight&&this.isDataing=== false) {
       // console.log('test');
       this.isDataing = true;
-          console.log(this.isDataing);
+          console.log();
 this.$refs.categoods.getMoreData()
     
     
@@ -51,7 +52,7 @@ this.$refs.categoods.getMoreData()
 this.isDataing=val
    },
   changeAct:function(id){
-this.$refs.categoods.getNewsFn(id)
+this.$refs.categoods.changeId(id)
 this.$refs.categoods.changeLoad(true)
   },
     getScrollTop(){
@@ -107,7 +108,7 @@ this.$refs.categoods.changeLoad(true)
         this.title= title;
         this.description = description;
      }
-     var writer= new ObjStory(0,'all','全部','全部');
+     var writer= new ObjStory(null,'all','全部','http://www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
     return axios.get('https://www.tybj-food.com/?json=get_category_index')
       .then((res) => {
        res.data.categories.unshift(writer)

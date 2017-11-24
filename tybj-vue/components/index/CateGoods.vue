@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       page:1,
-      id:null,
+      id:undefined,
       goodsLists:'',
 goodsHtml:'',
       loadHtml:'<i class="r-gif"></i>刷新成功',
@@ -87,24 +87,20 @@ goodsHtml:'',
 
   methods: {
 
-    getNewsFn(page,id) {
+    getNewsFn(id,page) {
       let url
       if(id===undefined){
-        url='/wap/?json=1'
+        url='/wap/?json=1&page='+page
       }else{
-        url='/wap/?json=get_category_posts&category_id='+id
+        url='/wap/?json=get_category_posts&category_id='+id+'&page='+page
       }
-      return axios.post(url,{
-        page:page
-      })
+      return axios.get(url)
      // .then((data) => data.json())
         .then((res) => {
-          this.page=page++
+          // this.page=page++
           this.loading=false
-          console.log(page)
           let posts=res.data.posts
         // console.log(res.data.posts instanceof Array)
-
 // return this.goodsHtml=posts.map((post,index)=>{
 // return '<div>123</div>'
 // // <div>123</div> 
@@ -115,7 +111,7 @@ goodsHtml:'',
 let goodsHtml='';
 res.data.posts.forEach((post)=>{
    let srcHtml=post.attachments.length>0?'https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src='+post.attachments[0].url+'&h=200&w=300&zc=1':'../images/loadbg.jpg';
-            this.goodsHtml+='<li><a class="upItem"><div class="info-img"><img class="lazy" src='+srcHtml+' /></div><div class="info-bar"><div class="pro-title">'+post.title+'</div><div class="e-numb"><span class="e-price">'+post.categories[0].title+'</span><span class="point">阅 '+parseInt(post.custom_fields.post_views_count)+'</span></div></div></a></li>'
+         goodsHtml+='<li><a class="upItem"><div class="info-img"><img class="lazy" src='+srcHtml+' /></div><div class="info-bar"><div class="pro-title">'+post.title+'</div><div class="e-numb"><span class="e-price">'+post.categories[0].title+'</span><span class="point">阅 '+parseInt(post.custom_fields.post_views_count)+'</span></div></div></a></li>'
          }  
 
          )
@@ -126,29 +122,39 @@ res.data.posts.forEach((post)=>{
 // if(this.page===0){
 //   this.goodsHtml
 // }
-            this.$emit('changeIsData',false)
+
             if(res.data.posts.length>0){
+            this.$emit('changeIsData',false)
               if(this.page===1){
                 this.page=this.page+1
-                console.log(this.page)
-                this.goodsLists=this.goodsHtml
+                // console.log(this.page)
+                this.goodsLists=goodsHtml
         
             if(res.data.posts.length<10){
                 this.updatapullDown=1
+              // console.log( this.updatapullDown);
+                  
 
             }else{
                 this.updatapullDown=0
               }
             }else { // 加载操作
+                this.page=this.page+1
               if(this.updatapullDown===0 ){
+            this.goodsLists=this.goodsLists.concat(goodsHtml)
                 if(res.data.posts.length<10){
                 this.updatapullDown=1
                 }
+              }else{
+                this.updatapullDown=0
+
               }
-                this.page=this.page++
-              this.goodsLists=this.goodsLists.concat(this.goodsHtml)
             }
         
+    }else if(res.data.posts.length===0){
+      this.updatapullDown=2;
+     this.$emit('changeIsData',true)
+
     }
       //     if(res.data.posts.length===10){
       //       this.updatapullDown=0
@@ -163,10 +169,16 @@ this.megNum=res.data.posts.length
     },
     changeLoad(val){
 this.loading=val
+// console.log(this.loading);
+    },
+        changeId(id){
+this.id=id
+this.page=1
+  this.getNewsFn(id,1)
     },
     getMoreData(){
       // console.log(this.page)
-      this.getNewsFn(this.page)
+      this.getNewsFn(this.id,this.page)
     }
 
 
@@ -184,7 +196,7 @@ this.loading=val
     // }
   },
   created() {
-    this.getNewsFn(this.page)
+    this.getNewsFn(this.id,this.page)
     // console.log(this.posts)
   },
 

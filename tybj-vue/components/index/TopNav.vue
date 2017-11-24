@@ -1,5 +1,5 @@
 <template>
-   <div class='th-nav wbox rel'>
+   <div class='th-nav wbox rel ty_tit'>
  
    <img class="logo" src="../../src/images/logo.png"/>
             <div class="th-nav-title of bg">天园饼家</div>
@@ -7,11 +7,11 @@
         
 </template>
 <style>
-.th-nav{
+.ty_tit{
 	 background-image: linear-gradient(135deg, #222, #C72730);
 	     border-bottom: 0px	;
 }
-.th-nav-title{
+.ty_tit .th-nav-title{
 color:#fff;
 font-size: .36rem;
 }
