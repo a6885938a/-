@@ -5,12 +5,18 @@ $yellowColor: #F5A623;
   background: $redColor;
 }
 
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
 
 //分类菜单
 .app-scroller-wrap {
   width: 100%;
-  height: 1rem;
-  // margin-top: .2rem;
+  height: 1rem; // margin-top: .2rem;
   position: relative;
   background-color: #333;
 
@@ -54,10 +60,9 @@ $yellowColor: #F5A623;
         background: $yellowColor;
         color: #000;
         .opa1 {
-               background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #000), color-stop(100%, #000));
+          background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #000), color-stop(100%, #000));
         }
       }
-
     }
     &.act {
       // border-bottom: .06rem solid $yellowColor
@@ -79,9 +84,7 @@ $yellowColor: #F5A623;
       margin-left: -.23rem;
       width: .46rem;
       height: .46rem; // -webkit-mask-image:'https://www.tybj-food.com/wp-content/themes/tybj/public/images/i_cake.png'
-      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff));
-
-      // -webkit-mask-image: url(https://www.tybj-food.com/wp-content/themes/tybj/public/images/i_cake.png);
+      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff)); // -webkit-mask-image: url(https://www.tybj-food.com/wp-content/themes/tybj/public/images/i_cake.png);
       -webkit-mask-size: .46rem;
       -webkit-mask-repeat: no-repeat;
     }
@@ -90,7 +93,7 @@ $yellowColor: #F5A623;
       height: .4rem;
       margin-top: .64rem;
       line-height: .24rem;
-      padding:0 .1rem;
+      padding: 0 .1rem;
       display: inline-block;
       &.quick-box {
         margin: 0 auto;
@@ -166,13 +169,29 @@ $yellowColor: #F5A623;
         font-size: .24rem;
         display: flex;
         height: .40rem;
+        line-height: .4rem;
+
         .e-price {
           flex: 1;
           text-align: left
         }
-        .point {
+        .watch {
+          line-height: .4rem;
+          height: .4rem;
           flex: 1;
-          text-align: right
+          text-align: right;
+          padding-right: .05rem;
+          span {
+            width: .4rem;
+            height: .4rem;
+            display: inline-block;
+          }
+          .ico {
+            text-indent: 9999px;
+            background: url(../images/watch.png) center no-repeat;
+            margin-right: .05rem;
+            background-size: .4rem .4rem;
+          }
         } // .sale-price {
         //       text-align: left;
         //     font-size: .28rem;
@@ -279,39 +298,74 @@ $yellowColor: #F5A623;
 
 //page
 main {
-    border: 0;
-    border-bottom-color: #fff;
-    border-image-width: 0;
+  border: 0;
+  border-bottom-color: #fff;
+  border-image-width: 0;
 }
+
 article {
-    padding: 0 .3rem .4rem;
-    border-bottom: 1px solid #e6e6e6;
-    background-color: #f6f6f6;
+  padding: 0 .3rem .4rem;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #f6f6f6;
   .head {
     font-weight: 400;
     padding: .54rem 0 0;
     .title {
-    font-size: .46rem;
-    font-weight: 700;
-    padding: 0 0 .2rem;
-    color: #404040;
-}
-.info {
-    font-size: .28rem;
-    font-weight: 400;
-    margin: 0 0 .12rem;
-    color: #888;
-}
-}
-.content {
-    font-size: .36rem;
+      font-size: .46rem;
+      font-weight: 700;
+      padding: 0 0 .2rem;
+      color: #404040;
+    }
+    .info {
+      font-size: .28rem;
+      font-weight: 400;
+      margin: 0 0 .12rem;
+      color: #888;
+      .time {
+        margin-right: .1rem;
+      }
+      .font {
+        float: right;
+        width: .6rem;
+        height: .3rem;
+        line-height: .3rem;
+        background: #888;
+        border-radius: .12rem;
+        font-size: .24rem;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+  .content {
+    font-size: .32rem;
     line-height: 1.5em;
     word-break: break-all;
     color: #404040;
-    p {
-    margin: .6rem 0;
-    text-align: justify;
-    text-indent: 2em;
-}
-}
+
+    .excerpt {
+      margin: .6rem 0;
+      text-align: justify;
+      text-indent: 2em;
+    }
+    img{
+      width:100%;
+    }
+    p img{
+      margin: .6rem 0;
+    }
+    .para{
+         margin: .6rem 0;
+      text-align: justify;
+      text-indent: 2em;
+    }
+  .kodex_buttons{
+    display: none;
+  }
+  }
+  .fontBig{
+    font-size: .36rem;
+
+  }
 }

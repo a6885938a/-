@@ -1,10 +1,11 @@
 <template>
   <div>
-   <nuxt-link to="/page">221</nuxt-link>
+    <nuxt-link to="/page/177">221</nuxt-link>
+        <!-- <nuxt-link :to="{ name: 'page', params: { id: '155' } }">123321</nuxt-link> -->
     <TopNav/>
     <Swiper/>
-    <Cate :cate_name="posts" v-on:changeAct="changeAct"/>
- <CateGoods ref="categoods" v-on:changeIsData="changeIsData"/>
+    <Cate :cate_name="posts" v-on:changeAct="changeAct" />
+    <CateGoods ref="categoods" :goodsLists="cateGoods" v-on:changeIsData="changeIsData" />
   </div>
 </template>
 <script>
@@ -13,171 +14,139 @@ import TopNav from '../components/index/TopNav.vue'
 import Swiper from '../components/index/Swiper.vue'
 import Cate from '../components/index/Cate.vue'
 import CateGoods from '../components/index/CateGoods.vue'
-
-
 // import Model from '../components/index/Model.vue'
 import axios from 'axios'
 
 
 export default {
-data(){
-  return {
-     scrollTop: '',
-     scrollHeight:'',
-     clientHeight:'',
-    isDataing:false,
-posts:[],
-newarr:[]
-  }
-},
-methods:{
- menu() {
-    this.scrollTop = this.getScrollTop();
- this.scrollHeight=this.getScrollHeight();
- this.clientHeight=this.getClientHeight();
- // console.log(this.scrollTop);
- // console.log(this.scrollHeight);
-console.log(this.isDataing);
-// console.log(this.scrollHeight);
-    if ( this.clientHeight + this.scrollTop === this.scrollHeight&&this.isDataing=== false) {
-      // console.log('test');
-      this.isDataing = true;
-          console.log(this.isDataing);
-this.$refs.categoods.getMoreData()
-    
-    
+  data() {
+    return {
+      scrollTop: '',
+      scrollHeight: '',
+      clientHeight: '',
+      isDataing: false,
+      posts: [],
+      cateGoods: []
     }
-   },
-   changeIsData(val){
-
-this.isDataing=val
-   },
-  changeAct:function(id){
-this.$refs.categoods.getNewsFn(id)
-this.$refs.categoods.changeLoad(true)
   },
-    getScrollTop(){
-          var scrollTop = 0;
-          if (document.documentElement && document.documentElement.scrollTop) {
-            scrollTop = document.documentElement.scrollTop;
-          } else if (document.body) {
-            scrollTop = document.body.scrollTop;
-          }
-          return scrollTop;
-      },
-            getClientHeight() {
-      
-          var windowHeight = 0;
-          if (document.compatMode === "CSS1Compat") {
-            windowHeight = document.documentElement.clientHeight;
-          } else {
-            windowHeight = document.body.clientHeight;
-          }
+  methods: {
+   scroll() {
+      this.scrollTop = this.getScrollTop();
+      this.scrollHeight = this.getScrollHeight();
+      this.clientHeight = this.getClientHeight();
+      // console.log(this.scrollTop);
+      // console.log(this.scrollHeight);
+      console.log(this.isDataing);
+      // console.log(this.scrollHeight);
+      if (this.clientHeight + this.scrollTop === this.scrollHeight && this.isDataing === false) {
+        // console.log('test');
+        this.isDataing = true;
+        console.log(this.isDataing);
+        this.$refs.categoods.getMoreData()
 
-          return windowHeight;
-     
-      },
-            getScrollHeight (){
-      
-          var scrollHeight = 0,
-            bodyScrollHeight = 0,
-            documentScrollHeight = 0;
-          if (document.body) {
-            bodyScrollHeight = document.body.scrollHeight;
-          }
-          if (document.documentElement) {
-            documentScrollHeight = document.documentElement.scrollHeight;
-          }
-          scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-          return scrollHeight;
-   
+
       }
-       
+    },
+    changeIsData(val) {
 
-},
+      this.isDataing = val
+    },
+    changeAct: function(id) {
+      this.$refs.categoods.changeLoad(true)
+      this.$refs.categoods.getNewsFn(id,1)
+    },
+    getScrollTop() {
+      var scrollTop = 0;
+      if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+      } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+      }
+      return scrollTop;
+    },
+    getClientHeight() {
+
+      var windowHeight = 0;
+      if (document.compatMode === "CSS1Compat") {
+        windowHeight = document.documentElement.clientHeight;
+      } else {
+        windowHeight = document.body.clientHeight;
+      }
+
+      return windowHeight;
+
+    },
+    getScrollHeight() {
+
+      var scrollHeight = 0,
+        bodyScrollHeight = 0,
+        documentScrollHeight = 0;
+      if (document.body) {
+        bodyScrollHeight = document.body.scrollHeight;
+      }
+      if (document.documentElement) {
+        documentScrollHeight = document.documentElement.scrollHeight;
+      }
+      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+      return scrollHeight;
+
+    }
+
+
+  },
 
   mounted() {
-   window.addEventListener('scroll', this.menu)
+    window.addEventListener('scroll', this.scroll)
   },
+destroyed(){
+    window.removeEventListener('scroll', this.scroll)
 
+},
 
+  async asyncData() {
+    let _self = this
 
- asyncData () {
-  let _self=this
-       function ObjStory(id,slug,title,description) //声明对象
-     {
-        this.ID = id;
-        this.slug= slug;
-        this.title= title;
-        this.description = description;
-     }
+    function ObjStory(id, slug, title, description) //声明对象
+    {
+      this.ID = id;
+      this.slug = slug;
+      this.title = title;
+      this.description = description;
+    }
+    const getCate = () => {
+      return axios.get('https://www.tybj-food.com/?json=get_category_index');
+    }
+    const getCateGoods = () => {
+      return axios.get('https://www.tybj-food.com/?json=1&&page=1');
+    }
+    let writer = new ObjStory(0, 'all', '全部', '//www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
+    return axios.all([getCate(), getCateGoods()])
+      .then(axios.spread((cateResp, cateGoodsResp) => {
+        cateResp.data.categories.unshift(writer)
 
-     function getUserAccount() {
-  return axios.get('https://www.tybj-food.com/?json=get_category_index');
-}
-
-function getUserPermissions() {
-  return axios.get('https://www.tybj-food.com/?json=1');
-}
-     // var writer= new ObjStory(0,'all','全部','//www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
-   axios.all([
-    getUserAccount(),
-    getUserPermissions()
-  ])
-
-  .then(axios.spread( (userResp,reposResp)=> {
-    // 上面两个请求都完成后，才执行这个回调方法
-    console.log(userResp.data.categories instanceof  String);
-    console.log('newarr', reposResp.data);
-     // posts=userResp.data.categories
-return {posts:userResp.data.categories}
-  }));
- },
-
-
-
-  //  asyncData({ req, params }) {
-  //    function ObjStory(id,slug,title,description) //声明对象
-  //    {
-  //       this.ID = id;
-  //       this.slug= slug;
-  //       this.title= title;
-  //       this.description = description;
-  //    }
-  //    var writer= new ObjStory(0,'all','全部','//www.tybj-food.com/wp-content/themes/tybj/public/images/i_all.png');
-  //   return axios.get('https://www.tybj-food.com/wap/?json=get_category_index')
-  //     .then((res) => {
-  //      res.data.categories.unshift(writer)
-
-  //       return { posts: res.data.categories}
-
-  //     })
-  // },  
-
+        return { posts: cateResp.data.categories,cateGoods:cateGoodsResp.data.posts }
+      }));
+  },
 
   created() {
-console.log(this.posts)
-console.log(this.newarr)
-
+    // console.log(this.cateGoods);
   },
-
   components: {
     TopNav,
     Swiper,
     Cate,
     CateGoods
-    // Model
   }
 }
 
 </script>
 <style>
 .fade-enter-active {
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 
 .fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 
 .fade-enter,
