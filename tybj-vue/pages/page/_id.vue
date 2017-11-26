@@ -1,24 +1,24 @@
 <template>
   <div>
+
     <!-- <a  href="javascript:"  class="class th-nav-back" @click="go()">123</a> -->
     <!-- <nuxt-link to="/page">123321</nuxt-link> -->
     <GoNav/>
-    <main>
+    <main style="padding-top: .6rem;">
       <article>
         <div class="head">
-          <h1 class="title">{{post.title}}</h1>
+          <h1 class="title"  >{{post.title}}</h1>
           <div class="info">
             <span class="time js-time">{{post.date}}</span>
             <span class="source js-source">{{post.categories[0].title}}</span>
-          
-            <span class="font" v-if='fontBig' @click='isBig()'> <transition name="bounce">T小</transition></span>
- 
-
-            <span class="font" v-else='fontBig' @click='isBig()'><transition name="bounce">T大</transition></span>
-   
+            <span  @click="fontBig = !fontBig">
+            <div class="font" :class="fontBig===true?'big':''" v-if='fontBig'>T小</div>
+            <span class="font" :class="fontBig===true?'':'small'" v-else>T大</span>
+     </span>
+      
           </div>
-          <div class="content" :class="{'fontBig':fontBig===true}  ">
-            <div class="excerpt"><p>{{post.excerpt}}></p></div>
+          <div class="content" :class="{'fontBig':fontBig===true}">
+            <div class="excerpt"><p>{{post.excerpt}}</p></div>
             <div class="cover"><img :src="post.attachments[0].url" /></div>
             <div v-html="this.strReplace(post.content)"></div>
           </div>
@@ -39,7 +39,11 @@ export default {
   data() {
     return {
       post: [],
-      fontBig:false
+      fontBig:false,
+       show: true,
+            scrollTop: '',
+      scrollHeight: '',
+      clientHeight: '',
     }
   },
   validate({ params }) {
@@ -56,12 +60,22 @@ export default {
     console.log(this.post)
   },
   methods: {
+       scroll() {
+      this.scrollTop = this.getScrollTop();
+      this.scrollHeight = this.getScrollHeight();
+      this.clientHeight = this.getClientHeight();
+      console.log(this.scrollTop);
+      // console.log(this.scrollHeight);
+      // console.log(this.scrollHeight);
+      if (this.clientHeight + this.scrollTop === this.scrollHeight ) {
+      }
+    },
     go() {
       this.$router.go(-1)
     },
-    isBig () {
+    toggle () {
+
 　　　　　　　　this.fontBig = !this.fontBig;
-console.log('test');
 　　　　　　},
     strReplace(str) {
       let strReplace = str.replace(/([a-z]+)="[\s\S]+?"/ig, function(a, b, c, d) {
@@ -75,8 +89,54 @@ console.log('test');
       return strReplace
     },
 
-  },
 
+ getScrollTop() {
+      var scrollTop = 0;
+      if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+      } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+      }
+      return scrollTop;
+    },
+    getClientHeight() {
+
+      var windowHeight = 0;
+      if (document.compatMode === "CSS1Compat") {
+        windowHeight = document.documentElement.clientHeight;
+      } else {
+        windowHeight = document.body.clientHeight;
+      }
+
+      return windowHeight;
+
+    },
+    getScrollHeight() {
+
+      var scrollHeight = 0,
+        bodyScrollHeight = 0,
+        documentScrollHeight = 0;
+      if (document.body) {
+        bodyScrollHeight = document.body.scrollHeight;
+      }
+      if (document.documentElement) {
+        documentScrollHeight = document.documentElement.scrollHeight;
+      }
+      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+      return scrollHeight;
+
+    }
+
+
+
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scroll)
+  },
+destroyed(){
+    window.removeEventListener('scroll', this.scroll)
+
+},
   components: {
     GoNav
   }
@@ -85,6 +145,12 @@ console.log('test');
 </script>
 
 <style>
+.fadeout-enter-active, .fadeout-leave-active {
+  transition: opacity .5s
+}
+.fadeout-enter, .fadeout-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
   .bounce-enter-active {
   animation: bounce-in 2s;
 }
@@ -93,13 +159,13 @@ console.log('test');
 }
 @keyframes bounce-in {
   0% {
-    transform: scale(0);
+    transform: scale(1);
   }
   50% {
     transform: scale(1.5);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0);
   }
 }
 @keyframes bounce-out {

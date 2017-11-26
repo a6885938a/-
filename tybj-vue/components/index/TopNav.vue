@@ -1,7 +1,7 @@
 <template>
    <div class='th-nav wbox rel ty_tit'>
- 
-   <img class="logo" src="../../src/images/logo.png"/>
+ <Logo/>
+
             <div class="th-nav-title of bg">天园饼家</div>
             </div>
         
@@ -23,5 +23,14 @@ left: .2rem;
 top:.05rem;
 }
 </style>
+<script>
+import Logo from '~/components/Logo.vue'
+export default {
+
+	  components: {
+    Logo
+  }
+}
+</script>
 
 
