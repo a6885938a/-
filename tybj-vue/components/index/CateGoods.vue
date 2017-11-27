@@ -1,19 +1,17 @@
 <template>
-  <div class="w app-pd-wp" style="position: relative;">
+  <div class="w app-pd-wp" style="position: relative;" >
     <!-- <p id="PullUp" v-html='loadHtml'  ></p> -->
     <p id="PullUp" v-html='loadHtml' v-if='loading'></p>
     <div class='loadingMeg' v-else='loading'>{{'为你推荐 '+megNum+' 条文章'}}</div>
     <div class=" hor-list">
-      <!-- <ul v-html='categoods'> -->
          <ul>
-<!--    {{goodsHtml}}
-
- </ul> -->
-         <nuxt-link :to="{name: 'page-id',params:{ id: post.id }}" v-for="post in goodsHtml">
-
-          <li  >
+         <nuxt-link :to="{name: 'page-id',params:{ id: post.id }}" v-for="post in goodsHtml" :key="post.id">
+          <li>
             <div class="info-img">
-              <img class='lazy' :src="post.attachments.length>0?'https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src='+post.attachments[0].url+'&h=200&w=300&zc=1':'../images/loadbg.jpg'" />
+     
+   <!-- <img class='lazy'   :src="https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src=http://img.tybj-food.com/2016/10/IMG_8694.jpg&h=200&w=300&zc=1" /> -->
+
+              <img  v-lazy="post.attachments.length>0?'https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src='+post.attachments[0].url+'&h=200&w=300&zc=1':'../images/loadbg.jpg'" />
             </div>
             <div class="info-bar">
        
@@ -29,6 +27,7 @@
       </ul>
     </div>
     <p id="PullDown" v-html='pullDownTips[updatapullDown]'></p>
+<!--    <img  v-lazy="https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src=http://img.tybj-food.com/2016/10/IMG_8694.jpg&h=200&w=300&zc=1" /> -->
   </div>
   <!-- <div>
   <div @click="getNewsFn">
@@ -37,30 +36,14 @@
   <div>{{posts}}</div>
   </div> -->
 </template>
-<style>
-.bounce-enter-active {
-  animation: bounce-in.5s;
-}
 
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    height: 0
-  }
-
-  100% {
-    height: .4rem;
-  }
-}
-
-</style>
 <script>
 import axios from 'axios';
+
+
 export default {
   props: ['goodsLists'],
+
   // props:{cateGoods:{type:Array}},
 
   // posts: 'news',
@@ -84,7 +67,8 @@ export default {
         2: '已经到底了,别址了',
         3: ''
       },
-      updatapullDown: 0
+      updatapullDown: 0,
+
 
 
 

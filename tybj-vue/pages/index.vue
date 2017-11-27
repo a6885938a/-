@@ -1,7 +1,9 @@
 <template>
   <div>
+    <nuxt-link to="/page/177">221</nuxt-link>
+        <!-- <nuxt-link :to="{ name: 'page', params: { id: '155' } }">123321</nuxt-link> -->
     <TopNav/>
-    <Swiper/>
+   <Swiper/>
     <Cate :cate_name="posts" v-on:changeAct="changeAct" />
     <CateGoods ref="categoods" :goodsLists="cateGoods" v-on:changeIsData="changeIsData" />
   </div>
@@ -41,8 +43,6 @@ export default {
         this.isDataing = true;
         console.log(this.isDataing);
         this.$refs.categoods.getMoreData()
-
-
       }
     },
     changeIsData(val) {
@@ -117,7 +117,8 @@ destroyed(){
     const getCateGoods = () => {
       return axios.get('https://www.tybj-food.com/?json=1&&page=1');
     }
-    let writer = new ObjStory(0, 'all', '全部', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAApVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABU/knhAAAANnRSTlMAwfgE5sw7JeJi8/vECuzIIrs26Sjd2NF9XlVPGRI5oKOcRR6YjYNn7g+RdG6IPzIvLauKsqe+JeGyAAADf0lEQVRo3u2aa3OiMBiFAUEthLvcVQRB8dqqrf//p+3kna3gmkCWdTrtTs6nmnkPTzDFnIQI/50Gk/2HLZKF3lfxjOia5eE7orjsj/1kcFc9ynxXlWhSjbG5HjwyYtMzJLrL9bNRozoypWuHxuX0D8S09LpMkhnVPYLqLsPWumdcJAaXF/8ufwuuLJLCQXMQdyqTK5hAuX7W8Cc1QCJFigz15lsD8qZAm6zQTChQoWsZdG04xh+q4iTQNNsDRV012lYqMPYzqutUVDCYcCuhgS9QCG1yDFxvN1ps3GA4ra4Cd8TdQzkewGDZWr7JcL1SD72l4J5lm1bXEg+2BF1DGCJ2PKtrA0Mmt4YJhhjrQbtNxBAEf7FAchlDRvXTiyFyzgIRmSFzImT+XMiQCBlyCIdwCIdwCIdwyA+HkIOEwwzpH4nc5O8gaNAO2VWEcKeu2l26eYOkOIF6SWu5hTQc65d1AsV+DVmtrmiMe5LCEghSvT/SBzTp1gGXaKlQK4X1xsFqcY18SPUxLAxMuIJRxsf5kCAn3yG4ohc1e+mBC60Sh2SaH+PSAJc5g/qdccVSXZkst9KgYKE3v+/FFSh0lwoFxk4AzYori9Cr0NQrYnIVs8//x0LrrraPwr2OdrdJK0b1Sjbs6pa8cB6XXwu56+bDadMwz0TTH5PlB2ixF0jaL1BAdZliNn94cpZ59ELSOjlNBZqmp2RNdEX5Uhe4uLi+razJiKIJ/YnXLarpcdZ8XdmmQpW5iIiIJEUtJnt1NzksQ1Ht2Esk/Aqf0qDdpIphIxVs+8wnznu3Sbvtjs5KqcfMOLFZTFK5Ee7meMOlzdY95njXUKFAfhGaaSVb5+S0klwCoPhJc8x9cAUXSlrJ19ktrdS5y9noT81d+sapcxdbgoR7QZt65xPBfTAkyGrLnIUL4m7qhSUL28ypPnYJgdtNnrub6pDXJz9wpcUhHMIhHMIhHMIh32Sjc/5cyPEr3v3G7r+9xbYl7J+2Z8Gyz/v4af0+vqxwGAxby0e9ThYcKlwT3s5IaHLYci+JrxHPSGh+RDctD9Cz8RC+CvuK5SoiTcgjnPYwoW2MqK6ggvXGWYf6udfn3EooMbn8z0Vg1OcEjrVloDT3kiNF63GWaCt3mTSlOWbO2TMkulTiqSh9Z47VFpfhnZ17wzC06WOY0s53xSnVg+xwqAtfp1+2QbFkV4Bt5QAAAABJRU5ErkJggg==');
+    let i_all='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAApVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABU/knhAAAANnRSTlMAwfgE5sw7JeJi8/vECuzIIrs26Sjd2NF9XlVPGRI5oKOcRR6YjYNn7g+RdG6IPzIvLauKsqe+JeGyAAADf0lEQVRo3u2aa3OiMBiFAUEthLvcVQRB8dqqrf//p+3kna3gmkCWdTrtTs6nmnkPTzDFnIQI/50Gk/2HLZKF3lfxjOia5eE7orjsj/1kcFc9ynxXlWhSjbG5HjwyYtMzJLrL9bNRozoypWuHxuX0D8S09LpMkhnVPYLqLsPWumdcJAaXF/8ufwuuLJLCQXMQdyqTK5hAuX7W8Cc1QCJFigz15lsD8qZAm6zQTChQoWsZdG04xh+q4iTQNNsDRV012lYqMPYzqutUVDCYcCuhgS9QCG1yDFxvN1ps3GA4ra4Cd8TdQzkewGDZWr7JcL1SD72l4J5lm1bXEg+2BF1DGCJ2PKtrA0Mmt4YJhhjrQbtNxBAEf7FAchlDRvXTiyFyzgIRmSFzImT+XMiQCBlyCIdwCIdwCIdwyA+HkIOEwwzpH4nc5O8gaNAO2VWEcKeu2l26eYOkOIF6SWu5hTQc65d1AsV+DVmtrmiMe5LCEghSvT/SBzTp1gGXaKlQK4X1xsFqcY18SPUxLAxMuIJRxsf5kCAn3yG4ohc1e+mBC60Sh2SaH+PSAJc5g/qdccVSXZkst9KgYKE3v+/FFSh0lwoFxk4AzYori9Cr0NQrYnIVs8//x0LrrraPwr2OdrdJK0b1Sjbs6pa8cB6XXwu56+bDadMwz0TTH5PlB2ixF0jaL1BAdZliNn94cpZ59ELSOjlNBZqmp2RNdEX5Uhe4uLi+razJiKIJ/YnXLarpcdZ8XdmmQpW5iIiIJEUtJnt1NzksQ1Ht2Esk/Aqf0qDdpIphIxVs+8wnznu3Sbvtjs5KqcfMOLFZTFK5Ee7meMOlzdY95njXUKFAfhGaaSVb5+S0klwCoPhJc8x9cAUXSlrJ19ktrdS5y9noT81d+sapcxdbgoR7QZt65xPBfTAkyGrLnIUL4m7qhSUL28ypPnYJgdtNnrub6pDXJz9wpcUhHMIhHMIhHMIh32Sjc/5cyPEr3v3G7r+9xbYl7J+2Z8Gyz/v4af0+vqxwGAxby0e9ThYcKlwT3s5IaHLYci+JrxHPSGh+RDctD9Cz8RC+CvuK5SoiTcgjnPYwoW2MqK6ggvXGWYf6udfn3EooMbn8z0Vg1OcEjrVloDT3kiNF63GWaCt3mTSlOWbO2TMkulTiqSh9Z47VFpfhnZ17wzC06WOY0s53xSnVg+xwqAtfp1+2QbFkV4Bt5QAAAABJRU5ErkJggg=='
+    let writer = new ObjStory(0, 'all', '全部', i_all);
     return axios.all([getCate(), getCateGoods()])
       .then(axios.spread((cateResp, cateGoodsResp) => {
         cateResp.data.categories.unshift(writer)
@@ -132,6 +133,7 @@ destroyed(){
   components: {
     TopNav,
     Swiper,
+  
     Cate,
     CateGoods
   }
@@ -153,34 +155,8 @@ destroyed(){
   opacity: 0;
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
 
-.links {
-  padding-top: 15px;
-}
 
 </style>

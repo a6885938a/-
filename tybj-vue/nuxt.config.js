@@ -98,13 +98,16 @@ module.exports = {
   plugins: [{
     src: '~/plugins/nuxt-swiper-plugin.js',
     ssr: false
+  }, {
+    src: '~plugins/vue-lazyload',
+    ssr: false
   }],
 
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
- 
+
   proxy: [
     [
       '/wap', {

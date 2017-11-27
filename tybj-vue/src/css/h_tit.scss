@@ -10,10 +10,10 @@ $titleColor: #353d44;
     z-index: 100;
     position: relative;
     height: .88rem;
-    background: #fff;
     line-height: .88rem;
+  background-color: rgba(34, 34, 34, 0.85);
     font-size: .3rem;
-    border-bottom: 1px solid #DCDCDC;
+    border-bottom:0px solid #DCDCDC;
 }
 
 .th-nav-title {
@@ -52,7 +52,7 @@ $titleColor: #353d44;
         display: inline-block;
         width: .24rem;
         height: .24rem;
-        border: solid $titleColor;
+        border: solid #fff;
         border-width: 1px 0 0 1px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);

@@ -15,13 +15,7 @@
 color:#fff;
 font-size: .36rem;
 }
-.th-nav .logo{
-height: .8rem;
-line-height: .8rem;
-position: absolute;
-left: .2rem;
-top:.05rem;
-}
+
 </style>
 <script>
 import Logo from '~/components/Logo.vue'

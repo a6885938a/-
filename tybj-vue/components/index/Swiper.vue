@@ -5,12 +5,12 @@
         <div class="swiper-slide" v-for="item in items">
           <!-- v-for="banner in banners" -->
           <!-- <img :src="banner"> -->
-          <swiper-slide>
+     <!--      <swiper-slide> -->
             <nuxt-link :to="item.url">
               <img :data-src="item.img" class="swiper-lazy">
               <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </nuxt-link>
-          </swiper-slide>
+          <!-- </swiper-slide> -->
           <!--  <swiper-slide>
         <nuxt-link to="/about">
           <img :src="banner">
@@ -57,6 +57,7 @@ export default {
       }
     }
   },
+
   // mounted() {
   //   console.log('app init')
   //   setTimeout(() => {
