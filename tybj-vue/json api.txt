@@ -9,6 +9,6 @@ https://www.tybj-food.com/?json=1&page=2
 
 ±Í«© https://www.tybj-food.com/tag/banana/?json=1
 
-
+https://www.tybj-food.com/?json=get_tag_posts&tag_slug=banana
 
 https://segmentfault.com/q/1010000005345202

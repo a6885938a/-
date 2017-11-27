@@ -2,12 +2,12 @@
   <div class="mySwiper">
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="item in items">
+        <div class="swiper-slide" v-for="post in goodsLists">
           <!-- v-for="banner in banners" -->
           <!-- <img :src="banner"> -->
      <!--      <swiper-slide> -->
-            <nuxt-link :to="item.url">
-              <img :data-src="item.img" class="swiper-lazy">
+            <nuxt-link :to="{name: 'page-id',params:{ id: post.id }}" :key="post.id">
+              <img :data-src="post.custom_fields.settings" class="swiper-lazy">
               <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </nuxt-link>
           <!-- </swiper-slide> -->
@@ -30,6 +30,8 @@ import Bimg from '../../src/images/02.jpg'
 import Loading from '../../src/images/loadbg.jpg'
 
 export default {
+props:{goodsLists:{type:Array}},
+
   data() {
     return {
       items: [{
