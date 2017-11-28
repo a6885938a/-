@@ -5,15 +5,19 @@
    <Swiper :goodsLists="bannerGoods"/>
     <Cate :cate_name="posts" v-on:changeAct="changeAct" />
     <CateGoods ref="categoods" :goodsLists="cateGoods" v-on:changeIsData="changeIsData" />
+  
+    <FooterNav />
   </div>
 </template>
 <script>
 import Logo from '~/components/Logo.vue'
+
 import TopNav from '../components/index/TopNav.vue'
 import Swiper from '../components/index/Swiper.vue'
 import Cate from '../components/index/Cate.vue'
 import CateGoods from '../components/index/CateGoods.vue'
-// import Model from '../components/index/Model.vue'
+import FooterNav from '~/components/FooterNav.vue'
+
 import axios from 'axios'
 
 
@@ -136,9 +140,9 @@ destroyed(){
   components: {
     TopNav,
     Swiper,
-  
     Cate,
-    CateGoods
+    CateGoods,
+    FooterNav
   }
 }
 

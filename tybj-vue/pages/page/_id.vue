@@ -8,9 +8,9 @@
         <div class="head">
           <div id="headHeight">
             <h1 class="title returnLeft">{{post.title}}</h1>
-            <div class="info">
-              <span class="time returnLeft">{{post.date}}</span>
-              <span class="source returnLeft">{{post.categories[0].title}}</span>
+            <div class="info returnLeft">
+              <span class="time">{{post.date}}</span>
+              <span class="source">{{post.categories[0].title}}</span>
               <span @click="fontBig = !fontBig">
             <div class="font" :class="fontBig===true?'big':''" v-if='fontBig'>T小</div>
             <span class="font" :class="fontBig===true?'':'small'" v-else>T大</span>
