@@ -1,7 +1,7 @@
 <template>
   <footer class="v5-tab">
   <ul class="hor-view">
-    <li><a class="cur"> <div class="opa1 i_home" ></div> <span >首页</span> </a>
+    <li  class="cur"><a> <div class="opa1 i_home" ></div> <span >首页</span> </a>
     </li>
     <li>
         <a > <div class="opa1 i_media" ></div> <span >媒体报道</span> </a>

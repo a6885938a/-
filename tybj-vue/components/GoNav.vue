@@ -1,5 +1,5 @@
 <template>
-  <div id="naxBox" ref="nav" class='th-nav wbox rel show-top-pannel' style=""  :style="{position: 'fixed',}">
+  <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel' style=""  :style="{position: 'fixed',}">
     <!-- <div class="opa1" :style="{ webkitMaskImage:'url(' +post.description+')'}" >12</div> -->
     <!-- <nuxt-link to="/">Back to the home page</nuxt-link> -->
     <a class="class th-nav-back" @click="go()"></a>
