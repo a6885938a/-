@@ -129,8 +129,7 @@ $yellowColor: #F5A623;
   position: relative;
   display: block;
   width: 7.5rem;
-
-  padding-bottom: .4rem;
+  padding-bottom: 1rem;
 }
 
 .hor-list {
@@ -523,4 +522,33 @@ a{
 
 .i_contact {
   -webkit-mask-image: url(../images/contact_ico.png)
+}
+
+
+//media
+.media li{
+
+}
+
+.vjs_video_3-dimensions {
+    width: 100%;
+    height: 100%;
+  
+    
+
+}
+.video-js {
+  position:relative;
+    width: 100%;
+    height:auto;
+.vjs-tech{
+  position:relative;
+}
+.vjs-big-play-button{
+  width: 1rem;
+  height: 1rem;
+   margin: auto;  
+  position: absolute;  
+  top: 0; left: 0; bottom: 0; right: 0;  
+}
 }

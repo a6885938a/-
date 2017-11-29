@@ -76,7 +76,6 @@ export default {
 let classVal=naxBoxWrap.getAttribute("class")
     classVal=classVal.concat('hide-top-pannel')
 
-console.log(classVal);
 
     if (fixHeight < this.scrollTop && this.isT < this.scrollTop) {
 

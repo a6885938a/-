@@ -25,6 +25,7 @@ module.exports = {
   css: [
     'src/css/base.scss',
     'swiper/dist/css/swiper.css',
+    'video.js/dist/video-js.css',
     'src/css/m_tybj.scss'
   ],
   /*
@@ -100,6 +101,9 @@ module.exports = {
     ssr: false
   }, {
     src: '~plugins/vue-lazyload',
+    ssr: false
+  }, {
+    src: '~plugins/nuxt-video-player-plugin.js',
     ssr: false
   }],
 
