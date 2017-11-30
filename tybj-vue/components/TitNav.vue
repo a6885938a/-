@@ -1,16 +1,16 @@
 <template>
-  <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel' style=""  :style="{position: 'fixed',}">
+  <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel'  :style="{position: 'fixed',}">
     <!-- <div class="opa1" :style="{ webkitMaskImage:'url(' +post.description+')'}" >12</div> -->
     <!-- <nuxt-link to="/">Back to the home page</nuxt-link> -->
     <a class="class th-nav-back" @click="go()"></a>
-    <Logo :ml='0.5' />
-    <div class="th-nav-title of bg" @click="change('56')">天园饼家</div>
+    <LogoText :ml='0.5' :isDisplay="isDisplay"/>
+    <div class="th-nav-title of bg">{{title?title:''}}</div>
   </div>
 </template>
 <script>
-import Logo from '~/components/Logo.vue'
+import LogoText from '~/components/LogoText.vue'
 export default {
-  props: { fixtop: { type: Number } },
+  props: { fixtop: { type: Number },title:{type:String},isDisplay:{type:String} },
 
   data() {
     return {
@@ -28,13 +28,10 @@ export default {
       window.history.go(-1)
       // this.$router.go(-1)
     },
-    change(x) {
-      this.td = '';
-    }
+ 
   },
   mounted() {
-    // let canvas=document.getElementById('naxBox').clientHeight;
-    // console.log(canvas);
+
     this.init();
 
   },
@@ -42,7 +39,7 @@ export default {
     // console.log(this.$refs.nav.style.color);
   },
   components: {
-    Logo,
+    LogoText,
   }
 
 }

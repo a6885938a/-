@@ -128,9 +128,12 @@ destroyed(){
     let writer = new ObjStory(0, 'all', '全部', i_all);
     return axios.all([getCate(), getCateGoods(), getBanner()])
       .then(axios.spread((cateResp, cateGoodsResp,bannerResp) => {
+   
         cateResp.data.categories.unshift(writer)
-
-        return { posts: cateResp.data.categories,cateGoods:cateGoodsResp.data.posts,bannerGoods:bannerResp.data.posts }
+        let  cateArr = cateResp.data.categories.filter((item)=>{
+    return item.id !== 9;//id9为媒体报道
+});
+        return { posts: cateArr,cateGoods:cateGoodsResp.data.posts,bannerGoods:bannerResp.data.posts }
       }));
   },
 
