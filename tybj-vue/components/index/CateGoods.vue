@@ -18,7 +18,7 @@
               <div class="pro-title">{{post.title}}</div>
               <div class="e-numb">
                 <span class="e-price">{{post.categories[0].title}}</span>
-                <span class="watch"><span class="ico">阅</span>{{parseInt(post.custom_fields.post_views_count)}}</span>
+                <span class="watch"><span class="ico">阅</span>{{post.custom_fields.post_views_count?parseInt(post.custom_fields.post_views_count):'1'}}</span>
               </div>
             </div>
         </li>

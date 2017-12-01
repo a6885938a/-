@@ -138,7 +138,6 @@ destroyed(){
   },
 
   created() {
-    console.log(this.bannerGoods);
   },
   components: {
     TopNav,

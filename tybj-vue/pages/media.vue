@@ -28,12 +28,17 @@ import TitNav from '~/components/TitNav.vue'
 import MediaLi from '~/components/media/MediaLi.vue'
 import axios from 'axios';
 export default {
-   // beforeCreate: function() {
-   //      document.getElementsByTagName("body")[0].className="mediaBody";
-   //  },
-   //    beforeDestroy: function() {
-   //      document.body.removeAttribute("class","mediaBody");
-   //  },
+   beforeCreate() {
+    if (typeof window !== 'undefined') {
+     document.getElementsByTagName("body")[0].className="mediaBody";
+}
+
+    },
+      beforeDestroy() {
+            if (typeof window !== 'undefined') {
+       window.document.body.removeAttribute("class","mediaBody");
+     }
+    },
 data () {
       return {
         // datas:[{"title":'1',"url":'http://p068hy9em.bkt.clouddn.com/12.mp4'},{"title":'2',"url":'https://www.tybj-food.com/wp-content/themes/tybj/dist/images/video_p1.mp4'}],
@@ -49,7 +54,7 @@ data () {
     return { posts: data.posts }
   },
     created() {
-    console.log(this.post);
+    // console.log(this.post);
   },
   components: {
     TitNav
