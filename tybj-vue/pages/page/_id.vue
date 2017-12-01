@@ -2,7 +2,7 @@
   <div>
     <!-- <a  href="javascript:"  class="class th-nav-back" @click="go()">123</a> -->
     <!-- <nuxt-link to="/page">123321</nuxt-link> -->
-    <TitNav ref="nav" :fixtop='fixtop' :isDisplay="'block'"/>
+    <TitNav ref="nav" :fixtop='fixtop' :isDisplay="'block'" />
     <main style="padding-top: .6rem;">
       <article>
         <div class="head">
@@ -37,8 +37,10 @@
 import axios from 'axios';
 
 import TitNav from '~/components/TitNav.vue'
+
+
 export default {
-      head () {
+  head() {
     return {
       title: this.post.title,
     }
@@ -75,23 +77,23 @@ export default {
       setTimeout(() => { this.isT = this.scrollTop; }, 0);
 
       let naxBox = document.getElementById('naxBox').clientHeight;
-      let naxBoxWrap=document.getElementById('naxBox')
+      let naxBoxWrap = document.getElementById('naxBox')
       let headHeight = document.getElementById('headHeight').clientHeight;
       let fixHeight = naxBox + headHeight
-let classVal=naxBoxWrap.getAttribute("class")
-    classVal=classVal.concat('hide-top-pannel')
+      let classVal = naxBoxWrap.getAttribute("class")
+      classVal = classVal.concat('hide-top-pannel')
 
 
-    if (fixHeight < this.scrollTop && this.isT < this.scrollTop) {
+      if (fixHeight < this.scrollTop && this.isT < this.scrollTop) {
 
-       naxBoxWrap.classList.remove("show-top-pannel")
-      setTimeout(() => { naxBoxWrap.classList.add("hide-top-pannel")},0);
+        naxBoxWrap.classList.remove("show-top-pannel")
+        setTimeout(() => { naxBoxWrap.classList.add("hide-top-pannel") }, 0);
       } else if (this.isT > this.scrollTop) {
-       naxBoxWrap.classList.remove("hide-top-pannel")
-      setTimeout(() => { naxBoxWrap.classList.add("show-top-pannel")},0);
+        naxBoxWrap.classList.remove("hide-top-pannel")
+        setTimeout(() => { naxBoxWrap.classList.add("show-top-pannel") }, 0);
 
 
-}
+      }
     },
     go() {
       this.$router.go(-1)
@@ -149,17 +151,17 @@ let classVal=naxBoxWrap.getAttribute("class")
 
   },
   mounted() {
-    window.addEventListener('scroll', this.scroll)
+    // window.addEventListener('scroll', this.scroll)
   },
   destroyed() {
-    window.removeEventListener('scroll', this.scroll)
+    // window.removeEventListener('scroll', this.scroll)
 
   },
   components: {
-    TitNav,
+    TitNav
   },
   created() {
-   
+
   },
 
 }

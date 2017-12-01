@@ -5,9 +5,11 @@
     <a class="class th-nav-back" @click="go()"></a>
     <LogoText :ml='0.5' :isDisplay="isDisplay"/>
     <div class="th-nav-title of bg">{{title?title:''}}</div>
+    <TrBtn/>
   </div>
 </template>
 <script>
+import TrBtn from '~/components/TrBtn.vue'
 import LogoText from '~/components/LogoText.vue'
 export default {
   props: { fixtop: { type: Number },title:{type:String},isDisplay:{type:String} },
@@ -39,7 +41,7 @@ export default {
     // console.log(this.$refs.nav.style.color);
   },
   components: {
-    LogoText,
+    LogoText,TrBtn
   }
 
 }
