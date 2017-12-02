@@ -3,7 +3,7 @@
     <!-- <a  href="javascript:"  class="class th-nav-back" @click="go()">123</a> -->
     <!-- <nuxt-link to="/page">123321</nuxt-link> -->
     <TitNav ref="nav" :fixtop='fixtop' :isDisplay="'block'" />
-    <main style="padding-top: .6rem;">
+    <main style="padding-top: .6rem; background: #eee;">
       <article>
         <div class="head">
           <div id="headHeight">
@@ -24,8 +24,36 @@
             <div class="cover"><img :src="post.attachments.length>0?post.attachments[0].url:''" /></div>
             <div v-html="this.strReplace(post.content)"></div>
           </div>
+
+
+
         </div>
       </article>
+            <div class="recommend" v-if="showRecommend">
+            <div class="app-pd-wp" style="position: relative;">
+              <h2>相关推荐</h2>
+              <div class="hor-list">
+                <ul>
+                  <nuxt-link :to="{name: 'page-id',params:{ id: post.id }}" v-for="post in recommendData" :key="post.id">
+                    <li>
+                      <div class="info-img">
+                        <img v-lazy="post.attachments.length>0?'https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src='+post.attachments[0].url+'&h=200&w=300&zc=1':'../images/loadbg.jpg'" />
+                      </div>
+                      <div class="info-bar">
+                        <div class="pro-title">{{post.title}}</div>
+                        <div class="e-numb">
+                          <span class="e-price">{{post.categories[0].title}}</span>
+                          <span class="watch"><span class="ico">阅</span>{{post.custom_fields.post_views_count?parseInt(post.custom_fields.post_views_count):'1'}}</span>
+                        </div>
+                      </div>
+                    </li>
+                  </nuxt-link>
+                </ul>
+              </div>
+              <!-- <p id="PullDown" v-html='pullDownTips[updatapullDown]'></p> -->
+              <!--    <img  v-lazy="https://www.tybj-food.com/wp-content/themes/tybj/timthumb.php?src=http://img.tybj-food.com/2016/10/IMG_8694.jpg&h=200&w=300&zc=1" /> -->
+            </div>
+          </div>
     </main>
   </div>
 </template>
@@ -48,6 +76,8 @@ export default {
   data() {
     return {
       post: [],
+      recommendData: [],
+      showRecommend:false,
       fontBig: false,
       show: true,
       scrollTop: '',
@@ -61,40 +91,25 @@ export default {
   validate({ params }) {
     return !isNaN(+params.id)
   },
+
+  // async asyncData({ params }) {
+  //   const postData = () => {
+  //     return axios.get(`https://www.tybj-food.com/?json=1&p=${+params.id}`);
+  //   }
+  //   const recommendData = () => {
+  //     return axios.get(`https://www.tybj-food.com/?json=get_category_posts&category_id=${+params.id}`)
+  //   }
+  //   return axios.all([postData(),recommendData()])
+  //     .then(axios.spread((postRespdata,recommend) => {
+  //       return { post: postRespdata.data.post,recommend:recommend.data.post,}
+  //     }));
+  // },
+
   async asyncData({ params }) {
     let { data } = await axios.get(`https://www.tybj-food.com/?json=1&p=${+params.id}`)
     return { post: data.post }
   },
   methods: {
-
-    scroll() {
-      this.scrollTop = this.getScrollTop();
-      this.scrollHeight = this.getScrollHeight();
-      this.clientHeight = this.getClientHeight();
-      // console.log(this.scrollTop);
-      // console.log(this.scrollHeight);
-      // console.log(this.scrollHeight);
-      setTimeout(() => { this.isT = this.scrollTop; }, 0);
-
-      let naxBox = document.getElementById('naxBox').clientHeight;
-      let naxBoxWrap = document.getElementById('naxBox')
-      let headHeight = document.getElementById('headHeight').clientHeight;
-      let fixHeight = naxBox + headHeight
-      let classVal = naxBoxWrap.getAttribute("class")
-      classVal = classVal.concat('hide-top-pannel')
-
-
-      if (fixHeight < this.scrollTop && this.isT < this.scrollTop) {
-
-        naxBoxWrap.classList.remove("show-top-pannel")
-        setTimeout(() => { naxBoxWrap.classList.add("hide-top-pannel") }, 0);
-      } else if (this.isT > this.scrollTop) {
-        naxBoxWrap.classList.remove("hide-top-pannel")
-        setTimeout(() => { naxBoxWrap.classList.add("show-top-pannel") }, 0);
-
-
-      }
-    },
     go() {
       this.$router.go(-1)
     },
@@ -109,45 +124,21 @@ export default {
       });
       return strReplace
     },
+    getRecommendData(id){
+      return axios.get('https://www.tybj-food.com/?json=get_category_posts&category_id='+id)
+          .then((res) => {
+   let newArr = res.data.posts.filter((item) => {
+          return item.id !== this.post.id; //id9为媒体报道
+        });
+   if(newArr.length>0)
+            {
+  this.showRecommend=true;
+              this.recommendData=newArr
+}
 
-
-    getScrollTop() {
-      var scrollTop = 0;
-      if (document.documentElement && document.documentElement.scrollTop) {
-        scrollTop = document.documentElement.scrollTop;
-      } else if (document.body) {
-        scrollTop = document.body.scrollTop;
-      }
-      return scrollTop;
-    },
-    getClientHeight() {
-
-      var windowHeight = 0;
-      if (document.compatMode === "CSS1Compat") {
-        windowHeight = document.documentElement.clientHeight;
-      } else {
-        windowHeight = document.body.clientHeight;
-      }
-
-      return windowHeight;
-
-    },
-    getScrollHeight() {
-      var scrollHeight = 0,
-        bodyScrollHeight = 0,
-        documentScrollHeight = 0;
-      if (document.body) {
-        bodyScrollHeight = document.body.scrollHeight;
-      }
-      if (document.documentElement) {
-        documentScrollHeight = document.documentElement.scrollHeight;
-      }
-      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
-      return scrollHeight;
-
+            // console.log(this.recommendData);
+          })
     }
-
-
 
   },
   mounted() {
@@ -161,7 +152,10 @@ export default {
     TitNav
   },
   created() {
-
+    // console.log(this.post.categories[0].id);
+    // 
+this.getRecommendData(this.post.categories[0].id);
+console.log(this.recommendData);
   },
 
 }

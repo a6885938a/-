@@ -321,8 +321,10 @@ main {
 
 article {
   padding: 0 .3rem .4rem;
+  margin-bottom:.3rem;
   border-bottom: 1px solid #e6e6e6;
-  background-color: #f6f6f6;
+
+  background: #f6f6f6;
   .head {
     font-weight: 400;
     padding: .54rem 0 0;
@@ -412,7 +414,22 @@ article {
     font-size: .38rem;
   }
 }
+.recommend{
+  border-top: 1px solid #e6e6e6;
 
+  background: #f6f6f6;
+.app-pd-wp{
+  padding:.3rem 0;
+  overflow: hidden;
+
+  h2{
+    padding:0 .3rem;
+    font-size: .34rem;
+    color:$redColor;
+  }
+}
+
+}
 .headroom {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
@@ -538,15 +555,22 @@ article {
 //media
 //
 .mediaBody {
-  background-image: url($bg+'move_bg.png');
-  background-repeat: no-repeat;
+  background: url($bg+'mediaBg.jpg') no-repeat  center;
+
+  background-attachment:fixed;
+  background-size:cover;
+
 }
 
 .media li {
+  border-bottom: 0;
+      margin-bottom:0;
   .mediaTit {
     line-height: .5rem;
     font-size: .24rem;
     height: .5rem;
+    background:#fff;
+    padding:0 .2rem;
     display: flex;
     span {}
     .flexLeft {
@@ -666,20 +690,21 @@ article {
   position: absolute;
   top: 1.18rem;
   right: .05rem;
-  background: #484F55;
+    // background-color: rgba(34,34,34,0.85);
+
   z-index: 112;
   border: 1px solid transparent;
   border-radius: 2px;
 
   li {
     position: relative;
-    border-bottom: 1px solid #5B6166;
+    border-bottom: 1px solid rgba(34,34,34,0.85);
     width: 2.5rem;
     height: .9rem;
     line-height: .9rem;
     text-align: left;
     text-indent: 1.0rem;
-    background: #484F55;
+    background-color: rgba(34,34,34,0.85);
     a {
       position: relative;
       display: block;
@@ -691,13 +716,13 @@ article {
   &::after {
     content: "";
     position: absolute;
-    top: -.45rem;
+    top: -.48rem;
     right: .1rem;
     display: inline-block;
     width: 0;
     height: 0;
     border-style: solid;
-    border-color: transparent transparent #484F55;
+    border-color: transparent transparent rgba(34,34,34,0.85);
     border-width: .25rem;
   }
 }

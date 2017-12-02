@@ -4,7 +4,7 @@
     <div class="w app-pd-wp" style="padding-top:1rem;">
       <div class="hor-list media">
         <ul>
-         <MediaLi/>
+    
           <li v-for="(post,index) in posts" :key="index">
              <nuxt-link :to="{name: 'page-id',params:{ id: post.id }}" class="mediaTit">
  
@@ -17,7 +17,7 @@
 </video>
 
          </li>
-
+ 
          </ul>
          </div>
      </div>
@@ -25,7 +25,6 @@
 </template>
 <script>
 import TitNav from '~/components/TitNav.vue'
-import MediaLi from '~/components/media/MediaLi.vue'
 import axios from 'axios';
 export default {
    beforeCreate() {
