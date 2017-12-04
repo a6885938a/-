@@ -37,11 +37,12 @@ export default {
         //              ],
         //         urls:['about','app'],
         swiperOption: {
+             notNextTick: true,
+    
           autoplay: 2500,
           autoplayDisableOnInteraction: false,
           initialSlide: 1,
           loop: true,
-          preloadImages: 'https://www.thgo8.com/public/index/images/logo1.jpg',
           lazyLoading: true,
           pagination: '.swiper-pagination',
           onSlideChangeEnd: swiper => {

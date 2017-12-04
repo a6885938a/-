@@ -1,4 +1,4 @@
-$redColor:#fb0304; //banner
+$redColor:#a91f24; //banner
 $yellowColor: #F5A623;
 $bg:'../images/';
 
@@ -321,7 +321,7 @@ main {
 
 article {
   padding: 0 .3rem .4rem;
-  margin-bottom:.3rem;
+  margin-bottom: .3rem;
   border-bottom: 1px solid #e6e6e6;
 
   background: #f6f6f6;
@@ -414,22 +414,23 @@ article {
     font-size: .38rem;
   }
 }
-.recommend{
+
+.recommend {
   border-top: 1px solid #e6e6e6;
 
   background: #f6f6f6;
-.app-pd-wp{
-  padding:.3rem 0;
-  overflow: hidden;
+  .app-pd-wp {
+    padding: .3rem 0;
+    overflow: hidden;
 
-  h2{
-    padding:0 .3rem;
-    font-size: .34rem;
-    color:$redColor;
+    h2 {
+      padding: 0 .3rem;
+      font-size: .34rem;
+      color: $redColor;
+    }
   }
 }
 
-}
 .headroom {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
@@ -455,6 +456,17 @@ article {
   -webkit-flex-direction: row;
   flex-direction: row;
 }
+
+.ver-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
 
 .v5-tab {
   position: fixed;
@@ -555,22 +567,21 @@ article {
 //media
 //
 .mediaBody {
-  background: url($bg+'mediaBg.jpg') no-repeat  center;
+  background: url($bg+'mediaBg.jpg') no-repeat center;
 
-  background-attachment:fixed;
-  background-size:cover;
-
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .media li {
   border-bottom: 0;
-      margin-bottom:0;
+  margin-bottom: 0;
   .mediaTit {
     line-height: .5rem;
     font-size: .24rem;
     height: .5rem;
-    background:#fff;
-    padding:0 .2rem;
+    background: #fff;
+    padding: 0 .2rem;
     display: flex;
     span {}
     .flexLeft {
@@ -625,15 +636,12 @@ article {
   // margin: .2rem .2rem 0 0;
   width: .8rem;
   height: .88rem;
-        background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff));
-
-  // background: url($bg+'more.png') ;
-    // -webkit-mask-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff)); // background: url($bg+'more.png') ;
+  // -webkit-mask-repeat: no-repeat;
   -webkit-mask: url($bg+'more.png') no-repeat center;
 
 
-   -webkit-mask-size: .5rem .5rem;
-  // background-size: .5rem .5rem;
+  -webkit-mask-size: .5rem .5rem; // background-size: .5rem .5rem;
 }
 
 #sub-title {
@@ -689,22 +697,20 @@ article {
   display: block;
   position: absolute;
   top: 1.18rem;
-  right: .05rem;
-    // background-color: rgba(34,34,34,0.85);
-
+  right: .05rem; // background-color: rgba(34,34,34,0.85);
   z-index: 112;
   border: 1px solid transparent;
   border-radius: 2px;
 
   li {
     position: relative;
-    border-bottom: 1px solid rgba(34,34,34,0.85);
+    border-bottom: 1px solid rgba(34, 34, 34, 0.85);
     width: 2.5rem;
     height: .9rem;
     line-height: .9rem;
     text-align: left;
     text-indent: 1.0rem;
-    background-color: rgba(34,34,34,0.85);
+    background-color: rgba(34, 34, 34, 0.85);
     a {
       position: relative;
       display: block;
@@ -722,10 +728,12 @@ article {
     width: 0;
     height: 0;
     border-style: solid;
-    border-color: transparent transparent rgba(34,34,34,0.85);
+    border-color: transparent transparent rgba(34, 34, 34, 0.85);
     border-width: .25rem;
   }
 }
+
+
 
 
 
@@ -790,4 +798,134 @@ article {
   opacity: .4;
   filter: alpha(opacity=40);
   -moz-opacity: .4;
+}
+
+//联系我们
+.textWrap {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background: #000;
+  width: 100%;
+  opacity: 0.75;
+}
+
+//联系我们
+.cantactText {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  text-align: center;
+  ul {
+    li {
+      position: relative;
+      display: inline-block;
+      flex: 1;
+
+      font-size: .28rem;
+      padding-left: .6rem;
+      margin-bottom: 1rem;
+      a {
+
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        color: #fff;
+        font-size: .28rem;
+      }
+      span {
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -.48rem;
+      right: .1rem;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent rgba(34, 34, 34, 0.85);
+      border-width: .25rem;
+    }
+  }
+}
+
+.cantactText li a:after {
+  content: "";
+  position: absolute;
+  left: .18rem;
+  top: 50%;
+  margin-top: -.35rem;
+  width: .7rem;
+  height: .7rem;
+  -webkit-mask-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, #fff), color-stop(100%, #fff));
+  -webkit-mask-size: .7rem;
+}
+
+.cantactText li a.tel-icon:after {
+
+  -webkit-mask-image: url($bg+'cook_1.png')
+}
+
+.cantactText li a.email-icon:after {
+
+  -webkit-mask-image: url($bg+'cook_2.png')
+}
+
+.cantactText li a.address-icon:after {
+  -webkit-mask-image: url($bg+'cook_3.png');
+}
+
+.mapFooter {
+  position: fixed;
+  background: $redColor;
+  bottom: 0;
+  z-index: 100;
+  height: .88rem;
+  width: 100%;
+  line-height: .88rem;
+  text-align: center;
+  font-size: .36rem;
+  a {
+    color: #fff;
+    position:relative;
+     .dd-icon {
+
+      position: absolute;
+      top: -.3rem;
+      z-index: 100;
+      left: 50%;
+      margin-left: -1.8rem;
+      width: .8rem;
+      height: .8rem;
+      display: block;
+      background: url($bg+'dd.png') no-repeat center;
+      background-size: .8rem;
+      -webkit-animation:conBounce 2s .2s ease infinite;
+-moz-animation:conBounce 2s .2s ease infinite;
+    }
+  }
+}
+
+
+@-webkit-keyframes conBounce{
+0%,20%,50%,80%,100%{-webkit-transform:translateY(0)}
+40%{-webkit-transform:translateY(-25px)}
+60%{-webkit-transform:translateY(-15px)}
+}
+@-moz-keyframes conBounce{
+0%,20%,50%,80%,100%{-moz-transform:translateY(0)}
+40%{-moz-transform:translateY(-25px)}
+60%{-moz-transform:translateY(-15px)}
 }

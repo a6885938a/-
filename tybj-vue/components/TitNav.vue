@@ -1,5 +1,6 @@
 <template>
-  <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel'  :style="{position: 'fixed',}">
+<!-- ?rgba:'rgba(34, 34, 34, 0.85)' -->
+  <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel'  :style="{position: 'fixed',backgroundColor:rgba?rgba:'rgba(34, 34, 34, 0.85)'}">
     <!-- <div class="opa1" :style="{ webkitMaskImage:'url(' +post.description+')'}" >12</div> -->
     <!-- <nuxt-link to="/">Back to the home page</nuxt-link> -->
     <a class="class th-nav-back" @click="go()"></a>
@@ -12,7 +13,7 @@
 import TrBtn from '~/components/TrBtn.vue'
 import LogoText from '~/components/LogoText.vue'
 export default {
-  props: {title:{type:String},isDisplay:{type:String} },
+  props: {title:{type:String},isDisplay:{type:String},rgba:{type:String}},
 
   data() {
     return {
@@ -25,7 +26,8 @@ export default {
       navHeight: '',
       fixtop: 0,
       isT: 0,
-      ToShow: false
+      ToShow: false,
+
 
     }
   },

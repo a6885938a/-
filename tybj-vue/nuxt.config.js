@@ -102,10 +102,12 @@ module.exports = {
   }, {
     src: '~plugins/vue-lazyload',
     ssr: false
-  }, {
-    src: '~plugins/nuxt-video-player-plugin.js',
-    ssr: false
-  }],
+  }
+  // , {
+  //   src: '~plugins/nuxt-video-player-plugin.js',
+  //   ssr: false
+  // }
+  ],
 
   modules: [
     '@nuxtjs/axios',
