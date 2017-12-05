@@ -1,6 +1,7 @@
 <template>
   <div>
     <TitNav ref="nav" :title="'联系我们'" :rgba="'rgba(255, 255, 255, 0)'" />
+   
     <div class="textWrap" :style="{height:screenHeight + 'px',width:screenWidth + 'px'}"></div>
 <div class="mapFooter"><a href="http://map.baidu.com/mobile/webapp/place/detail/qt=ninf&wd=西樵天园&c=138&searchFlag=bigBox&version=5&exptype=dep&src_from=webapp_all_bigbox&uid=e101510c45a227b08af15dfd&industry=cater&qid=12142460488701111055/showall=1&detail_from=list&vt=map/?fromhash=1"><i class="dd-icon"></i>一键导航到店</a></div>
     <div class="cantactText">
@@ -45,7 +46,6 @@ export default {
   components: {
     TitNav,
     Swiper,
-
 
   }
 }

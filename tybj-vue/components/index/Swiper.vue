@@ -1,5 +1,5 @@
 <template>
-  <div class="mySwiper" :style="{width:bodywidth}">
+  <div class="mySwiper" >
     <div v-swiper:mySwiper="swiperOption">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="post in goodsLists">

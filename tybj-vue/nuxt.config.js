@@ -23,10 +23,12 @@ module.exports = {
     }]
   },
   css: [
-    'src/css/base.scss',
-    'swiper/dist/css/swiper.css',
-    'video.js/dist/video-js.css',
-    'src/css/m_tybj.scss'
+  // 'src/css/base.scss',
+  // 'src/css/h5/animate.css',
+  // 'swiper/dist/css/swiper.css',
+  // 'video.js/dist/video-js.css',
+  // 'src/css/m_tybj.scss',
+    'src/css/h5/main.css'
   ],
   /*
    ** Customize the progress bar color
@@ -63,20 +65,28 @@ module.exports = {
     vendor: ['vue-awesome-swiper', 'axios'],
     module: {
       rules: [{
-        test: /\.(png|jpe?g|jpg|gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 5100, // 4KO
-          name: 'img/[name].[hash:7].[ext]'
+          test: /\.(png|jpe?g|jpg|gif|svg|mp3|mp4)$/,
+          loader: 'url-loader',
+          query: {
+            limit: 5100, // 4KO
+            name: 'img/[name].[hash:7].[ext]'
+          }
+        }, {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          query: {
+            limit: 1000, // 1 KO
+            name: 'fonts/[name].[hash:7].[ext]'
+          }
+        }, {
+          test: /\.(webm|mp4|mp3)$/,
+          loader: 'file-loader',
+          options: {
+            name: 'videos/[name].[hash:7].[ext]'
+          }
         }
-      }, {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000, // 1 KO
-          name: 'fonts/[name].[hash:7].[ext]'
-        }
-      }]
+
+      ]
 
     },
     /*
@@ -97,16 +107,16 @@ module.exports = {
   },
 
   plugins: [{
-    src: '~/plugins/nuxt-swiper-plugin.js',
-    ssr: false
-  }, {
-    src: '~plugins/vue-lazyload',
-    ssr: false
-  }
-  // , {
-  //   src: '~plugins/nuxt-video-player-plugin.js',
-  //   ssr: false
-  // }
+      src: '~/plugins/nuxt-swiper-plugin.js',
+      ssr: false
+    }, {
+      src: '~plugins/vue-lazyload',
+      ssr: false
+    }
+    // , {
+    //   src: '~plugins/nuxt-video-player-plugin.js',
+    //   ssr: false
+    // }
   ],
 
   modules: [
