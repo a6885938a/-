@@ -24,21 +24,13 @@ module.exports = {
   },
   css: [
     'src/css/base.scss',
-    'src/css/h5/main.css'
+    'src/css/h5/main.css',
     'src/css/h5/animate.css',
     'swiper/dist/css/swiper.css',
     'video.js/dist/video-js.css',
     'src/css/m_tybj.scss',
   ],
-  js: [
-    // 'static/js/zepto.js',
-    // 'static/js/h5.js',
-    // 'static/js/dialog.js',
-    // 'static/js/loading1.js',
-    // 'static/js/touch.js'
-
-
-  ],
+  
   /*
    ** Customize the progress bar color
    */
@@ -66,9 +58,7 @@ module.exports = {
       console.log('Before enter...')
     }
   },
-  externals: [{
-    webpack - zepto: '$'
-  }],
+
   /*
    ** Build configuration
    */

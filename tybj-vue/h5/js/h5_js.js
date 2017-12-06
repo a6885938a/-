@@ -5,44 +5,44 @@
 // }();
 // 
 // $(window).height()
-// var n = this;
-// $(window).on("touchmove", function(n) {
-// 	n.preventDefault()
-// }), touch.on($("#J_AudioBtn"), "touchstart", function() {
-// 	n.audio()
-// }), $("#loadingBtn").on("tap", function() {
-// 	console.log('test');
-// 	n.start()
-// }), $("#J_Ani1").on("animationend webkitAnimationEnd", function() {
-// 	$(this).removeClass("slideInLeft").addClass("swing_v")
-// }), $("#J_Ani2").on("animationend webkitAnimationEnd", function() {
-// 	$("#J_Ani2").removeClass("bg"), n.auto($("#J_Ani2 span"), "po", 18, 6, !1)
-// }), $("#J_Ani4").on("animationend webkitAnimationEnd", function() {
-// 	$(this).addClass("ani")
-// }), $("#J_Ani5").on("animationend webkitAnimationEnd", function() {
-// 	var n = $(this);
-// 	setTimeout(function() {
-// 		n.removeClass("slideInRight").addClass("slideOutLeft")
-// 	}, 1e3)
-// }), $("#J_Ani6").on("animationend webkitAnimationEnd", function() {
-// 	$(this).removeClass("animated zoomIn").addClass("ani")
-// }), touch.on($("#J_Btn"), "swipeleft", function() {
-// 	return n.curIndex >= 14 ? !1 : (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate -= 30, $("#J_Btn").css({
-// 		"-webkit-transform": "rotate(" + n.rotate + "deg)"
-// 	}), n.curIndex++, $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), $(".salBox").hide(), $("#J_Box" + n.curIndex).css("display", "block"), n.reset(), void(14 == n.curIndex && n.sucInfo()))
-// }), touch.on($("#J_Btn"), "swiperight", function() {
-// 	return n.curIndex && 0 !== n.curIndex ? (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate += 30, $("#J_Btn").css({
-// 		"-webkit-transform": "rotate(" + n.rotate + "deg)"
-// 	}), n.curIndex--, $(".salBox").hide(), $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), void $("#J_Box" + n.curIndex).css("display", "block")) : !1
-// }), $("#J_SubmitInfo").on("touchstart", function() {
-// 	n.submitInfo()
-// }), $("#J_Box0 .tip").on("tap", function() {
-// 	$(this).hide()
-// }), $("#J_ShareBtn").on("tap", function() {
-// 	$("#J_ShareTip").show()
-// }), $("#J_ShareTip").on("tap", function() {
-// 	$(this).hide()
-// })
+var n = this;
+$(window).on("touchmove", function(n) {
+	n.preventDefault()
+}), touch.on($("#J_AudioBtn"), "touchstart", function() {
+	n.audio()
+}), $("#loadingBtn").on("tap", function() {
+	console.log('test');
+	n.start()
+}), $("#J_Ani1").on("animationend webkitAnimationEnd", function() {
+	$(this).removeClass("slideInLeft").addClass("swing_v")
+}), $("#J_Ani2").on("animationend webkitAnimationEnd", function() {
+	$("#J_Ani2").removeClass("bg"), n.auto($("#J_Ani2 span"), "po", 18, 6, !1)
+}), $("#J_Ani4").on("animationend webkitAnimationEnd", function() {
+	$(this).addClass("ani")
+}), $("#J_Ani5").on("animationend webkitAnimationEnd", function() {
+	var n = $(this);
+	setTimeout(function() {
+		n.removeClass("slideInRight").addClass("slideOutLeft")
+	}, 1e3)
+}), $("#J_Ani6").on("animationend webkitAnimationEnd", function() {
+	$(this).removeClass("animated zoomIn").addClass("ani")
+}), touch.on($("#J_Btn"), "swipeleft", function() {
+	return n.curIndex >= 14 ? !1 : (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate -= 30, $("#J_Btn").css({
+		"-webkit-transform": "rotate(" + n.rotate + "deg)"
+	}), n.curIndex++, $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), $(".salBox").hide(), $("#J_Box" + n.curIndex).css("display", "block"), n.reset(), void(14 == n.curIndex && n.sucInfo()))
+}), touch.on($("#J_Btn"), "swiperight", function() {
+	return n.curIndex && 0 !== n.curIndex ? (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate += 30, $("#J_Btn").css({
+		"-webkit-transform": "rotate(" + n.rotate + "deg)"
+	}), n.curIndex--, $(".salBox").hide(), $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), void $("#J_Box" + n.curIndex).css("display", "block")) : !1
+}), $("#J_SubmitInfo").on("touchstart", function() {
+	n.submitInfo()
+}), $("#J_Box0 .tip").on("tap", function() {
+	$(this).hide()
+}), $("#J_ShareBtn").on("tap", function() {
+	$("#J_ShareTip").show()
+}), $("#J_ShareTip").on("tap", function() {
+	$(this).hide()
+})
 
 // var Main = function() {};
 // Main.prototype = {
