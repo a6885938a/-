@@ -47,7 +47,7 @@ export default {
       this.isDataing = val
     },
     changeAct: function(id) {
-      this.$.categoods.changeLoad(true)
+      this.$refs.categoods.changeLoad(true)
       this.$refs.categoods.getNewsFn(id, 1)
     },
     getScrollTop() {
