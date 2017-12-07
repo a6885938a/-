@@ -155,8 +155,8 @@ opacity:.3
 .loading-wrap.loading .loading-img2 {
 	background: url(../images/img1.png) center center no-repeat;
 	background-size: contain;
-	width: 71.875%;
-	height: 30.35714286%;
+	width: 60%;
+	height: 80%;
 	position: relative;
 	z-index: 10;
 	opacity: 0
@@ -167,14 +167,14 @@ opacity:.3
 }
 @-webkit-keyframes slideInUp_v {
 0% {
--webkit-transform:translate3d(0, 30%, 0);
-transform:translate3d(0, 30%, 0);
+-webkit-transform:translate3d(0, 45px, 0);
+transform:translate3d(0, 45px, 0);
 visibility:visible;
 opacity:0
 }
-1% {
+/*1% {
 opacity:1
-}
+}*/
 100% {
 -webkit-transform:translate3d(0, 0, 0);
 transform:translate3d(0, 0, 0);
@@ -192,7 +192,11 @@ opacity:1
 	left: 0
 }
 .loading-wrap.loading .loading-img4 {
-	background: url(http://s.flyfinger.com/polycom/static/images/travel/img4_72801db.png) center top no-repeat;
+
+
+	background: url(../images/cloud.png) center no-repeat;
+
+
 	background-size: 100% auto;
 	width: 100%;
 	height: 100%;
@@ -210,7 +214,7 @@ opacity:1
 	animation-fill-mode: forwards
 }
 .loading-wrap.loading .btn1 {
-	background: url(http://s.flyfinger.com/polycom/static/images/travel/btn1_4b8fa5d.png) center center no-repeat;
+	background: url(../images/btn1.png) center center no-repeat;
 	background-size: contain;
 	width: 57.8125%;
 	height: 12.1031746%;
@@ -222,7 +226,7 @@ opacity:1
 	display: none
 }
 .loading-wrap.loading .btn1 span {
-	background: url(http://s.flyfinger.com/polycom/static/images/travel/img2_8a6bf82.png) center center no-repeat;
+	background: url(../images/img2.png) center center no-repeat;
 	background-size: contain;
 	width: 100%;
 	height: 100%;
@@ -299,12 +303,12 @@ opacity:0;
     -webkit-transition: -webkit-transform 1s;
     top: 0;
     left: 0;
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/bg_04_a1dca65.jpg) left top repeat-x;
+    background: url(../images/bodybg.jpg) left top repeat-x;
     background-size: auto 100%
 }
 
 .bg-box .bg_3 p {
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/bg_04_a1dca65.jpg) left top repeat-x;
+    background: url(../images/bodybg.jpg) left top repeat-x;
     background-size: auto 100%;
     width: 100%;
     height: 100%;
@@ -316,10 +320,21 @@ opacity:0;
 
 @-webkit-keyframes bg_ani {
     100% {
-        -webkit-transform: translate3d(-86.66666667%, 0, 0)
+        -webkit-transform: translate3d(-80.66666667%, 0, 0)
     }
 }
+.tab{
 
+	   width: 100%;
+    height: 10%;
+        background: url(../images/tab.jpg) center no-repeat;
+    background-size: auto 100%;
+        position: absolute;
+    left:0;
+    bottom: 0;
+    z-index: 1;
+
+}
 .salBox {
     width: 100%;
     height: 100%;
@@ -346,7 +361,7 @@ opacity:0;
 }
 
 .box0 .tip {
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/tip_7cb3ea8.png) center center no-repeat;
+    background: url(../images/tip.png) center center no-repeat;
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
@@ -1620,15 +1635,15 @@ opacity:0;
 }
 
 .btn {
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/btn2_9b1bd38.png) center center no-repeat;
+    background: url(../images/cook.png) center center no-repeat;
     background-size: contain;
-    width: 66.828125%;
+    width: 60.828125%;
     height: 38.69047619%;
     position: fixed;
     z-index: 100;
-    bottom: -19.3452381%;
+    bottom: -14.3452381%;
     left: 50%;
-    margin-left: -33.4140625%;
+    margin-left: -30.4140625%;
     display: none
 }
 
@@ -1662,3 +1677,4 @@ opacity:0;
     animation-play-state: paused;
     -webkit-animation-play-state: paused
 }
+.din{ display:none;}
