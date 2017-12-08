@@ -30,7 +30,7 @@ module.exports = {
     'video.js/dist/video-js.css',
     'src/css/m_tybj.scss',
   ],
-  
+
   /*
    ** Customize the progress bar color
    */
