@@ -393,18 +393,18 @@ opacity:0;
 }
 
 .box1 .con-item1 {
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/1990_b3ee7a5.png) center center no-repeat;
-    background-size: contain;
+    width: 100%;
+    text-align:center;
+/*
     width: 20.78125%;
-    height: 12.59920635%;
+    height: 12.59920635%;*/
     margin-top: -10%
 }
 
 .box1 .con-item2 {
-    background: url(http://s.flyfinger.com/polycom/static/images/travel/img6_88cc4d7.png) center center no-repeat;
-    background-size: contain;
-    width: 41.09375%;
-    height: 3.17460317%;
+
+      width: 100%;
+    text-align:center;
     -webkit-animation-delay: .5s;
     margin-top: -5px
 }
