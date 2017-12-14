@@ -37,9 +37,9 @@ Main.prototype = {
 		}), $("#J_Ani6").on("animationend webkitAnimationEnd", function() {
 			$(this).removeClass("animated zoomIn").addClass("ani")
 		}), touch.on($("#J_Btn"), "swipeleft", function() {
-			return n.curIndex >= 14 ? !1 : (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate -= 30, $("#J_Btn").css({
+			return n.curIndex >= 6 ? !1 : (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate -= 30, $("#J_Btn").css({
 				"-webkit-transform": "rotate(" + n.rotate + "deg)"
-			}), n.curIndex++, $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), $(".salBox").hide(), $("#J_Box" + n.curIndex).css("display", "block"), n.reset(), void(14 == n.curIndex && n.sucInfo()))
+			}), n.curIndex++, $("#J_BgBox .bg_1,#J_BgBox .bg_2,#J_BgBox .bg_3").css("-webkit-transform", "translateX(-" + 100 * n.curIndex / 100 + "%)"), $(".salBox").hide(), $("#J_Box" + n.curIndex).css("display", "block"), n.reset(), void(6 == n.curIndex && n.sucInfo()))
 		}), touch.on($("#J_Btn"), "swiperight", function() {
 			return n.curIndex && 0 !== n.curIndex ? (-1 === navigator.userAgent.indexOf("Android") && document.getElementById("J_Eye").play(), n.rotate += 30, $("#J_Btn").css({
 				"-webkit-transform": "rotate(" + n.rotate + "deg)"
@@ -59,7 +59,7 @@ Main.prototype = {
 	},
 	start: function() {
 		var n = this;
-		document.getElementById("J_BgAudio").paused && document.getElementById("J_BgAudio").play(), $("#loading .loading-img1,#loading .loading-img2,#loading .btn1,#loading .logo").removeClass("i slideInUp").addClass("animated fadeOut"), $("#loading .loading-img3,#loading .loading-img4").addClass("out"), $("#loading .loading-img4").one("animationend webkitAnimationEnd", function() {
+		document.getElementById("J_BgAudio").paused && document.getElementById("J_BgAudio").play(), $("#loading .loading-img1,#loading .loading-img2,#loading .btn1,#loading .logo,#loading .meihua,#loading .hua").removeClass("i slideInUp").addClass("animated fadeOut"), $("#loading .meihua").removeClass("moveMeihua").addClass("fadeOut"), $("#loading .hua").removeClass("moveHua").addClass("fadeOut"), $("#loading .loading-img3,#loading .loading-img4").addClass("out"), $("#loading .loading-img4").one("animationend webkitAnimationEnd", function() {
 			$("#J_Box0,#J_Btn").css("display", "block"), $("#J_Btn").removeClass("animated slideInUp").addClass("transition"), $("#loading").hide(), n.curIndex = 0, n.rotate = 0
 		})
 	},
@@ -102,7 +102,7 @@ Main.prototype = {
 		})
 	},
 	sucInfo: function() {
-		$(".salBox").hide(), $("#J_Box14").css("display", "block"), $("#J_Btn").hide();
+		$(".salBox").hide(), $("#J_Box6").css("display", "block"), $("#J_Btn").hide();
 		var n = this;
 		setTimeout(function() {
 			n.auto($("#J_Ani3 span"), "po", 2, 40, !0)
