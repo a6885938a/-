@@ -24,10 +24,7 @@ module.exports = {
   },
   css: [
     'src/css/base.scss',
-    'src/css/h5/main.css',
-    'src/css/h5/animate.css',
     'swiper/dist/css/swiper.css',
-    'video.js/dist/video-js.css',
     'src/css/m_tybj.scss',
   ],
 
