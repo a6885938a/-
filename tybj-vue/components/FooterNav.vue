@@ -15,8 +15,8 @@
           <nuxt-link :to="/media"><div class="opa1 i_search" ></div> <span >搜索文章</span>   </nuxt-link>
            </li> -->
       <li>
-        <nuxt-link :to="'/about'">
-          <div class="opa1 i_about"></div> <span>天园简介</span> </nuxt-link>
+        <a href="http://www.tybj-food.com/wp-content/themes/tybj/h5/brand.html">
+          <div class="opa1 i_about"></div> <span>天园简介</span> </a>
       </li>
       <li>
         <nuxt-link :to="'/contact'">

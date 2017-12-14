@@ -3,7 +3,7 @@
   <div id="naxBox" ref="nav" class='th-nav wbox rel headroom show-top-pannel'  :style="{position: 'fixed',backgroundColor:rgba?rgba:'rgba(34, 34, 34, 0.85)'}">
     <!-- <div class="opa1" :style="{ webkitMaskImage:'url(' +post.description+')'}" >12</div> -->
     <!-- <nuxt-link to="/">Back to the home page</nuxt-link> -->
-    <a class="class th-nav-back" @click="go()"></a>
+    <a class="class th-nav-back" onclick="window.history.go(-1)"></a>
     <LogoText :ml='0.5' :isDisplay="isDisplay"/>
     <div class="th-nav-title of bg">{{title?title:''}}</div>
     <TrBtn ref="TrBtn"/>
@@ -89,7 +89,7 @@ export default {
     },
 
     go() {
-      window.history.go(-1)
+      history.back()
      
     },
  

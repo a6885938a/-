@@ -9,7 +9,7 @@
         <nuxt-link :to="'/media'" class="nav-more-icon media-icon">媒体报道</nuxt-link>
       </li>
       <li>
-        <nuxt-link :to="'/about'" class="nav-more-icon about-icon">天园简介</nuxt-link>
+        <a href="http://www.tybj-food.com/wp-content/themes/tybj/h5/brand.html" class="nav-more-icon about-icon">天园简介</a>
       </li>
       <li>
         <nuxt-link :to="'/contact'" class="nav-more-icon contact-icon">联系我们</nuxt-link>

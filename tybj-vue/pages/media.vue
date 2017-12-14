@@ -27,6 +27,7 @@
 import TitNav from '~/components/TitNav.vue'
 import axios from 'axios';
 export default {
+    scrollToTop: false,
    beforeCreate() {
     if (typeof window !== 'undefined') {
      document.getElementsByTagName("body")[0].className="mediaBody";
