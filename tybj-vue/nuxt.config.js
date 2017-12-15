@@ -35,9 +35,12 @@ module.exports = {
     color: '#a91f24',
     height: '2px'
   },
-router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
+  router: {
+    scrollBehavior: function(to, from, savedPosition) {
+      return {
+        x: 0,
+        y: 0
+      }
     }
   },
   //页面过度效果//过度必须带有fade

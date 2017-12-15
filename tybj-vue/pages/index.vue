@@ -96,7 +96,7 @@ export default {
   },
   destroyed() {
     window.removeEventListener('scroll', this.scroll)
-
+// window.scrollTo(0, 0)
   },
 
   async asyncData() {
