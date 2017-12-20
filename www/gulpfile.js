@@ -174,10 +174,10 @@ gulp.task('autoprefixer', function() {
 //压缩图片
 gulp.task('imagemin', function() {
     gulp.src([TY + '/images/*/*.{png,jpg,gif,svg}', TY + '/images/*.{png,jpg,gif,svg}'])
-        .pipe(cache(imagemin({
+    .pipe(cache(imagemin({
             progressive: true, //類型：Boolean 默認：false 無損壓縮jpg圖片
             svgoPlugins: [{ removeViewBox: false }], //不要移除svg的viewbox屬性
-            use: [pngquant()] //确保已安装pngquant，使用pngquant深度壓縮png圖片的imagemin插件
+        use: [pngquant()] //确保已安装pngquant，使用pngquant深度壓縮png圖片的imagemin插件
         })))
         .pipe(gulp.dest(N_TY + 'images'));
 });
