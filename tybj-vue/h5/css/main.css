@@ -51,7 +51,9 @@ a {
   display: block;
   visibility: hidden
 }
-
+.tr{
+  text-align: center;
+}
 input,
 a,
  :focus {
@@ -526,7 +528,8 @@ opacity:1;
 .con-item1 {
   width: 100%;
   text-align: center;
-  margin-top: -10%
+  margin-top: -10%;
+font-size: .60rem;
 }
 
 .con-item2 {
@@ -534,7 +537,8 @@ opacity:1;
   width: 100%;
   text-align: center;
   -webkit-animation-delay: .5s;
-  margin-top: -5px
+  margin-top: -5px;
+  font-size: .48rem;
 }
 
 .salBox {
@@ -808,7 +812,7 @@ opacity:1;
 }
 
 .audio_btn {
-/*  background: url(../images/audio.png) center center no-repeat;
+  background: url(../images/audio.png) center center no-repeat;
   background-size: contain;
   width: 22px;
   height: 22px;
@@ -825,7 +829,7 @@ opacity:1;
   animation-play-state: running;
   -webkit-animation-play-state: running;
   animation-duration: 2s;
-  -webkit-animation-duration: 2s*/
+  -webkit-animation-duration: 2s
 }
 
 .audio_btn_v {

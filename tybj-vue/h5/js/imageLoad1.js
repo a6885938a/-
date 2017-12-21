@@ -1,67 +1,43 @@
-var ImageLoad = function() { this.images = {}, this.imageUrls = [], this.imagesLoaded = 0, this.imagesFailedToLoad = 0, this.imagesIndex = 0, this.imageLoadingProgress = 0 };
-ImageLoad.prototype = { getImage: function(a) { return this.images[a] }, imageLoadedCallback: function() { this.imagesLoaded++ }, imageLoadedErrorCallback: function() { this.imagesFailedToLoad++ }, loadImage: function(a) { var e = new Image,
-      i = this;
-    e.src = a, e.addEventListener("load", function(a) { i.imageLoadedCallback(a) }), e.addEventListener("error", function(a) { i.imageLoadedErrorCallback(a) }), this.images[a] = e }, loadImages: function() { return this.imagesIndex < this.imageUrls.length && (this.loadImage(this.imageUrls[this.imagesIndex]), this.imagesIndex++), (this.imagesLoaded + this.imagesFailedToLoad) / this.imageUrls.length * 100 }, queueImage: function(a) { var e = this; return "[object Array]" === Object.prototype.toString.call(a) ? a.forEach(function(a) { e.imageUrls.push(a) }) : this.imageUrls.push(a), this }, imageLoadingProgressCallback: function(a, e) { var i = this,
-      s = setInterval(function() { i.imageLoadingProgress = isNaN(i.loadImages()) ? 100 : i.loadImages(), 100 === i.imageLoadingProgress && (clearInterval(s), setTimeout(function() { e.call(i) }, 300)), a.call(i, i.imageLoadingProgress) }, 10) } }, window.ImageLoad = ImageLoad;
-         var loadImgArr = [
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg_04_a1dca65.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/1990_b3ee7a5.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/1998_9fac3ea.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/2001_bd15923.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/2003_0aaf31f.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/2004_d0a1cbc.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/2005_aeafff4.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/2008_81b6dff.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/audio_286014b.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg1_6bd1374.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg2_a876b53.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg3_868cd9a.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg4_b782718.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg5_5182f68.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg6_aaf9f01.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg7_e8e95ea.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg8_6708f40.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg9_d7f1805.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg10_aaf9f01.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/bg13_7ffa10b.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/btn1_4b8fa5d.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/btn2_9b1bd38.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/btn3_60166c4.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/btn4_2f682e2.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/btn5_4628446.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img1_8f63be5.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img2_8a6bf82.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img3_a8e8f99.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img4_72801db.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img5_f48635b.jpg',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img6_88cc4d7.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img7_7115711.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img8_e562aa7.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img9_c46495a.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img10_ea10c4d.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img11_fdd4c04.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img12_e190e1b.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img13_3fdbebf.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img14_f5bdbdd.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img15_4bb2632.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img16_636ac64.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img17_78fec9f.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img18_0e4b5d3.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img19_f1a7cfe.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img20_6e01a88.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img21_679d3df.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img22_ba0636b.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img23_80ba098.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img24_ddd2297.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img25_185ae0b.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img26_2cc3f4a.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img27_455c73c.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img28_46da84d.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img29_f3db3d4.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img30_0f26735.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img31_6e715a7.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img32_ce394cd.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/img33_3400be3.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/logo_fd331a7.png',
-        // 'http://s.flyfinger.com/polycom/static/images/travel/logo_ani_2e909b0.png'
-    ];
+var ImageLoad = function() {
+    this.images = {}, this.imageUrls = [], this.imagesLoaded = 0, this.imagesFailedToLoad = 0, this.imagesIndex = 0, this.imageLoadingProgress = 0
+};
+ImageLoad.prototype = {
+    getImage: function(a) {
+        return this.images[a]
+    },
+    imageLoadedCallback: function() {
+        this.imagesLoaded++
+    },
+    imageLoadedErrorCallback: function() {
+        this.imagesFailedToLoad++
+    },
+    loadImage: function(a) {
+        var e = new Image,
+            i = this;
+        e.src = a, e.addEventListener("load", function(a) {
+            i.imageLoadedCallback(a)
+        }), e.addEventListener("error", function(a) {
+            i.imageLoadedErrorCallback(a)
+        }), this.images[a] = e
+    },
+    loadImages: function() {
+        return this.imagesIndex < this.imageUrls.length && (this.loadImage(this.imageUrls[this.imagesIndex]), this.imagesIndex++), (this.imagesLoaded + this.imagesFailedToLoad) / this.imageUrls.length * 100
+    },
+    queueImage: function(a) {
+        var e = this;
+        return "[object Array]" === Object.prototype.toString.call(a) ? a.forEach(function(a) {
+            e.imageUrls.push(a)
+        }) : this.imageUrls.push(a), this
+    },
+    imageLoadingProgressCallback: function(a, e) {
+        var i = this,
+            s = setInterval(function() {
+                i.imageLoadingProgress = isNaN(i.loadImages()) ? 100 : i.loadImages(), 100 === i.imageLoadingProgress && (clearInterval(s), setTimeout(function() {
+                    e.call(i)
+                }, 300)), a.call(i, i.imageLoadingProgress)
+            }, 10)
+    }
+}, window.ImageLoad = ImageLoad;
+var loadImgArr = [
+
+];
