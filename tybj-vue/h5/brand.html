@@ -170,6 +170,25 @@
   <script type="text/javascript" charset="utf-8" src="js/touch.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/dialog.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/h5_js.js"></script>
+   <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/wx.js"></script>
+    <script src="js/share.js"></script>
+    <script>
+        //先定义分享参数对象,全参数为（可按需配置 ）：
+        var options={
+            'id':'天园饼家',
+            'title':'西樵大饼非遗传承人的故事',
+            'desc':'西樵大饼非遗传承人的故事',
+            'link':'https://www.tybj-food.com/wp-content/themes/tybj/h5/brand.html',
+            'imgUrl':'./images/logo.jpg'
+        };
+        //后定义实例(注：实例名不能为关键字和'wx')：
+        var _wx_share = new WxShare(options);
+        //如要在中途重置分享到朋友圈，调用setTimeLineOptions方法：
+        _wx_share.setTimeLineOptions({
+            'title':'天园饼家--西樵大饼非遗传承人的故事'
+        });
+    </script> 
 </body>
 
 </html>
