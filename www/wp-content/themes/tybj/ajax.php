@@ -15,9 +15,9 @@ url = location.href;
 $.ajax({
     type: "get",
     url: "https://www.tybj-food.com/wp-content/themes/tybj/jssdk.php?url=" + url, //替换网址，xxx根据自己jssdk文件位置修改 
-    dataType: "json",
-    // jsonp: "callback",
-    // jsonpCallback: "success_jsonpCallback",
+    dataType: "jsonp",
+    jsonp: "callback",
+    jsonpCallback: "success_jsonpCallback",
     success: function(data) {
         wx.config({
             appId: data.appId,
@@ -39,10 +39,10 @@ $.ajax({
 });
 wx.ready(function() {
     var shareData = {
-        title: '你傻啊',
-        desc: '叼你妈隔壁', //这里请特别注意是要去除html 
-        link: 'www.baidu.com',
-        imgUrl: 'http://www.xq0757.com/attachment/Mon_1801/20_444560_87100a083b7a1c0.jpg'
+        title: '标题',
+        desc: '简介', //这里请特别注意是要去除html 
+        link: '链接',
+        imgUrl: '题图'
     };
     wx.onMenuShareAppMessage(shareData);
     wx.onMenuShareTimeline(shareData);
